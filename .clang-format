@@ -1,0 +1,32 @@
+BasedOnStyle: LLVM
+Language : Cpp
+Standard: c++17
+IndentWidth : 4
+TabWidth: 4
+ColumnLimit: 120
+AccessModifierOffset: -4
+ContinuationIndentWidth: 4
+UseTab: Never
+BreakStringLiterals: true
+AlwaysBreakTemplateDeclarations : true
+AlignAfterOpenBracket : true
+AlignOperands : true
+AlignTrailingComments : true
+BreakConstructorInitializers : AfterColon
+AlwaysBreakAfterReturnType : All
+IndentCaseLabels: false
+ReflowComments: true
+PointerAlignment: Left
+MaxEmptyLinesToKeep: 2
+FixNamespaceComments: true
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '<[^.]+>'
+    Priority: 1
+  - Regex: '^<.+\.h>'
+    Priority: 2
+  - Regex: '^<.+\.hpp>'
+    Priority: 3
+  - Regex: '.*'
+    Priority: 4
