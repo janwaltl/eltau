@@ -9,6 +9,10 @@ option(ELTAU_BUILD_EXAMPLES "Build examples" OFF)
 option(ELTAU_BUILD_TEST "Build tests" OFF)
 option(ELTAU_SANITIZED "Sanitized build (addr,leak,UB)" OFF)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 20)
+
 # Set reasonable build options for Elphi project targets
 function(config_default_target_flags target)
   target_compile_options(${target} PRIVATE -std=c++20 -Wall -Wextra -Werror -pedantic -fpic -fno-omit-frame-pointer)
@@ -38,7 +42,6 @@ endfunction()
 
 add_subdirectory(libs/catch2)
 add_subdirectory(libs/fmt)
-add_subdirectory(libs/ftxui)
 
 if(ELTAU_ENABLE_COVERAGE)
   include(cmake/CodeCoverage.cmake)
