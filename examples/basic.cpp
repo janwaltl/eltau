@@ -13,12 +13,12 @@
 
 int
 main() {
+
     eltau::EagerTerminal term{std::make_unique<eltau::Text>("Hello world", 0)};
 
     for (std::size_t i = 0; i < 100; ++i) {
         term.draw();
-        using namespace std::chrono_literals;
-        std::this_thread::sleep_for(100ms);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 
     return 0;
