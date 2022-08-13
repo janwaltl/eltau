@@ -5,7 +5,7 @@ project(eltau VERSION 0.1 LANGUAGES CXX)
 
 option(ELTAU_ENABLE_COVERAGE "Enable code coverage testing support" OFF)
 option(ELTAU_JUNIT_TEST_OUTPUT "Generate test reports in JUNIT(XML) format" OFF)
-option(ELTAU_BUILD_EXAMPLES "Build examples" OFF)
+option(ELTAU_BUILD_EXAMPLES "Build examples" ON)
 option(ELTAU_BUILD_TEST "Build tests" OFF)
 option(ELTAU_SANITIZED "Sanitized build (addr,leak,UB)" OFF)
 
@@ -92,6 +92,6 @@ target_sources(
 if(ELTAU_BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif(ELTAU_BUILD_EXAMPLES)
-if(ELTAU_BUILD_TEST)
-  add_subdirectory(test)
-endif(ELTAU_BUILD_TEST)
+#if(ELTAU_BUILD_TEST)
+#add_subdirectory(test)
+#endif(ELTAU_BUILD_TEST)
