@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('element_8cpp_source.html',''); initRes
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="structeltau_1_1Vector.html">Vector</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classeltau_1_1Text.html#ab252cee3a29c786736440caa008be1dd">   28</a></span>&#160;<a class="code" href="classeltau_1_1Text.html#ab252cee3a29c786736440caa008be1dd">Text::do_calc_pref_size</a>(<a class="code" href="structeltau_1_1Vector.html">Vector</a> max_size) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// TODO calculate unicode width properly, right now assume ASCII.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// TODO(jw) calculate unicode width properly, right now assume ASCII.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> len = <a class="code" href="classeltau_1_1Text.html#a73dfd6bdd5fb41103fab43c28c55f6a7">m_text</a>.size();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structeltau_1_1Vector.html">Vector</a>{.<a class="code" href="structeltau_1_1Vector.html#afba4a6b67a2cc9c93fee4c297acbd28f">m_row</a> = std::min(max_size.<a class="code" href="structeltau_1_1Vector.html#afba4a6b67a2cc9c93fee4c297acbd28f">m_row</a>, len % max_size.<a class="code" href="structeltau_1_1Vector.html#a0765b2514d137ae70bdf47ff28b009e2">m_col</a>), .m_col = std::min(len, max_size.<a class="code" href="structeltau_1_1Vector.html#a0765b2514d137ae70bdf47ff28b009e2">m_col</a>)};</div>
@@ -129,12 +129,12 @@ $(document).ready(function(){initNavTree('element_8cpp_source.html',''); initRes
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structeltau_1_1Vector.html">Vector</a> cursor{0, 0};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <a class="code" href="structeltau_1_1Vector.html">Vector</a> size = window.<a class="code" href="classeltau_1_1Window.html#aa5456682aee512040054694deea6cec9">size</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// TODO iterate over graphemes instead.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// TODO(jw) iterate over graphemes instead.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c : <a class="code" href="classeltau_1_1Text.html#a73dfd6bdd5fb41103fab43c28c55f6a7">m_text</a>) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (!window.<a class="code" href="classeltau_1_1Window.html#a782aefbe8decea5bf0b0a70016343cec">is_inside</a>(cursor))</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">auto</span>* cell = window[cursor];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// TODO ignore non-printable ASCII characters.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// TODO(jw) ignore non-printable ASCII characters.</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\n&#39;</span>) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            ++cursor.m_row;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            cursor.m_col = 0;</div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('element_8cpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="element_8cpp.html">element.cpp</a></li>
-    <li class="footer">Generated on Sat Aug 13 2022 21:34:12 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Aug 13 2022 21:44:13 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
