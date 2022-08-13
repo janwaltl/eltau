@@ -26,7 +26,7 @@ Text::Text(std::string_view text, std::size_t wrap_limit) : m_text(text), m_wrap
 
 Vector
 Text::do_calc_pref_size(Vector max_size) {
-    // TODO calculate unicode width properly, right now assume ASCII.
+    // TODO(jw) calculate unicode width properly, right now assume ASCII.
     auto len = m_text.size();
 
     return Vector{.m_row = std::min(max_size.m_row, len % max_size.m_col), .m_col = std::min(len, max_size.m_col)};
@@ -37,12 +37,12 @@ Text::do_draw(DrawingWindow& window) {
     Vector cursor{0, 0};
     const Vector size = window.size();
 
-    // TODO iterate over graphemes instead.
+    // TODO(jw) iterate over graphemes instead.
     for (auto c : m_text) {
         if (!window.is_inside(cursor))
             break;
         auto* cell = window[cursor];
-        // TODO ignore non-printable ASCII characters.
+        // TODO(jw) ignore non-printable ASCII characters.
         if (c == '\n') {
             ++cursor.m_row;
             cursor.m_col = 0;
