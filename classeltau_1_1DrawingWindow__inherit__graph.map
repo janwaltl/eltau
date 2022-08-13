@@ -1,0 +1,4 @@
+<map id="eltau::DrawingWindow" name="eltau::DrawingWindow">
+<area shape="rect" id="node1" title="Drawable area in a screen." alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node2" href="$classeltau_1_1Window.html" title="Rectangular area on the screen." alt="" coords="29,5,131,32"/>
+</map>

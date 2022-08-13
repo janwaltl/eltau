@@ -1,0 +1,4 @@
+<map id="eltau::Window" name="eltau::Window">
+<area shape="rect" id="node1" title="Rectangular area on the screen." alt="" coords="5,109,108,136"/>
+<area shape="rect" id="node2" href="$structeltau_1_1Vector.html" title="Coordinates in the screen." alt="" coords="9,5,104,32"/>
+</map>

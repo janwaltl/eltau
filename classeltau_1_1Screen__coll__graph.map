@@ -1,0 +1,8 @@
+<map id="eltau::Screen" name="eltau::Screen">
+<area shape="rect" id="node1" title="Abstract terminal screen." alt="" coords="177,332,275,359"/>
+<area shape="rect" id="node2" title=" " alt="" coords="100,228,221,269"/>
+<area shape="rect" id="node3" href="$structeltau_1_1Cell.html" title="Terminal cell." alt="" coords="121,139,200,165"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,161,61"/>
+<area shape="rect" id="node5" href="$structeltau_1_1Color256.html" title="256 Terminal colors" alt="" coords="186,20,293,47"/>
+<area shape="rect" id="node6" href="$structeltau_1_1Vector.html" title="Coordinates in the screen." alt="" coords="245,235,340,262"/>
+</map>
