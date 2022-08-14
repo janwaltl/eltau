@@ -11,6 +11,10 @@
 #include <eltau/element.hpp>
 #include <eltau/terminal.hpp>
 
+namespace {
+using namespace std::chrono_literals;
+constexpr auto c_tick = 100ms;
+} // namespace
 int
 main() {
 
@@ -18,7 +22,7 @@ main() {
 
     for (std::size_t i = 0; i < 100; ++i) {
         term.draw();
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(c_tick);
     }
 
     return 0;
