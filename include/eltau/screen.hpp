@@ -246,7 +246,7 @@ public:
     /*******************************************************************************
      * @brief Create a new window.
      *
-     * @param win Window to draw on
+     * @param win Window to draw on, copied.
      * @param screen Screen to use, reference is captured.
      ******************************************************************************/
     DrawingWindow(const Window& win, Screen& screen) noexcept;

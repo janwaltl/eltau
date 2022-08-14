@@ -91,4 +91,4 @@ CheckOptions:
   - key: 			 readability-identifier-naming.TypeTemplateParameterCase
     value: aNy_CasE
   - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
-  	value: 1
+    value: 1

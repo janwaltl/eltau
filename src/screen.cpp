@@ -6,7 +6,7 @@
 #include <eltau/screen.hpp>
 
 namespace eltau {
-Screen::Screen(Vector dimensions) : m_size{dimensions}, m_buffer{m_size.m_col * m_size.m_row, Cell{}} {
+Screen::Screen(Vector size) : m_size{size}, m_buffer{m_size.m_col * m_size.m_row, Cell{}} {
 
     for (auto& c : m_buffer) {
         c.m_char[0] = '+';
