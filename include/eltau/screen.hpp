@@ -69,18 +69,21 @@ static_assert(sizeof(Cell) == 16, "Keep nice - 8, 16, or 32 in the future.");
 struct Vector {
     std::size_t m_row;
     std::size_t m_col;
+
+    bool
+    operator==(const Vector&) const = default;
 };
 
 /*******************************************************************************
  * @brief Element-wise sum.
  ******************************************************************************/
-Vector inline
+Vector
 operator+(const Vector& l, const Vector& r);
 
 /*******************************************************************************
  * @brief Saturating element-wise subtraction.
  ******************************************************************************/
-Vector inline
+Vector
 operator-(const Vector& l, const Vector& r);
 
 /*******************************************************************************

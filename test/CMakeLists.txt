@@ -30,5 +30,5 @@ endif(ELTAU_JUNIT_TEST_OUTPUT)
 target_sources(
   tests
   PRIVATE
-  test_foo.cpp
+  test_screen.cpp
 )

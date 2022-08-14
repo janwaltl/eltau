@@ -61,7 +61,7 @@ operator-(const Vector& l, const Vector& r) {
     Vector res{.m_row = l.m_row - r.m_row, .m_col = l.m_col - r.m_col};
 
     // Saturating
-    return {.m_row = res.m_row > l.m_row ? 0 : res.m_row, .m_col = res.m_row > l.m_row ? 0 : res.m_row};
+    return {.m_row = res.m_row > l.m_row ? 0 : res.m_row, .m_col = res.m_col > l.m_col ? 0 : res.m_col};
 }
 
 Window::Window(Vector begin, Vector size) noexcept : m_begin(begin), m_size(size) {}
