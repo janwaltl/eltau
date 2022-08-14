@@ -16,6 +16,8 @@ var screen_8hpp =
       [ "Inverse", "screen_8hpp.html#a84ee5c845edc34fe7152f2471565a066a84eb3dfbcca4b528a999740da778b26d", null ],
       [ "Strike", "screen_8hpp.html#a84ee5c845edc34fe7152f2471565a066afbb319e8afeae64fdf650c07f8eada5c", null ]
     ] ],
+    [ "max", "screen_8hpp.html#a159db0696273890792dd106a2dc6822f", null ],
+    [ "min", "screen_8hpp.html#af366f3151c412913c031fe80c899a65a", null ],
     [ "operator+", "screen_8hpp.html#a591339d3e11f6bdf57c10548fad7dd53", null ],
     [ "operator-", "screen_8hpp.html#aef32f02e5fedbdd6d3971858c4ba1207", null ],
     [ "c_utf8_cpoints", "screen_8hpp.html#a06a02821dfa0f42ff62f4d409ebfe9ff", null ]

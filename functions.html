@@ -93,9 +93,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_b"></a>- b -</h3><ul>
-<li>begin()
-: <a class="el" href="classeltau_1_1Window.html#a25b8a623dffd061810e6166ccb7bbd77">eltau::Window</a>
-</li>
 <li>borrow()
 : <a class="el" href="structeltau_1_1SharedStateImpl.html#a6a6e226394f885c96abe0d7d9bb122e4">eltau::SharedStateImpl&lt; State &gt;</a>
 </li>
@@ -119,9 +116,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
-<li>dims()
-: <a class="el" href="classeltau_1_1Screen.html#ae9600f6e1dd45cd84fe75f004bdfcb3b">eltau::Screen</a>
-</li>
 <li>do_calc_pref_size()
 : <a class="el" href="classeltau_1_1Element.html#a9d061d86a7ddf44cef2865ab39886601">eltau::Element</a>
 , <a class="el" href="classeltau_1_1HContainer.html#a6dd9227080f6d5c0b4834aca53437058">eltau::HContainer&lt; Elems &gt;</a>
@@ -200,9 +194,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
-<li>m_begin
-: <a class="el" href="classeltau_1_1Window.html#a1caab1b8c549e1f0b922e45a5fc34b21">eltau::Window</a>
-</li>
 <li>m_bg
 : <a class="el" href="structeltau_1_1Cell.html#a49ab2c16a7e4ae9dee8fca01d299b7db">eltau::Cell</a>
 </li>
@@ -215,9 +206,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>m_col
 : <a class="el" href="structeltau_1_1Vector.html#a0765b2514d137ae70bdf47ff28b009e2">eltau::Vector</a>
 </li>
-<li>m_dims
-: <a class="el" href="classeltau_1_1Screen.html#a8cbab823b36a99751fc6415d32e96008">eltau::Screen</a>
-</li>
 <li>m_elems
 : <a class="el" href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">eltau::HContainer&lt; Elems &gt;</a>
 </li>
@@ -226,6 +214,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>m_last_pref_size
 : <a class="el" href="classeltau_1_1Element.html#a8cf8add17e66650fb2be6c835f85456c">eltau::Element</a>
+</li>
+<li>m_origin
+: <a class="el" href="classeltau_1_1Window.html#a05d7e007f838291f9d3a163447ff1db8">eltau::Window</a>
 </li>
 <li>m_root
 : <a class="el" href="classeltau_1_1EagerTerminal.html#a4262ac1e16647b409e098de47eac7f80">eltau::EagerTerminal</a>
@@ -238,7 +229,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 , <a class="el" href="classeltau_1_1EagerTerminal.html#ad045e808d2998c8871ae51b4dce878a2">eltau::EagerTerminal</a>
 </li>
 <li>m_size
-: <a class="el" href="classeltau_1_1Window.html#a408df7d8e33d24a6172e67ec2475fa22">eltau::Window</a>
+: <a class="el" href="classeltau_1_1Screen.html#ab012d06146f04c9afe67c05b430cf515">eltau::Screen</a>
+, <a class="el" href="classeltau_1_1Window.html#a408df7d8e33d24a6172e67ec2475fa22">eltau::Window</a>
 </li>
 <li>m_state
 : <a class="el" href="structeltau_1_1SharedStateImpl.html#a0ccb3f452391b29ab0b8ed9fae2bc42a">eltau::SharedStateImpl&lt; State &gt;</a>
@@ -274,9 +266,16 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 , <a class="el" href="classeltau_1_1EltauException.html#afd8a1e0a32317ac6cff3939ead07a496">eltau::EltauException</a>
 , <a class="el" href="classeltau_1_1Window.html#a29b0833d5e84f5f572a13ba3d8c7c106">eltau::Window</a>
 </li>
+<li>operator==()
+: <a class="el" href="structeltau_1_1Vector.html#a443eaf0c4258a38f8728aa7b6361a601">eltau::Vector</a>
+, <a class="el" href="classeltau_1_1Window.html#a2c282cfb02741d63553f18b5ff0f1894">eltau::Window</a>
+</li>
 <li>operator[]()
 : <a class="el" href="classeltau_1_1DrawingWindow.html#ac25048ed14c30fbe71f9269bab4647b8">eltau::DrawingWindow</a>
 , <a class="el" href="classeltau_1_1Screen.html#abc5b811d2113a1b3d5effdc04c59b6cb">eltau::Screen</a>
+</li>
+<li>origin()
+: <a class="el" href="classeltau_1_1Window.html#a25ec2dd87c09384977e594485f0cebdf">eltau::Window</a>
 </li>
 </ul>
 
@@ -290,10 +289,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>Screen()
-: <a class="el" href="classeltau_1_1Screen.html#ad44028581f50418c6901901a23a7fe06">eltau::Screen</a>
+: <a class="el" href="classeltau_1_1Screen.html#a9d4b4552008183f7c96dce6d54a772b1">eltau::Screen</a>
 </li>
 <li>size()
-: <a class="el" href="classeltau_1_1Window.html#aa5456682aee512040054694deea6cec9">eltau::Window</a>
+: <a class="el" href="classeltau_1_1Screen.html#a1344f0d8ed91713da7868ae5f7eb2191">eltau::Screen</a>
+, <a class="el" href="classeltau_1_1Window.html#aa5456682aee512040054694deea6cec9">eltau::Window</a>
 </li>
 <li>sub_win()
 : <a class="el" href="classeltau_1_1DrawingWindow.html#a9e4597af16ff0d7a10e361ce10a3bd76">eltau::DrawingWindow</a>
@@ -332,7 +332,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Aug 14 2022 12:02:49 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 14 2022 21:29:56 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

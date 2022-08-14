@@ -31,7 +31,7 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M38.5,-68.22C38.5,-52.7 38.5,-31.36 38.5,-19.62"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="35,-68.28 38.5,-78.28 42,-68.28 35,-68.28"/>
-<text text-anchor="middle" x="58.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> m_begin</text>
+<text text-anchor="middle" x="58.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> m_origin</text>
 <text text-anchor="middle" x="58.5" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">m_size</text>
 </g>
 </g>

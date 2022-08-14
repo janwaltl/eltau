@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_7eelement_144',['~Element',['../classeltau_1_1Element.html#a9acb81b3624c712c728d06fb8eb0b733',1,'eltau::Element']]],
-  ['_7eeltauexception_145',['~EltauException',['../classeltau_1_1EltauException.html#aa0935583cfd25062d66d605298f88159',1,'eltau::EltauException']]],
-  ['_7ewindow_146',['~Window',['../classeltau_1_1Window.html#ae042e7443e519f4f5a06f71df474e607',1,'eltau::Window']]]
+  ['window_146',['Window',['../classeltau_1_1Window.html#a13cba51872cf26f39eb091ce7167518c',1,'eltau::Window::Window(Vector begin, Vector size) noexcept'],['../classeltau_1_1Window.html#adc6157fabfaedf51bf6166c5f5898646',1,'eltau::Window::Window(const Window &amp;other)=default'],['../classeltau_1_1Window.html#a01bae0f544ad46048ced4cacf71f0a0e',1,'eltau::Window::Window(Window &amp;&amp;other) noexcept=default']]]
 ];

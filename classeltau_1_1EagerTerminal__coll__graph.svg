@@ -132,7 +132,7 @@
 <title>Node8&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M205.86,-141.62C197.44,-126.03 185.61,-104.09 179.15,-92.12"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="202.97,-143.64 210.8,-150.78 209.13,-140.32 202.97,-143.64"/>
-<text text-anchor="middle" x="215" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00"> m_dims</text>
+<text text-anchor="middle" x="213.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00"> m_size</text>
 </g>
 </g>
 </svg>

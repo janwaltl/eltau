@@ -178,6 +178,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aef32f02e5fedbdd6d3971858c4ba1207"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeltau.html#aef32f02e5fedbdd6d3971858c4ba1207">operator-</a> (const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;l, const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;r)</td></tr>
 <tr class="memdesc:aef32f02e5fedbdd6d3971858c4ba1207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saturating element-wise subtraction.  <a href="namespaceeltau.html#aef32f02e5fedbdd6d3971858c4ba1207">More...</a><br /></td></tr>
 <tr class="separator:aef32f02e5fedbdd6d3971858c4ba1207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af366f3151c412913c031fe80c899a65a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeltau.html#af366f3151c412913c031fe80c899a65a">min</a> (const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;l, const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;r) noexcept</td></tr>
+<tr class="memdesc:af366f3151c412913c031fe80c899a65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element-wise minimum.  <a href="namespaceeltau.html#af366f3151c412913c031fe80c899a65a">More...</a><br /></td></tr>
+<tr class="separator:af366f3151c412913c031fe80c899a65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159db0696273890792dd106a2dc6822f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeltau.html#a159db0696273890792dd106a2dc6822f">max</a> (const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;l, const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;r) noexcept</td></tr>
+<tr class="memdesc:a159db0696273890792dd106a2dc6822f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element-wise maximum.  <a href="namespaceeltau.html#a159db0696273890792dd106a2dc6822f">More...</a><br /></td></tr>
+<tr class="separator:a159db0696273890792dd106a2dc6822f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0df62f3b45b6af33a2437c2fd29b8d79"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a0df62f3b45b6af33a2437c2fd29b8d79"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79">HContainer</a> (Ts...) -&gt; <a class="el" href="classeltau_1_1HContainer.html">HContainer</a>&lt; std::decay_t&lt; Ts &gt;... &gt;</td></tr>
 <tr class="separator:a0df62f3b45b6af33a2437c2fd29b8d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,14 +278,91 @@ template&lt;typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a591339d3e11f6bdf57c10548fad7dd53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a591339d3e11f6bdf57c10548fad7dd53">&#9670;&nbsp;</a></span>operator+()</h2>
+<a id="a159db0696273890792dd106a2dc6822f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159db0696273890792dd106a2dc6822f">&#9670;&nbsp;</a></span>max()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structeltau_1_1Vector.html">Vector</a> eltau::max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Element-wise maximum. </p>
+
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00074">74</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af366f3151c412913c031fe80c899a65a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af366f3151c412913c031fe80c899a65a">&#9670;&nbsp;</a></span>min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structeltau_1_1Vector.html">Vector</a> eltau::min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structeltau_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Element-wise minimum. </p>
+
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00069">69</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a591339d3e11f6bdf57c10548fad7dd53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a591339d3e11f6bdf57c10548fad7dd53">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structeltau_1_1Vector.html">Vector</a> eltau::operator+ </td>
@@ -299,16 +382,11 @@ template&lt;typename... Ts&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Element-wise sum. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00055">55</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00056">56</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -317,9 +395,6 @@ template&lt;typename... Ts&gt; </div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structeltau_1_1Vector.html">Vector</a> eltau::operator- </td>
@@ -339,16 +414,11 @@ template&lt;typename... Ts&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Saturating element-wise subtraction. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00060">60</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00061">61</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +454,7 @@ template&lt;typename... Ts&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceeltau.html">eltau</a></li>
-    <li class="footer">Generated on Sun Aug 14 2022 12:02:49 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 14 2022 21:29:56 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

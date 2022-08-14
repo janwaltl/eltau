@@ -26,6 +26,8 @@ var namespaceeltau =
       [ "Strike", "namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066afbb319e8afeae64fdf650c07f8eada5c", null ]
     ] ],
     [ "HContainer", "namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79", null ],
+    [ "max", "namespaceeltau.html#a159db0696273890792dd106a2dc6822f", null ],
+    [ "min", "namespaceeltau.html#af366f3151c412913c031fe80c899a65a", null ],
     [ "operator+", "namespaceeltau.html#a591339d3e11f6bdf57c10548fad7dd53", null ],
     [ "operator-", "namespaceeltau.html#aef32f02e5fedbdd6d3971858c4ba1207", null ],
     [ "c_utf8_cpoints", "namespaceeltau.html#a06a02821dfa0f42ff62f4d409ebfe9ff", null ]
