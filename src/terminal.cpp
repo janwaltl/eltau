@@ -68,7 +68,7 @@ EagerTerminal::draw() {
     if (!m_root)
         return;
 
-    const auto dims = m_screen.dims();
+    const auto dims = m_screen.size();
     // Process elements
 
     // Draw to the screen buffer

@@ -174,7 +174,7 @@ public:
 
 private:
     /*! Top-left corner. */
-    Vector m_begin;
+    Vector m_origin;
     /*! Size of the window. */
     Vector m_size;
 };
@@ -184,21 +184,23 @@ private:
  ******************************************************************************/
 class Screen {
 public:
+    /*! Non-owning view of a line of cells. */
     using Line = std::span<Cell>;
+    /*! Non-owning read-only view of a line of cells. */
     using cLine = std::span<const Cell>;
 
     /*******************************************************************************
      * @brief Construct a new screen with the given dimensions.
      *
-     * @param dimensions Size of the screen.
+     * @param size Size of the screen.
      ******************************************************************************/
-    explicit Screen(Vector dimensions);
+    explicit Screen(Vector size);
 
     /*******************************************************************************
      * @brief Return screen dimensions passed in the ctor.
      ******************************************************************************/
     Vector
-    dims() const noexcept;
+    size() const noexcept;
 
     /*******************************************************************************
      * @brief Line-based access to the screen.
@@ -231,7 +233,7 @@ public:
     operator[](Vector coords) const noexcept;
 
 private:
-    Vector m_dims;
+    Vector m_size;
     /*! Row-major storage. */
     std::vector<Cell> m_buffer;
 };

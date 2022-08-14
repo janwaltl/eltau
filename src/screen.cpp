@@ -6,7 +6,7 @@
 #include <eltau/screen.hpp>
 
 namespace eltau {
-Screen::Screen(Vector dimensions) : m_dims{dimensions}, m_buffer{m_dims.m_col * m_dims.m_row, Cell{}} {
+Screen::Screen(Vector dimensions) : m_size{dimensions}, m_buffer{m_size.m_col * m_size.m_row, Cell{}} {
 
     for (auto& c : m_buffer) {
         c.m_char[0] = '+';
@@ -15,26 +15,26 @@ Screen::Screen(Vector dimensions) : m_dims{dimensions}, m_buffer{m_dims.m_col * 
 }
 
 Vector
-Screen::dims() const noexcept {
-    return m_dims;
+Screen::size() const noexcept {
+    return m_size;
 }
 
 Screen::Line
 Screen::line(std::size_t idx) noexcept {
-    idx = idx * m_dims.m_col;
+    idx = idx * m_size.m_col;
     if (idx >= m_buffer.size())
         return {};
     auto* begin = m_buffer.data() + idx;
-    return {begin, begin + m_dims.m_col};
+    return {begin, begin + m_size.m_col};
 }
 
 Screen::cLine
 Screen::line(std::size_t idx) const noexcept {
-    idx = idx * m_dims.m_col;
+    idx = idx * m_size.m_col;
     if (idx >= m_buffer.size())
         return {};
     const auto* begin = m_buffer.data() + idx;
-    return {begin, begin + m_dims.m_col};
+    return {begin, begin + m_size.m_col};
 }
 
 const Cell*
@@ -74,12 +74,12 @@ max(const Vector& l, const Vector& r) noexcept {
     return {std::max(l.m_row, r.m_row), std::max(l.m_col, r.m_col)};
 }
 
-Window::Window(Vector begin, Vector size) noexcept : m_begin(begin), m_size(size) {}
+Window::Window(Vector begin, Vector size) noexcept : m_origin(begin), m_size(size) {}
 
 bool
 Window::is_inside(Vector pos) const noexcept {
-    auto end = m_begin + m_size;
-    return pos.m_row >= m_begin.m_row && pos.m_row < end.m_row && pos.m_col >= m_begin.m_col && pos.m_col < end.m_col;
+    auto end = m_origin + m_size;
+    return pos.m_row >= m_origin.m_row && pos.m_row < end.m_row && pos.m_col >= m_origin.m_col && pos.m_col < end.m_col;
 }
 
 Vector
@@ -89,17 +89,17 @@ Window::size() const noexcept {
 
 Vector
 Window::origin() const noexcept {
-    return m_begin;
+    return m_origin;
 }
 
 Vector
 Window::end() const noexcept {
-    return m_begin + m_size;
+    return m_origin + m_size;
 }
 
 Window
 Window::sub_win(Vector offset, Vector size) {
-    auto origin = m_begin + offset;
+    auto origin = m_origin + offset;
     auto max_size = m_size - offset;
     return {origin, min(max_size, size)};
 }
