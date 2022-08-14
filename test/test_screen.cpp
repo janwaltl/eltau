@@ -202,3 +202,71 @@ TEST_CASE("Window cell and line equality") {
         REQUIRE(cells.size() == size.m_col * size.m_row);
     }
 }
+
+TEST_CASE("DrawingWindow captures correct window") {
+
+    constexpr et::Vector origin{10, 1};
+    constexpr et::Vector size{3, 4};
+
+    et::Screen s{size};
+    // Window can be out of screen.
+    et::Window win{origin, size};
+    et::DrawingWindow dwin{win, s};
+
+    REQUIRE(dwin.size() == win.size());
+    REQUIRE(dwin.origin() == win.origin());
+    REQUIRE(dwin.end() == win.end());
+}
+
+TEST_CASE("DrawingWindow captures correct subwindow") {
+
+    constexpr et::Vector origin{1, 1};
+    constexpr et::Vector size{14, 12};
+
+    et::Screen s{size};
+    // Window can be out of screen.
+    et::Window win{origin, size};
+    et::DrawingWindow dwin{win, s};
+
+    auto sdwin = dwin.sub_win({1, 0}, {2, 3});
+    auto swin = win.sub_win({1, 0}, {2, 3});
+
+    REQUIRE(sdwin.size() == swin.size());
+    REQUIRE(sdwin.origin() == swin.origin());
+    REQUIRE(sdwin.end() == swin.end());
+}
+
+TEST_CASE("DrawingWindow captures correct screen") {
+
+    SECTION("All window cells are correct") {
+
+        constexpr et::Vector origin{2, 7};
+        constexpr et::Vector size{12, 16};
+
+        et::Screen s{size};
+        // Fully inside the screen.
+        et::Window win{origin, {.m_row = 3, .m_col = 5}};
+        et::DrawingWindow dwin{win, s};
+        auto e = win.end();
+        for (std::size_t r = origin.m_row; r < e.m_row; ++r)
+            for (std::size_t c = origin.m_col; c < e.m_col; ++c) {
+                et::Vector coords{.m_row = r, .m_col = c};
+                REQUIRE(s[coords] == dwin[coords]);
+            }
+    }
+    SECTION("Cells are restricted exactly to the window") {
+        constexpr et::Vector origin{5, 0};
+        constexpr et::Vector size{12, 8};
+
+        et::Screen s{size};
+        // Fully inside the screen.
+        et::Window win{origin, {.m_row = 3, .m_col = 5}};
+        const et::DrawingWindow dwin{win, s};
+        for (std::size_t r = 0; r < size.m_row; ++r)
+            for (std::size_t c = 0; c < size.m_col; ++c) {
+                et::Vector coords{.m_row = r, .m_col = c};
+                auto inside = win.is_inside(coords);
+                REQUIRE((nullptr != dwin[coords]) == inside);
+            }
+    }
+}
