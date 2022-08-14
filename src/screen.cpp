@@ -64,6 +64,16 @@ operator-(const Vector& l, const Vector& r) {
     return {.m_row = res.m_row > l.m_row ? 0 : res.m_row, .m_col = res.m_col > l.m_col ? 0 : res.m_col};
 }
 
+Vector
+min(const Vector& l, const Vector& r) noexcept {
+    return {std::min(l.m_row, r.m_row), std::min(l.m_col, r.m_col)};
+}
+
+Vector
+max(const Vector& l, const Vector& r) noexcept {
+    return {std::max(l.m_row, r.m_row), std::max(l.m_col, r.m_col)};
+}
+
 Window::Window(Vector begin, Vector size) noexcept : m_begin(begin), m_size(size) {}
 
 bool

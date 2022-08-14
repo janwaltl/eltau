@@ -71,8 +71,20 @@ struct Vector {
     std::size_t m_col;
 
     bool
-    operator==(const Vector&) const = default;
+    operator==(const Vector&) const noexcept = default;
 };
+
+/*******************************************************************************
+ * @brief Element-wise minimum.
+ ******************************************************************************/
+Vector
+min(const Vector& l, const Vector& r) noexcept;
+
+/*******************************************************************************
+ * @brief Element-wise maximum.
+ ******************************************************************************/
+Vector
+max(const Vector& l, const Vector& r) noexcept;
 
 /*******************************************************************************
  * @brief Element-wise sum.

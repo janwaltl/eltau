@@ -10,6 +10,18 @@
 #include <eltau/screen.hpp>
 
 namespace et = eltau;
+TEST_CASE("Vector min") {
+    REQUIRE(min(et::Vector{0, 0}, et::Vector{1, 2}) == et::Vector{0, 0});
+    REQUIRE(min(et::Vector{5, 1}, et::Vector{1, 5}) == et::Vector{1, 1});
+    REQUIRE(min(et::Vector{5, 7}, et::Vector{7, 9}) == et::Vector{5, 7});
+    REQUIRE(min(et::Vector{5, 7}, et::Vector{3, 1}) == et::Vector{3, 1});
+}
+TEST_CASE("Vector max") {
+    REQUIRE(max(et::Vector{0, 0}, et::Vector{1, 2}) == et::Vector{1, 2});
+    REQUIRE(max(et::Vector{5, 1}, et::Vector{1, 5}) == et::Vector{5, 5});
+    REQUIRE(max(et::Vector{5, 7}, et::Vector{7, 9}) == et::Vector{7, 9});
+    REQUIRE(max(et::Vector{5, 7}, et::Vector{3, 1}) == et::Vector{5, 7});
+}
 
 TEST_CASE("Vector subtraction") {
     constexpr auto m = std::numeric_limits<std::size_t>::max();
