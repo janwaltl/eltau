@@ -5,8 +5,10 @@
  ******************************************************************************/
 
 #include <limits>
+#include <unordered_set>
 
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/generators/catch_generators.hpp>
 #include <eltau/screen.hpp>
 
 namespace et = eltau;
@@ -136,5 +138,67 @@ TEST_CASE("Subwindow construction") {
         auto sub = win.sub_win(sub_origin, sub_size);
         REQUIRE(sub.size() == sub_size);
         REQUIRE(sub.origin() == (sub_origin + origin));
+    }
+}
+TEST_CASE("Screen size") {
+    SECTION("Empty screen") {
+        et::Screen s{et::Vector{0, 0}};
+
+        REQUIRE(s.size() == et::Vector{0, 0});
+    }
+
+    SECTION("Sizes") {
+        auto size{GENERATE(et::Vector{0, 0}, et::Vector{1, 2}, et::Vector{53, 1}, et::Vector{2, 0}, et::Vector{0, 3})};
+        et::Screen s{size};
+
+        REQUIRE(s.size() == size);
+    }
+}
+TEST_CASE("Window Line getters") {
+    const et::Vector size{5, 3};
+    const et::Screen s{size};
+    SECTION("Correct idx") {
+        for (std::size_t i = 0; i < size.m_row; ++i)
+            REQUIRE(s.line(i).size() == size.m_col);
+    }
+    SECTION("Out of range index -> empty line") {
+        REQUIRE(!s.line(size.m_row - 1).empty());
+        REQUIRE(s.line(size.m_row).empty());
+        REQUIRE(s.line(size.m_row + 1).empty());
+        REQUIRE(s.line(size.m_row + 12).empty());
+    }
+}
+
+TEST_CASE("Window Cell getters") {
+    const et::Vector size{5, 3};
+    const et::Screen s{size};
+    SECTION("Correct coords") {
+        for (std::size_t r = 0; r < size.m_row; ++r)
+            for (std::size_t c = 0; c < size.m_col; ++c)
+                REQUIRE(s[{.m_row = r, .m_col = c}] != nullptr);
+    }
+    SECTION("Out of range coords -> no Cell") {
+        REQUIRE(s[size] == nullptr);
+        REQUIRE(s[{.m_row = size.m_row, .m_col = size.m_col - 1}] == nullptr);
+        REQUIRE(s[{.m_row = size.m_row - 1, .m_col = size.m_col}] == nullptr);
+        REQUIRE(s[{.m_row = size.m_row - 1, .m_col = size.m_col - 1}] != nullptr);
+    }
+}
+
+TEST_CASE("Window cell and line equality") {
+    const et::Vector size{1, 4};
+    et::Screen s{size};
+    SECTION("Cells correspond to cells in lines") {
+        for (std::size_t r = 0; r < size.m_row; ++r)
+            for (std::size_t c = 0; c < size.m_col; ++c)
+                REQUIRE(s[{.m_row = r, .m_col = c}] == &s.line(r)[c]);
+    }
+    SECTION("Returned cells are unique") {
+        std::unordered_set<et::Cell*> cells;
+        for (std::size_t r = 0; r < size.m_row; ++r)
+            for (std::size_t c = 0; c < size.m_col; ++c)
+                cells.emplace(&s.line(r)[c]);
+
+        REQUIRE(cells.size() == size.m_col * size.m_row);
     }
 }

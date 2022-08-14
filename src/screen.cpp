@@ -21,11 +21,12 @@ Screen::size() const noexcept {
 
 Screen::Line
 Screen::line(std::size_t idx) noexcept {
-    idx = idx * m_size.m_col;
-    if (idx >= m_buffer.size())
-        return {};
-    auto* begin = m_buffer.data() + idx;
-    return {begin, begin + m_size.m_col};
+    auto range = std::as_const(*this).line(idx);
+
+    return {
+        const_cast<Cell*>(range.data()),
+        const_cast<Cell*>(range.data() + range.size()),
+    };
 }
 
 Screen::cLine
@@ -39,16 +40,16 @@ Screen::line(std::size_t idx) const noexcept {
 
 const Cell*
 Screen::operator[](Vector coords) const noexcept {
-    auto idx = coords.m_row * (coords.m_col + 1);
+    if (!Window{{0, 0}, m_size}.is_inside(coords))
+        return nullptr;
 
-    return idx < m_buffer.size() ? &m_buffer[idx] : nullptr;
+    auto idx = (coords.m_row + 1) * coords.m_col;
+    return &m_buffer[idx];
 }
 
 Cell*
 Screen::operator[](Vector coords) noexcept {
-    auto idx = coords.m_row * (coords.m_col + 1);
-
-    return idx < m_buffer.size() ? &m_buffer[idx] : nullptr;
+    return const_cast<Cell*>(std::as_const(*this)[coords]);
 }
 
 Vector
