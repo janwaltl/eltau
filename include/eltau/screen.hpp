@@ -260,7 +260,7 @@ public:
     /*******************************************************************************
      * @brief Cell-based access to the window.
      *
-     * @param coords Cell to return
+     * @param coords Cell to return, valid values in range [origin, origin+size).
      * @retval nullptr If the @p coords are not within the window.
      ******************************************************************************/
     Cell*

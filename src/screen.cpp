@@ -115,14 +115,14 @@ DrawingWindow::sub_win(Vector offset, Vector size) {
 Cell*
 DrawingWindow::operator[](Vector coords) noexcept {
     if (this->is_inside(coords))
-        return (*m_screen)[coords + this->origin()];
+        return (*m_screen)[coords];
     return nullptr;
 }
 
 const Cell*
 DrawingWindow::operator[](Vector coords) const noexcept {
     if (this->is_inside(coords))
-        return (*m_screen)[coords + this->origin()];
+        return (*m_screen)[coords];
     return nullptr;
 }
 } // namespace eltau

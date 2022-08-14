@@ -41,7 +41,7 @@ Text::do_draw(DrawingWindow& window) {
     for (auto c : m_text) {
         if (!window.is_inside(cursor))
             break;
-        auto* cell = window[cursor];
+        auto* cell = window[window.origin() + cursor];
         // TODO(jw) ignore non-printable ASCII characters.
         if (c == '\n') {
             ++cursor.m_row;
