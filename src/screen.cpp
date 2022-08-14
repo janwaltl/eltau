@@ -88,7 +88,7 @@ Window::size() const noexcept {
 }
 
 Vector
-Window::begin() const noexcept {
+Window::origin() const noexcept {
     return m_begin;
 }
 
@@ -99,7 +99,9 @@ Window::end() const noexcept {
 
 Window
 Window::sub_win(Vector offset, Vector size) {
-    return {m_begin + offset, size - m_size};
+    auto origin = m_begin + offset;
+    auto max_size = m_size - offset;
+    return {origin, min(max_size, size)};
 }
 
 DrawingWindow::DrawingWindow(const Window& win, Screen& screen) noexcept : Window{win}, m_screen{&screen} {}
@@ -112,14 +114,14 @@ DrawingWindow::sub_win(Vector offset, Vector size) {
 Cell*
 DrawingWindow::operator[](Vector coords) noexcept {
     if (this->is_inside(coords))
-        return (*m_screen)[coords + this->begin()];
+        return (*m_screen)[coords + this->origin()];
     return nullptr;
 }
 
 const Cell*
 DrawingWindow::operator[](Vector coords) const noexcept {
     if (this->is_inside(coords))
-        return (*m_screen)[coords + this->begin()];
+        return (*m_screen)[coords + this->origin()];
     return nullptr;
 }
 } // namespace eltau

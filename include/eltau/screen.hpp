@@ -103,7 +103,11 @@ operator-(const Vector& l, const Vector& r);
  ******************************************************************************/
 class Window {
 public:
+    /*******************************************************************************
+     * @brief New window.
+     ******************************************************************************/
     Window(Vector begin, Vector size) noexcept;
+
     /*******************************************************************************
      * @brief Default copy ctor.
      ******************************************************************************/
@@ -141,7 +145,7 @@ public:
      * @brief Top-left corner coords.
      ******************************************************************************/
     Vector
-    begin() const noexcept;
+    origin() const noexcept;
 
     /*******************************************************************************
      * @brief Bottom-right corner coords.
@@ -164,6 +168,9 @@ public:
      ******************************************************************************/
     Window
     sub_win(Vector offset, Vector size);
+
+    bool
+    operator==(const Window& other) const noexcept = default;
 
 private:
     /*! Top-left corner. */
