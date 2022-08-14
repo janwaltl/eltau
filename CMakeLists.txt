@@ -49,9 +49,9 @@ if(ELTAU_ENABLE_COVERAGE)
   setup_target_for_coverage_gcovr_html(
     NAME coverage
     EXECUTABLE ctest -C
-    DEPENDENCIES elphi::elphi elphi::elphi_tests
-    EXCLUDE "eltau/test/*"
-    EXCLUDE "eltau/examples/*"
+    DEPENDENCIES eltau::eltau eltau::tests
+    EXCLUDE "test/*"
+    EXCLUDE "examples/*"
     EXCLUDE "libs*"
   )
 endif(ELTAU_ENABLE_COVERAGE)
@@ -92,6 +92,6 @@ target_sources(
 if(ELTAU_BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif(ELTAU_BUILD_EXAMPLES)
-#if(ELTAU_BUILD_TEST)
-#add_subdirectory(test)
-#endif(ELTAU_BUILD_TEST)
+if(ELTAU_BUILD_TEST)
+  add_subdirectory(test)
+endif(ELTAU_BUILD_TEST)
