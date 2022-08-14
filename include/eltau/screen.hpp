@@ -35,7 +35,7 @@ enum Style : std::uint8_t {
  * @brief 256 Terminal colors
  ******************************************************************************/
 struct Color256 {
-    std::uint8_t m_value;
+    std::uint8_t m_value = 0;
 };
 
 /*******************************************************************************
@@ -67,8 +67,8 @@ static_assert(sizeof(Cell) == 16, "Keep nice - 8, 16, or 32 in the future.");
  * 0,0 is top-left corner.
  ******************************************************************************/
 struct Vector {
-    std::size_t m_row;
-    std::size_t m_col;
+    std::size_t m_row = 0;
+    std::size_t m_col = 0;
 
     bool
     operator==(const Vector&) const noexcept = default;
