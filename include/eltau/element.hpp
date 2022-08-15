@@ -1,7 +1,7 @@
 /*******************************************************************************
  * @file element.hpp
  * @copyright Copyright 2022 Jan Waltl.
- * @license	This file is released under ElPhi project's license, see LICENSE.
+ * @license	This file is released under ElTau project's license, see LICENSE.
  ******************************************************************************/
 #pragma once
 
