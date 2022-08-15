@@ -18,16 +18,19 @@ coverage:
 	cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build/coverage -DELTAU_ENABLE_COVERAGE=ON  ${COMPILER} -DELTAU_BUILD_TEST=ON
 	cmake --build build/coverage -- -j`nproc`
 	scripts/gen_coverage.sh build/coverage
+	cp build/coverage/compile_commands.json build/
 
 junit:
 	cmake -DCMAKE_BUILD_TYPE=Release -DELTAU_JUNIT_TEST_OUTPUT=ON  ${COMPILER} -S . -B build/junit -DELTAU_BUILD_TEST=ON
 	cmake --build build/junit -- -j`nproc`
 	scripts/run_unit.sh build/junit
+	cp build/junit/compile_commands.json build/
 
 test:
 	cmake -DCMAKE_BUILD_TYPE=ReleaseWithDebInfo ${COMPILER} -S . -B build/release -DELTAU_BUILD_TEST=ON
 	cmake --build build/release -- -j`nproc`
 	scripts/run_tests.sh build/release
+	cp build/release/compile_commands.json build/
 
 format:
 	scripts/format_codebase.sh
