@@ -2,7 +2,7 @@ add_executable(tests)
 add_executable(eltau::tests ALIAS tests)
 
 target_link_libraries(tests PRIVATE eltau::eltau)
-target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain fmt::fmt)
 
 
 config_default_target_flags(tests)
@@ -31,4 +31,5 @@ target_sources(
   tests
   PRIVATE
   test_screen.cpp
+  test_exception.cpp
 )
