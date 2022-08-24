@@ -102,15 +102,18 @@ private:
  ******************************************************************************/
 class Text : public Element {
 public:
+    /*! Constant denoting unwrapped text. */
+    inline constexpr static std::size_t c_no_wrap = 0;
+
     /*******************************************************************************
      * @brief New Text element.
      *
      * Respects newline in the input string.
      *
      * @param text String to show, UTF-8 supported.
-     * @param wrap_limit Optional automatic wrapping. 0 is no wrapping.
+     * @param wrap_limit Optional automatic wrapping. c_no_wrap is no wrapping.
      ******************************************************************************/
-    Text(std::string_view text, std::size_t wrap_limit);
+    explicit Text(std::string_view text, std::size_t wrap_limit = c_no_wrap);
 
 private:
     /*******************************************************************************

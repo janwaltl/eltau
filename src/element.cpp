@@ -3,17 +3,23 @@
  * @copyright Copyright 2022 Jan Waltl.
  * @license	This file is released under ElTau project's license, see LICENSE.
  ******************************************************************************/
+#include <cassert>
+
 #include <eltau/element.hpp>
 
 namespace eltau {
 
 Vector
 Element::calc_pref_size(Vector max_size) {
+    // Only calc size for feasible bounds.
+    if (max_size.m_col == 0 || max_size.m_row == 0)
+        return m_last_pref_size = {0, 0};
     return m_last_pref_size = this->do_calc_pref_size(max_size);
 }
 
 void
 Element::draw(DrawingWindow& window) {
+
     return this->do_draw(window);
 }
 
@@ -26,10 +32,16 @@ Text::Text(std::string_view text, std::size_t wrap_limit) : m_text(text), m_wrap
 
 Vector
 Text::do_calc_pref_size(Vector max_size) {
-    // TODO(jw) calculate unicode width properly, right now assume ASCII.
-    auto len = m_text.size();
+    assert(max_size.m_row > 0 && max_size.m_col > 0);
 
-    return Vector{.m_row = std::min(max_size.m_row, len % max_size.m_col), .m_col = std::min(len, max_size.m_col)};
+    // TODO(jw) calculate unicode width properly, right now assume ASCII.
+    const auto len = m_text.size();
+    const auto usable_cols = m_wrap_limit == c_no_wrap ? max_size.m_col : std::min(max_size.m_col, m_wrap_limit);
+
+    // Rounds rows up.
+    const auto pref_rows{len / usable_cols + (len % usable_cols ? 1 : 0)};
+
+    return Vector{.m_row = std::min(max_size.m_row, pref_rows), .m_col = std::min(len, usable_cols)};
 }
 
 void
