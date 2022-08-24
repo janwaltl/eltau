@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classeltau_1_1Text.html',''); initResi
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classeltau_1_1Text-members.html">List of all members</a>  </div>
@@ -119,9 +120,9 @@ Collaboration diagram for eltau::Text:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2f37fa9ceeec0bfa7cbdc148e6139bc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Text.html#a2f37fa9ceeec0bfa7cbdc148e6139bc7">Text</a> (std::string_view text, std::size_t wrap_limit)</td></tr>
-<tr class="memdesc:a2f37fa9ceeec0bfa7cbdc148e6139bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">New <a class="el" href="classeltau_1_1Text.html" title="Basic styled UTF-8 text with optional wrapping.">Text</a> element.  <a href="classeltau_1_1Text.html#a2f37fa9ceeec0bfa7cbdc148e6139bc7">More...</a><br /></td></tr>
-<tr class="separator:a2f37fa9ceeec0bfa7cbdc148e6139bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19726ab0ef5dfe3a8dd7600a1c61ee09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Text.html#a19726ab0ef5dfe3a8dd7600a1c61ee09">Text</a> (std::string_view text, std::size_t wrap_limit=<a class="el" href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">c_no_wrap</a>)</td></tr>
+<tr class="memdesc:a19726ab0ef5dfe3a8dd7600a1c61ee09"><td class="mdescLeft">&#160;</td><td class="mdescRight">New <a class="el" href="classeltau_1_1Text.html" title="Basic styled UTF-8 text with optional wrapping.">Text</a> element.  <a href="classeltau_1_1Text.html#a19726ab0ef5dfe3a8dd7600a1c61ee09">More...</a><br /></td></tr>
+<tr class="separator:a19726ab0ef5dfe3a8dd7600a1c61ee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classeltau_1_1Element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classeltau_1_1Element')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classeltau_1_1Element.html">eltau::Element</a></td></tr>
 <tr class="memitem:a6590f1a310d6c29313629e19a3260743 inherit pub_methods_classeltau_1_1Element"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Element.html#a6590f1a310d6c29313629e19a3260743">Element</a> ()=default</td></tr>
 <tr class="separator:a6590f1a310d6c29313629e19a3260743 inherit pub_methods_classeltau_1_1Element"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +151,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9603f893e8c3ece59392eaeef136d428 inherit pub_methods_classeltau_1_1Element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last recaulculated preferred size.  <a href="classeltau_1_1Element.html#a9603f893e8c3ece59392eaeef136d428">More...</a><br /></td></tr>
 <tr class="separator:a9603f893e8c3ece59392eaeef136d428 inherit pub_methods_classeltau_1_1Element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ac0a63fce3a6fefa055a731540e8a20d8"><td class="memItemLeft" align="right" valign="top">constexpr static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">c_no_wrap</a> = 0</td></tr>
+<tr class="separator:ac0a63fce3a6fefa055a731540e8a20d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ab252cee3a29c786736440caa008be1dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Text.html#ab252cee3a29c786736440caa008be1dd">do_calc_pref_size</a> (<a class="el" href="structeltau_1_1Vector.html">Vector</a> max_size) override</td></tr>
@@ -171,11 +177,14 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="element_8hpp_source.html#l00103">103</a> of file <a class="el" href="element_8hpp_source.html">element.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2f37fa9ceeec0bfa7cbdc148e6139bc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f37fa9ceeec0bfa7cbdc148e6139bc7">&#9670;&nbsp;</a></span>Text()</h2>
+<a id="a19726ab0ef5dfe3a8dd7600a1c61ee09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19726ab0ef5dfe3a8dd7600a1c61ee09">&#9670;&nbsp;</a></span>Text()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">eltau::Text::Text </td>
@@ -187,7 +196,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>wrap_limit</em>&#160;</td>
+          <td class="paramname"><em>wrap_limit</em> = <code><a class="el" href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">c_no_wrap</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -195,6 +204,11 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>New <a class="el" href="classeltau_1_1Text.html" title="Basic styled UTF-8 text with optional wrapping.">Text</a> element. </p>
@@ -202,12 +216,12 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>String to show, UTF-8 supported. </td></tr>
-    <tr><td class="paramname">wrap_limit</td><td>Optional automatic wrapping. 0 is no wrapping. </td></tr>
+    <tr><td class="paramname">wrap_limit</td><td>Optional automatic wrapping. c_no_wrap is no wrapping. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="element_8cpp_source.html#l00025">25</a> of file <a class="el" href="element_8cpp_source.html">element.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="element_8cpp_source.html#l00031">31</a> of file <a class="el" href="element_8cpp_source.html">element.cpp</a>.</p>
 
 </div>
 </div>
@@ -248,7 +262,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classeltau_1_1Element.html#a9d061d86a7ddf44cef2865ab39886601">eltau::Element</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="element_8cpp_source.html#l00028">28</a> of file <a class="el" href="element_8cpp_source.html">element.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="element_8cpp_source.html#l00034">34</a> of file <a class="el" href="element_8cpp_source.html">element.cpp</a>.</p>
 
 </div>
 </div>
@@ -281,11 +295,36 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classeltau_1_1Element.html#acfdb84b584895d9fbdca5ee822bcf0f0">eltau::Element</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="element_8cpp_source.html#l00036">36</a> of file <a class="el" href="element_8cpp_source.html">element.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="element_8cpp_source.html#l00048">48</a> of file <a class="el" href="element_8cpp_source.html">element.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac0a63fce3a6fefa055a731540e8a20d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a63fce3a6fefa055a731540e8a20d8">&#9670;&nbsp;</a></span>c_no_wrap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static std::size_t eltau::Text::c_no_wrap = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constant denoting unwrapped text. </p>
+
+<p class="definition">Definition at line <a class="el" href="element_8hpp_source.html#l00106">106</a> of file <a class="el" href="element_8hpp_source.html">element.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a73dfd6bdd5fb41103fab43c28c55f6a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73dfd6bdd5fb41103fab43c28c55f6a7">&#9670;&nbsp;</a></span>m_text</h2>
 
@@ -307,7 +346,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="classeltau_1_1Text.html" title="Basic styled UTF-8 text with optional wrapping.">Text</a> to render. </p>
 
-<p class="definition">Definition at line <a class="el" href="element_8hpp_source.html#l00139">139</a> of file <a class="el" href="element_8hpp_source.html">element.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="element_8hpp_source.html#l00142">142</a> of file <a class="el" href="element_8hpp_source.html">element.hpp</a>.</p>
 
 </div>
 </div>
@@ -332,7 +371,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Hard wrap-limit on the text. </p>
 
-<p class="definition">Definition at line <a class="el" href="element_8hpp_source.html#l00141">141</a> of file <a class="el" href="element_8hpp_source.html">element.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="element_8hpp_source.html#l00144">144</a> of file <a class="el" href="element_8hpp_source.html">element.hpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +385,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceeltau.html">eltau</a></li><li class="navelem"><a class="el" href="classeltau_1_1Text.html">Text</a></li>
-    <li class="footer">Generated on Tue Aug 16 2022 19:57:40 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Aug 24 2022 17:20:52 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
