@@ -35,6 +35,7 @@ Text::do_calc_pref_size(Vector max_size) {
     assert(max_size.m_row > 0 && max_size.m_col > 0);
 
     // TODO(jw) calculate unicode width properly, right now assume ASCII.
+    // TODO(jw) Newline support
     const auto len = m_text.size();
     const auto usable_cols = m_wrap_limit == c_no_wrap ? max_size.m_col : std::min(max_size.m_col, m_wrap_limit);
 
@@ -55,18 +56,13 @@ Text::do_draw(DrawingWindow& window) {
             break;
         auto* cell = window[window.origin() + cursor];
         // TODO(jw) ignore non-printable ASCII characters.
-        if (c == '\n') {
+        cell->m_char[0] = c;
+        cell->m_fg.m_value = 0; // Black
+        cell->m_bg.m_value = 6; // Cyan
+        cursor.m_col += 1;
+        if (size.m_col <= cursor.m_col) {
             ++cursor.m_row;
             cursor.m_col = 0;
-        } else {
-            cell->m_char[0] = c;
-            cell->m_fg.m_value = 0; // Black
-            cell->m_bg.m_value = 6; // Cyan
-            cursor.m_col += 1;
-            if (size.m_col <= cursor.m_col) {
-                ++cursor.m_row;
-                cursor.m_col = 0;
-            }
         }
     }
 }

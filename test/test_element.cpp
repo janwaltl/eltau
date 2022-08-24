@@ -133,4 +133,31 @@ SCENARIO("Text size calculation") {
             THEN("Sentence is vertical") { REQUIRE(size == et::Vector{.m_row = sentence.length(), .m_col = 1}); }
         }
     }
+
+    GIVEN("wrapped sentence") {
+
+        using namespace std::string_view_literals;
+        constexpr auto sentence{"Hello world"sv};
+        constexpr auto wrap_limit = 4;
+
+        et::Text text{sentence, wrap_limit};
+        WHEN("Unrestricted size is calculated") {
+            const auto size = text.calc_pref_size({100, 100});
+            THEN("It is equal to sentence length") { REQUIRE(size == et::Vector{.m_row = 3, .m_col = 4}); }
+        }
+        WHEN("size is calculated with tight bounds") {
+            const auto size = text.calc_pref_size({.m_row = 3, .m_col = wrap_limit});
+            THEN("It is still equal to sentence length") {
+                REQUIRE(size == et::Vector{.m_row = 3, .m_col = wrap_limit});
+            }
+        }
+        WHEN("size is stricter") {
+            const auto size = text.calc_pref_size({.m_row = 10, .m_col = wrap_limit - 1});
+            THEN("Last character is wrapped") { REQUIRE(size == et::Vector{.m_row = 4, .m_col = wrap_limit - 1}); }
+        }
+        WHEN("size is most strict") {
+            const auto size = text.calc_pref_size({.m_row = sentence.length(), .m_col = 1});
+            THEN("Sentence is vertical") { REQUIRE(size == et::Vector{.m_row = sentence.length(), .m_col = 1}); }
+        }
+    }
 }
