@@ -1,23 +1,23 @@
 # TODO list
 
 ## Minimal set
-- [] Fix `Text` drawing.
-- [] Test `Text` drawing.
-- [] Implement a proper eager terminal.
-- [] Implement horizontal, vertical containers.
-- [] Add Text button.
-- [] Add layout modifiers - centering, flex, border.
+- [ ] Fix `Text` drawing.
+- [ ] Test `Text` drawing.
+- [ ] Implement a proper eager terminal.
+- [ ] Implement horizontal, vertical containers.
+- [ ] Add Text button.
+- [ ] Add layout modifiers - centering, flex, border.
 
 ## Reactive terminal
 Optimized for CPU and serial throughput with minimal redraws.
 
-- [] Think through the current `get_preferred_size`, lay out the elements, `draw(actual size)`.
-  - [] Can it always be done? Is one iteration of pref+draw enough?
-  - [] Eliminate double calls, draw calculates similar stuff as preferred size.
+- [ ] Think through the current `get_preferred_size`, lay out the elements, `draw(actual size)`.
+  - [ ] Can it always be done? Is one iteration of pref+draw enough?
+  - [ ] Eliminate double calls, draw calculates similar stuff as preferred size.
     - On one hand, try avoid introducing state, on the other, explicit `last_calc_size` might be handy.
-- [] Think about state propagation and clear trigger for re-draw.
-  - [] Resolve the propagation of re-draw - when it stops? Interops with `pref_size`?
-- [] Implement proof of concept reactive terminal.
+- [ ] Think about state propagation and clear trigger for re-draw.
+  - [ ] Resolve the propagation of re-draw - when it stops? Interops with `pref_size`?
+- [ ] Implement proof of concept reactive terminal.
 
 
 ## Functional approach
