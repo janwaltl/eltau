@@ -20,7 +20,7 @@ namespace {
 /*******************************************************************************
  * @throw EltauException if the size is unknown
  ******************************************************************************/
-Vector
+Vec2
 get_screen_size() {
     struct winsize w;
     if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) == -1) {

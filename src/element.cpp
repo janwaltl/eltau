@@ -9,8 +9,8 @@
 
 namespace eltau {
 
-Vector
-Element::calc_pref_size(Vector max_size) {
+Vec2
+Element::calc_pref_size(Vec2 max_size) {
     // Only calc size for feasible bounds.
     if (max_size.m_col == 0 || max_size.m_row == 0)
         return m_last_pref_size = {0, 0};
@@ -23,15 +23,15 @@ Element::draw(DrawingWindow& window) {
     return this->do_draw(window);
 }
 
-Vector
+Vec2
 Element::get_last_pref_size() const noexcept {
     return m_last_pref_size;
 }
 
 Text::Text(std::string_view text, std::size_t wrap_limit) : m_text(text), m_wrap_limit(wrap_limit) {}
 
-Vector
-Text::do_calc_pref_size(Vector max_size) {
+Vec2
+Text::do_calc_pref_size(Vec2 max_size) {
     assert(max_size.m_row > 0 && max_size.m_col > 0);
 
     // TODO(jw) calculate unicode width properly, right now assume ASCII.
@@ -42,13 +42,13 @@ Text::do_calc_pref_size(Vector max_size) {
     // Rounds rows up.
     const auto pref_rows{len / usable_cols + (len % usable_cols ? 1 : 0)};
 
-    return Vector{.m_row = std::min(max_size.m_row, pref_rows), .m_col = std::min(len, usable_cols)};
+    return Vec2{.m_row = std::min(max_size.m_row, pref_rows), .m_col = std::min(len, usable_cols)};
 }
 
 void
 Text::do_draw(DrawingWindow& window) {
-    Vector cursor{0, 0};
-    const Vector size = window.size();
+    Vec2 cursor{0, 0};
+    const Vec2 size = window.size();
 
     // TODO(jw) iterate over graphemes instead.
     for (auto c : m_text) {

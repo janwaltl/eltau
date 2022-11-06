@@ -66,37 +66,37 @@ static_assert(sizeof(Cell) == 16, "Keep nice - 8, 16, or 32 in the future.");
  *
  * 0,0 is top-left corner.
  ******************************************************************************/
-struct Vector {
+struct Vec2 {
     std::size_t m_row = 0;
     std::size_t m_col = 0;
 
     bool
-    operator==(const Vector&) const noexcept = default;
+    operator==(const Vec2&) const noexcept = default;
 };
 
 /*******************************************************************************
  * @brief Element-wise minimum.
  ******************************************************************************/
-Vector
-min(const Vector& l, const Vector& r) noexcept;
+Vec2
+min(const Vec2& l, const Vec2& r) noexcept;
 
 /*******************************************************************************
  * @brief Element-wise maximum.
  ******************************************************************************/
-Vector
-max(const Vector& l, const Vector& r) noexcept;
+Vec2
+max(const Vec2& l, const Vec2& r) noexcept;
 
 /*******************************************************************************
  * @brief Element-wise sum.
  ******************************************************************************/
-Vector
-operator+(const Vector& l, const Vector& r);
+Vec2
+operator+(const Vec2& l, const Vec2& r);
 
 /*******************************************************************************
  * @brief Saturating element-wise subtraction.
  ******************************************************************************/
-Vector
-operator-(const Vector& l, const Vector& r);
+Vec2
+operator-(const Vec2& l, const Vec2& r);
 
 /*******************************************************************************
  * @brief Rectangular area on the screen.
@@ -106,7 +106,7 @@ public:
     /*******************************************************************************
      * @brief New window.
      ******************************************************************************/
-    Window(Vector begin, Vector size) noexcept;
+    Window(Vec2 begin, Vec2 size) noexcept;
 
     /*******************************************************************************
      * @brief Default copy ctor.
@@ -138,26 +138,26 @@ public:
     /*******************************************************************************
      * @brief Dimensions of the window.
      ******************************************************************************/
-    Vector
+    Vec2
     size() const noexcept;
 
     /*******************************************************************************
      * @brief Top-left corner coords.
      ******************************************************************************/
-    Vector
+    Vec2
     origin() const noexcept;
 
     /*******************************************************************************
      * @brief Bottom-right corner coords.
      ******************************************************************************/
-    Vector
+    Vec2
     end() const noexcept;
 
     /*******************************************************************************
      * @brief Test whether @p pos is inside the window or not.
      ******************************************************************************/
     bool
-    is_inside(Vector pos) const noexcept;
+    is_inside(Vec2 pos) const noexcept;
 
     /*******************************************************************************
      * @brief Return a sub-window.
@@ -167,16 +167,16 @@ public:
      * @return New sub-window.
      ******************************************************************************/
     Window
-    sub_win(Vector offset, Vector size);
+    sub_win(Vec2 offset, Vec2 size);
 
     bool
     operator==(const Window& other) const noexcept = default;
 
 private:
     /*! Top-left corner. */
-    Vector m_origin;
+    Vec2 m_origin;
     /*! Size of the window. */
-    Vector m_size;
+    Vec2 m_size;
 };
 
 /*******************************************************************************
@@ -194,12 +194,12 @@ public:
      *
      * @param size Size of the screen.
      ******************************************************************************/
-    explicit Screen(Vector size);
+    explicit Screen(Vec2 size);
 
     /*******************************************************************************
      * @brief Return screen dimensions passed in the ctor.
      ******************************************************************************/
-    Vector
+    Vec2
     size() const noexcept;
 
     /*******************************************************************************
@@ -224,16 +224,16 @@ public:
      * @retval nullptr If the @p coords are not within the screen.
      ******************************************************************************/
     Cell*
-    operator[](Vector coords) noexcept;
+    operator[](Vec2 coords) noexcept;
 
     /*******************************************************************************
      * @brief See non-const version.
      ******************************************************************************/
     const Cell*
-    operator[](Vector coords) const noexcept;
+    operator[](Vec2 coords) const noexcept;
 
 private:
-    Vector m_size;
+    Vec2 m_size;
     /*! Row-major storage. */
     std::vector<Cell> m_buffer;
 };
@@ -255,7 +255,7 @@ public:
      * @brief Same as Window::sub_win .
      ******************************************************************************/
     DrawingWindow
-    sub_win(Vector offset, Vector size);
+    sub_win(Vec2 offset, Vec2 size);
 
     /*******************************************************************************
      * @brief Cell-based access to the window.
@@ -264,13 +264,13 @@ public:
      * @retval nullptr If the @p coords are not within the window.
      ******************************************************************************/
     Cell*
-    operator[](Vector coords) noexcept;
+    operator[](Vec2 coords) noexcept;
 
     /*******************************************************************************
      * @brief See non-const version.
      ******************************************************************************/
     const Cell*
-    operator[](Vector coords) const noexcept;
+    operator[](Vec2 coords) const noexcept;
 
 private:
     /*! Used screen, valid unless moved-from. */

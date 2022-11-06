@@ -53,8 +53,8 @@ public:
      * @param max_size Maximum allowed size of the element.
      * @return Preferred size of the element, must not exceed @p max_size.
      ******************************************************************************/
-    Vector
-    calc_pref_size(Vector max_size);
+    Vec2
+    calc_pref_size(Vec2 max_size);
 
     /*******************************************************************************
      * @brief Draw the element to the assigned window.
@@ -72,7 +72,7 @@ public:
      *
      * @return Empty if the size has not been calculated yet.
      ******************************************************************************/
-    Vector
+    Vec2
     get_last_pref_size() const noexcept;
 
 private:
@@ -81,8 +81,8 @@ private:
      *
      * Derived class must implement for its element.
      ******************************************************************************/
-    virtual Vector
-    do_calc_pref_size(Vector max_size) = 0;
+    virtual Vec2
+    do_calc_pref_size(Vec2 max_size) = 0;
 
     /*******************************************************************************
      * @brief Virtual version of draw().
@@ -93,7 +93,7 @@ private:
     do_draw(DrawingWindow& window) = 0;
 
     /*! Cached preferred size. */
-    Vector m_last_pref_size{};
+    Vec2 m_last_pref_size{};
 };
 
 
@@ -126,8 +126,8 @@ private:
      * @param max_size limits on the size.
      * @return Calculated necessary size.
      ******************************************************************************/
-    Vector
-    do_calc_pref_size(Vector max_size) override;
+    Vec2
+    do_calc_pref_size(Vec2 max_size) override;
 
     /*******************************************************************************
      * @brief Draw text to the assigned window.
@@ -162,8 +162,8 @@ public:
     explicit HContainer(Ts&&... elems);
 
 private:
-    Vector
-    do_calc_pref_size(Vector max_size) override;
+    Vec2
+    do_calc_pref_size(Vec2 max_size) override;
 
     void
     do_draw(DrawingWindow& window) override;
@@ -179,8 +179,8 @@ template <typename... Ts>
 HContainer<Elems...>::HContainer(Ts&&... elems) : m_elems{std::forward<Ts>(elems)...} {}
 
 template <typename... Elems>
-Vector
-HContainer<Elems...>::do_calc_pref_size(Vector max_size) {
+Vec2
+HContainer<Elems...>::do_calc_pref_size(Vec2 max_size) {
     // Without alignment and flex.
     // 	If we are flex, claim maximum but still calc them.
 
