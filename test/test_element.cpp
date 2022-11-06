@@ -124,9 +124,7 @@ SCENARIO("Text size calculation") {
         }
         WHEN("size is stricter") {
             const auto size = text.calc_pref_size({.m_row = 10, .m_col = sentence.length() - 1});
-            THEN("Last character is wrapped") {
-                REQUIRE(size == et::Vec2{.m_row = 2, .m_col = sentence.length() - 1});
-            }
+            THEN("Last character is wrapped") { REQUIRE(size == et::Vec2{.m_row = 2, .m_col = sentence.length() - 1}); }
         }
         WHEN("size is most strict") {
             const auto size = text.calc_pref_size({.m_row = sentence.length(), .m_col = 1});
@@ -147,9 +145,7 @@ SCENARIO("Text size calculation") {
         }
         WHEN("size is calculated with tight bounds") {
             const auto size = text.calc_pref_size({.m_row = 3, .m_col = wrap_limit});
-            THEN("It is still equal to sentence length") {
-                REQUIRE(size == et::Vec2{.m_row = 3, .m_col = wrap_limit});
-            }
+            THEN("It is still equal to sentence length") { REQUIRE(size == et::Vec2{.m_row = 3, .m_col = wrap_limit}); }
         }
         WHEN("size is stricter") {
             const auto size = text.calc_pref_size({.m_row = 10, .m_col = wrap_limit - 1});
