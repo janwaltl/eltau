@@ -10,7 +10,7 @@ var annotated_dup =
       [ "EltauException", "classeltau_1_1EltauException.html", "classeltau_1_1EltauException" ],
       [ "Color256", "structeltau_1_1Color256.html", "structeltau_1_1Color256" ],
       [ "Cell", "structeltau_1_1Cell.html", "structeltau_1_1Cell" ],
-      [ "Vector", "structeltau_1_1Vector.html", "structeltau_1_1Vector" ],
+      [ "Vec2", "structeltau_1_1Vec2.html", "structeltau_1_1Vec2" ],
       [ "Window", "classeltau_1_1Window.html", "classeltau_1_1Window" ],
       [ "Screen", "classeltau_1_1Screen.html", "classeltau_1_1Screen" ],
       [ "DrawingWindow", "classeltau_1_1DrawingWindow.html", "classeltau_1_1DrawingWindow" ],

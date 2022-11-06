@@ -2,7 +2,7 @@ var screen_8hpp =
 [
     [ "Color256", "structeltau_1_1Color256.html", "structeltau_1_1Color256" ],
     [ "Cell", "structeltau_1_1Cell.html", "structeltau_1_1Cell" ],
-    [ "Vector", "structeltau_1_1Vector.html", "structeltau_1_1Vector" ],
+    [ "Vec2", "structeltau_1_1Vec2.html", "structeltau_1_1Vec2" ],
     [ "Window", "classeltau_1_1Window.html", "classeltau_1_1Window" ],
     [ "Screen", "classeltau_1_1Screen.html", "classeltau_1_1Screen" ],
     [ "DrawingWindow", "classeltau_1_1DrawingWindow.html", "classeltau_1_1DrawingWindow" ],
@@ -16,9 +16,9 @@ var screen_8hpp =
       [ "Inverse", "screen_8hpp.html#a84ee5c845edc34fe7152f2471565a066a84eb3dfbcca4b528a999740da778b26d", null ],
       [ "Strike", "screen_8hpp.html#a84ee5c845edc34fe7152f2471565a066afbb319e8afeae64fdf650c07f8eada5c", null ]
     ] ],
-    [ "max", "screen_8hpp.html#a159db0696273890792dd106a2dc6822f", null ],
-    [ "min", "screen_8hpp.html#af366f3151c412913c031fe80c899a65a", null ],
-    [ "operator+", "screen_8hpp.html#a591339d3e11f6bdf57c10548fad7dd53", null ],
-    [ "operator-", "screen_8hpp.html#aef32f02e5fedbdd6d3971858c4ba1207", null ],
+    [ "max", "screen_8hpp.html#afd7938526bc749dac4e0c1d78ba395aa", null ],
+    [ "min", "screen_8hpp.html#a40f74572a92ad4f79d59d386ce8889aa", null ],
+    [ "operator+", "screen_8hpp.html#a736f33c572a4aa5395953a3b61468ece", null ],
+    [ "operator-", "screen_8hpp.html#a3a99ad194bb6337dced3f7bf3eff8f4b", null ],
     [ "c_utf8_cpoints", "screen_8hpp.html#a06a02821dfa0f42ff62f4d409ebfe9ff", null ]
 ];

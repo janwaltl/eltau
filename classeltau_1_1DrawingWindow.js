@@ -1,8 +1,8 @@
 var classeltau_1_1DrawingWindow =
 [
     [ "DrawingWindow", "classeltau_1_1DrawingWindow.html#acfa43cdbf5425f8bde7e3bcee46b02ec", null ],
-    [ "operator[]", "classeltau_1_1DrawingWindow.html#ae839f6d6f90c3cc9667a610d09adaceb", null ],
-    [ "operator[]", "classeltau_1_1DrawingWindow.html#ac25048ed14c30fbe71f9269bab4647b8", null ],
-    [ "sub_win", "classeltau_1_1DrawingWindow.html#a9e4597af16ff0d7a10e361ce10a3bd76", null ],
+    [ "operator[]", "classeltau_1_1DrawingWindow.html#a9c7958e7579d5a02811fbfd2277a4541", null ],
+    [ "operator[]", "classeltau_1_1DrawingWindow.html#aef7316914a0e6cebb43593157362dd7b", null ],
+    [ "sub_win", "classeltau_1_1DrawingWindow.html#a5cc871f332ba04055d381003a562853c", null ],
     [ "m_screen", "classeltau_1_1DrawingWindow.html#adfbed9d5980c567d964368041807c321", null ]
 ];

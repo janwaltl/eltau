@@ -36,9 +36,9 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structeltau_1_1Vector.html" target="_top" xlink:title="Coordinates in the screen.">
-<polygon fill="none" stroke="black" points="13,-135.5 13,-154.5 84,-154.5 84,-135.5 13,-135.5"/>
-<text text-anchor="middle" x="48.5" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Vector</text>
+<g id="a_node3"><a xlink:href="structeltau_1_1Vec2.html" target="_top" xlink:title="Coordinates in the screen.">
+<polygon fill="none" stroke="black" points="16,-135.5 16,-154.5 81,-154.5 81,-135.5 16,-135.5"/>
+<text text-anchor="middle" x="48.5" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Vec2</text>
 </a>
 </g>
 </g>

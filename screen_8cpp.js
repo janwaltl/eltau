@@ -1,7 +1,7 @@
 var screen_8cpp =
 [
-    [ "max", "screen_8cpp.html#a159db0696273890792dd106a2dc6822f", null ],
-    [ "min", "screen_8cpp.html#af366f3151c412913c031fe80c899a65a", null ],
-    [ "operator+", "screen_8cpp.html#a591339d3e11f6bdf57c10548fad7dd53", null ],
-    [ "operator-", "screen_8cpp.html#aef32f02e5fedbdd6d3971858c4ba1207", null ]
+    [ "max", "screen_8cpp.html#afd7938526bc749dac4e0c1d78ba395aa", null ],
+    [ "min", "screen_8cpp.html#a40f74572a92ad4f79d59d386ce8889aa", null ],
+    [ "operator+", "screen_8cpp.html#a736f33c572a4aa5395953a3b61468ece", null ],
+    [ "operator-", "screen_8cpp.html#a3a99ad194bb6337dced3f7bf3eff8f4b", null ]
 ];

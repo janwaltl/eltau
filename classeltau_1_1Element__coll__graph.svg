@@ -20,9 +20,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structeltau_1_1Vector.html" target="_top" xlink:title="Coordinates in the screen.">
-<polygon fill="none" stroke="black" points="3,-67.5 3,-86.5 74,-86.5 74,-67.5 3,-67.5"/>
-<text text-anchor="middle" x="38.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Vector</text>
+<g id="a_node2"><a xlink:href="structeltau_1_1Vec2.html" target="_top" xlink:title="Coordinates in the screen.">
+<polygon fill="none" stroke="black" points="6,-67.5 6,-86.5 71,-86.5 71,-67.5 6,-67.5"/>
+<text text-anchor="middle" x="38.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Vec2</text>
 </a>
 </g>
 </g>

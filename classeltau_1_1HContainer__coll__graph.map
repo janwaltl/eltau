@@ -1,5 +1,5 @@
 <map id="eltau::HContainer&lt; Elems &gt;" name="eltau::HContainer&lt; Elems &gt;">
 <area shape="rect" id="node1" title=" " alt="" coords="5,171,135,212"/>
 <area shape="rect" id="node2" href="$classeltau_1_1Element.html" title="Basic TUI drawable element." alt="" coords="19,95,121,121"/>
-<area shape="rect" id="node3" href="$structeltau_1_1Vector.html" title="Coordinates in the screen." alt="" coords="23,5,117,32"/>
+<area shape="rect" id="node3" href="$structeltau_1_1Vec2.html" title="Coordinates in the screen." alt="" coords="27,5,113,32"/>
 </map>

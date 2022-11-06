@@ -35,17 +35,17 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structeltau_1_1Vector.html" target="_top" xlink:title="Coordinates in the screen.">
-<polygon fill="none" stroke="black" points="14,-151 14,-170 85,-170 85,-151 14,-151"/>
-<text text-anchor="middle" x="49.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Vector</text>
+<g id="a_node3"><a xlink:href="structeltau_1_1Vec2.html" target="_top" xlink:title="Coordinates in the screen.">
+<polygon fill="none" stroke="black" points="18,-151 18,-170 83,-170 83,-151 18,-151"/>
+<text text-anchor="middle" x="50.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Vec2</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M42.88,-141.13C41.5,-136.57 40.25,-131.66 39.5,-127 37.26,-113.05 37.5,-96.59 37.95,-86.74"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="39.63,-142.45 46.11,-150.83 46.27,-140.24 39.63,-142.45"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M43.21,-141.17C41.7,-136.61 40.32,-131.69 39.5,-127 37.06,-113.09 37.37,-96.61 37.88,-86.75"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="40.04,-142.68 46.77,-150.86 46.61,-140.27 40.04,-142.68"/>
 <text text-anchor="middle" x="59.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00"> m_origin</text>
 <text text-anchor="middle" x="59.5" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00">m_size</text>
 </g>
@@ -59,10 +59,10 @@
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge8" class="edge">
+<g id="edge4" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M64.91,-143.76C75.66,-132.82 90.38,-117.95 103.5,-105 109.65,-98.93 116.65,-92.18 122.12,-86.95"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="62.36,-141.36 57.86,-150.94 67.36,-146.26 62.36,-141.36"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M65.89,-143.4C76.4,-132.48 90.68,-117.76 103.5,-105 109.63,-98.9 116.63,-92.15 122.09,-86.93"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="63.08,-141.28 58.68,-150.92 68.13,-146.13 63.08,-141.28"/>
 <text text-anchor="middle" x="120.5" y="-113.5" font-family="Helvetica,sans-Serif" font-size="10.00"> m_size</text>
 </g>
 <!-- Node4&#45;&gt;Node1 -->
@@ -83,7 +83,7 @@
 </g>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
-<g id="edge4" class="edge">
+<g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M150.62,-135.72C145.14,-119.18 138.16,-98.1 134.33,-86.54"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="147.33,-136.91 153.8,-145.3 153.97,-134.71 147.33,-136.91"/>
@@ -99,7 +99,7 @@
 </g>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
+<g id="edge6" class="edge">
 <title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M158.5,-213.24C158.5,-201.41 158.5,-186.38 158.5,-175.58"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="155,-213.36 158.5,-223.36 162,-213.36 155,-213.36"/>
@@ -117,7 +117,7 @@
 </g>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
+<g id="edge7" class="edge">
 <title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M119.45,-292.57C131.05,-275.18 145.08,-254.12 152.77,-242.59"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="116.3,-291 113.66,-301.26 122.12,-294.88 116.3,-291"/>
@@ -133,7 +133,7 @@
 </g>
 </g>
 <!-- Node8&#45;&gt;Node6 -->
-<g id="edge7" class="edge">
+<g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node6</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M207.1,-303.61C199.69,-291.47 189.35,-275.01 179.5,-261 175.13,-254.78 169.88,-248.03 165.72,-242.84"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="204.18,-305.54 212.34,-312.28 210.17,-301.92 204.18,-305.54"/>

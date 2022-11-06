@@ -17,7 +17,7 @@ var hierarchy =
     [ "eltau::SharedStateBaseImpl", "structeltau_1_1SharedStateBaseImpl.html", [
       [ "eltau::SharedStateImpl< State >", "structeltau_1_1SharedStateImpl.html", null ]
     ] ],
-    [ "eltau::Vector", "structeltau_1_1Vector.html", null ],
+    [ "eltau::Vec2", "structeltau_1_1Vec2.html", null ],
     [ "eltau::Window", "classeltau_1_1Window.html", [
       [ "eltau::DrawingWindow", "classeltau_1_1DrawingWindow.html", null ]
     ] ]

@@ -1,7 +1,7 @@
 <map id="eltau::DrawingWindow" name="eltau::DrawingWindow">
 <area shape="rect" id="node1" title="Drawable area in a screen." alt="" coords="43,436,193,463"/>
 <area shape="rect" id="node2" href="$classeltau_1_1Window.html" title="Rectangular area on the screen." alt="" coords="5,347,108,373"/>
-<area shape="rect" id="node3" href="$structeltau_1_1Vector.html" title="Coordinates in the screen." alt="" coords="24,235,119,262"/>
+<area shape="rect" id="node3" href="$structeltau_1_1Vec2.html" title="Coordinates in the screen." alt="" coords="29,235,116,262"/>
 <area shape="rect" id="node4" href="$classeltau_1_1Screen.html" title="Abstract terminal screen." alt="" coords="132,347,229,373"/>
 <area shape="rect" id="node5" title=" " alt="" coords="156,228,277,269"/>
 <area shape="rect" id="node6" href="$structeltau_1_1Cell.html" title="Terminal cell." alt="" coords="177,139,256,165"/>
