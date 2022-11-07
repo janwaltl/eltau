@@ -17,7 +17,7 @@ constexpr char c_escape_char = ' ';
 /*******************************************************************************
  * @brief Replace non-printable ASCII characters, leaves newlines intact.
  *
- * @param text String to replace, ASCII-only.
+ * @param src String to replace, ASCII-only.
  * @return Escaped copy of a string.
  ******************************************************************************/
 std::string
@@ -33,7 +33,8 @@ escape_ascii(std::string str) noexcept {
 /*******************************************************************************
  * @brief Replace non-printable ASCII characters, leaves newlines intact.
  *
- * @param text String to replace, ASCII-only.
+ * @param str String to replace, ASCII-only.
+ * @param wrap_limit Limit line length.
  * @return Escaped copy of a string.
  ******************************************************************************/
 Vec2
