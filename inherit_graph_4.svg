@@ -36,16 +36,16 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="classeltau_1_1Text.html" target="_top" xlink:title="Basic styled UTF&#45;8 text with optional wrapping.">
-<polygon fill="none" stroke="black" points="131,-0.5 131,-19.5 192,-19.5 192,-0.5 131,-0.5"/>
-<text text-anchor="middle" x="161.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::Text</text>
+<g id="a_node3"><a xlink:href="classeltau_1_1ascii_1_1Text.html" target="_top" xlink:title="Basic styled ASCII text with optional wrapping.">
+<polygon fill="none" stroke="black" points="118.5,-0.5 118.5,-19.5 204.5,-19.5 204.5,-0.5 118.5,-0.5"/>
+<text text-anchor="middle" x="161.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">eltau::ascii::Text</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node0&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M87.14,-23.34C101.93,-20.65 117.79,-17.77 130.97,-15.37"/>
+<path fill="none" stroke="midnightblue" d="M87.17,-23.33C97.44,-21.47 108.22,-19.51 118.26,-17.68"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="86.33,-19.93 77.12,-25.16 87.59,-26.81 86.33,-19.93"/>
 </g>
 </g>

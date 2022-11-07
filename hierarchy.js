@@ -5,7 +5,7 @@ var hierarchy =
     [ "eltau::EagerTerminal", "classeltau_1_1EagerTerminal.html", null ],
     [ "eltau::Element", "classeltau_1_1Element.html", [
       [ "eltau::HContainer< Elems >", "classeltau_1_1HContainer.html", null ],
-      [ "eltau::Text", "classeltau_1_1Text.html", null ]
+      [ "eltau::ascii::Text", "classeltau_1_1ascii_1_1Text.html", null ]
     ] ],
     [ "std::exception", null, [
       [ "std::logic_error", null, [

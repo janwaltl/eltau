@@ -4,8 +4,10 @@ var annotated_dup =
       [ "anonymous_namespace{terminal.cpp}", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03.html", [
         [ "orig_term", "structeltau_1_1anonymous__namespace_02terminal_8cpp_03_1_1orig__term.html", null ]
       ] ],
+      [ "ascii", "namespaceeltau_1_1ascii.html", [
+        [ "Text", "classeltau_1_1ascii_1_1Text.html", "classeltau_1_1ascii_1_1Text" ]
+      ] ],
       [ "Element", "classeltau_1_1Element.html", "classeltau_1_1Element" ],
-      [ "Text", "classeltau_1_1Text.html", "classeltau_1_1Text" ],
       [ "HContainer", "classeltau_1_1HContainer.html", "classeltau_1_1HContainer" ],
       [ "EltauException", "classeltau_1_1EltauException.html", "classeltau_1_1EltauException" ],
       [ "Color256", "structeltau_1_1Color256.html", "structeltau_1_1Color256" ],

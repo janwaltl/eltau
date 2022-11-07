@@ -1,8 +1,8 @@
 var namespaceeltau =
 [
     [ "anonymous_namespace{terminal.cpp}", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03.html", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03" ],
+    [ "ascii", "namespaceeltau_1_1ascii.html", "namespaceeltau_1_1ascii" ],
     [ "Element", "classeltau_1_1Element.html", "classeltau_1_1Element" ],
-    [ "Text", "classeltau_1_1Text.html", "classeltau_1_1Text" ],
     [ "HContainer", "classeltau_1_1HContainer.html", "classeltau_1_1HContainer" ],
     [ "EltauException", "classeltau_1_1EltauException.html", "classeltau_1_1EltauException" ],
     [ "Color256", "structeltau_1_1Color256.html", "structeltau_1_1Color256" ],
@@ -30,5 +30,6 @@ var namespaceeltau =
     [ "min", "namespaceeltau.html#a40f74572a92ad4f79d59d386ce8889aa", null ],
     [ "operator+", "namespaceeltau.html#a736f33c572a4aa5395953a3b61468ece", null ],
     [ "operator-", "namespaceeltau.html#a3a99ad194bb6337dced3f7bf3eff8f4b", null ],
+    [ "operator<<", "namespaceeltau.html#a60ab4604db4459d18afd574195aa08b6", null ],
     [ "c_utf8_cpoints", "namespaceeltau.html#a06a02821dfa0f42ff62f4d409ebfe9ff", null ]
 ];

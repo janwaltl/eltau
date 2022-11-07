@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['text_146',['Text',['../classeltau_1_1Text.html#a19726ab0ef5dfe3a8dd7600a1c61ee09',1,'eltau::Text']]]
+  ['text_161',['Text',['../classeltau_1_1ascii_1_1Text.html#a32fb314713a07b09d3509b86d2b9cd91',1,'eltau::ascii::Text']]]
 ];

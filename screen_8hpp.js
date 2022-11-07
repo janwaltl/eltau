@@ -20,5 +20,6 @@ var screen_8hpp =
     [ "min", "screen_8hpp.html#a40f74572a92ad4f79d59d386ce8889aa", null ],
     [ "operator+", "screen_8hpp.html#a736f33c572a4aa5395953a3b61468ece", null ],
     [ "operator-", "screen_8hpp.html#a3a99ad194bb6337dced3f7bf3eff8f4b", null ],
+    [ "operator<<", "screen_8hpp.html#a60ab4604db4459d18afd574195aa08b6", null ],
     [ "c_utf8_cpoints", "screen_8hpp.html#a06a02821dfa0f42ff62f4d409ebfe9ff", null ]
 ];

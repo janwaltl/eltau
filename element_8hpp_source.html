@@ -148,94 +148,72 @@ $(document).ready(function(){initNavTree('element_8hpp_source.html',''); initRes
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classeltau_1_1Element.html#ad9280903e61ef5d469168c6371d20baa">   96</a></span>&#160;    <a class="code" href="structeltau_1_1Vec2.html">Vec2</a> <a class="code" href="classeltau_1_1Element.html#ad9280903e61ef5d469168c6371d20baa">m_last_pref_size</a>{};</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classeltau_1_1Text.html">  103</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeltau_1_1Text.html">Text</a> : <span class="keyword">public</span> <a class="code" href="classeltau_1_1Element.html">Element</a> {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">  106</a></span>&#160;    <span class="keyword">inline</span> constexpr <span class="keyword">static</span> std::size_t <a class="code" href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">c_no_wrap</a> = 0;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// Notes:</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// Is container aligned or should parent control that?</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// Element | hcenter | vcenter | hleft | hright | vup | vdown | hflex | vflex(weight) |  center | flex | scrollable</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">//-&gt; AlignedElement</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//  - Or just set fields of every element &lt;- YEA.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// VContainer{elems...,fmt_string=&quot;&quot;}</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// VContainer{{weights,elems}...,fmt_string=&quot; =-+&quot;}</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classeltau_1_1Text.html#a19726ab0ef5dfe3a8dd7600a1c61ee09">Text</a>(std::string_view text, std::size_t wrap_limit = <a class="code" href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">c_no_wrap</a>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html">  110</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeltau_1_1HContainer.html">HContainer</a> : <span class="keyword">public</span> <a class="code" href="classeltau_1_1Element.html">Element</a> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">HContainer</a>(Ts&amp;&amp;... elems);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="structeltau_1_1Vec2.html">Vec2</a></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">do_calc_pref_size</a>(<a class="code" href="structeltau_1_1Vec2.html">Vec2</a> max_size) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="structeltau_1_1Vec2.html">Vec2</a></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classeltau_1_1Text.html#a1d94134c94d28a12c12b2dda10bc1f2b">do_calc_pref_size</a>(<a class="code" href="structeltau_1_1Vec2.html">Vec2</a> max_size) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">do_draw</a>(<a class="code" href="classeltau_1_1DrawingWindow.html">DrawingWindow</a>&amp; window) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">  123</a></span>&#160;    std::tuple&lt;Elems...&gt; <a class="code" href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">m_elems</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79">  127</a></span>&#160;<a class="code" href="namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79">HContainer</a>(Ts...) -&gt; <a class="code" href="classeltau_1_1HContainer.html">HContainer&lt;std::decay_t&lt;Ts&gt;</a>...&gt;;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">  131</a></span>&#160;<a class="code" href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">HContainer&lt;Elems...&gt;::HContainer</a>(Ts&amp;&amp;... elems) : m_elems{std::forward&lt;Ts&gt;(elems)...} {}</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classeltau_1_1Text.html#ab0560c6def574c894d3a1bce004a53af">do_draw</a>(<a class="code" href="classeltau_1_1DrawingWindow.html">DrawingWindow</a>&amp; window) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<a class="code" href="structeltau_1_1Vec2.html">Vec2</a></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">  135</a></span>&#160;<a class="code" href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">HContainer&lt;Elems...&gt;::do_calc_pref_size</a>(<a class="code" href="structeltau_1_1Vec2.html">Vec2</a> max_size) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// Without alignment and flex.</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">//  If we are flex, claim maximum but still calc them.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">auto</span> elems = std::apply([](<span class="keyword">auto</span>&amp;... v) { <span class="keywordflow">return</span> std::array{<span class="keyword">static_cast&lt;</span><a class="code" href="classeltau_1_1Element.html">Element</a>&amp;<span class="keyword">&gt;</span>(v)...}; });</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classeltau_1_1Text.html#a73dfd6bdd5fb41103fab43c28c55f6a7">  142</a></span>&#160;    std::string <a class="code" href="classeltau_1_1Text.html#a73dfd6bdd5fb41103fab43c28c55f6a7">m_text</a>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classeltau_1_1Text.html#a1174efeeaa33bc1156359309bb506638">  144</a></span>&#160;    std::size_t <a class="code" href="classeltau_1_1Text.html#a1174efeeaa33bc1156359309bb506638">m_wrap_limit</a>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;};</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">// Notes:</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">// Is container aligned or should parent control that?</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">// Element | hcenter | vcenter | hleft | hright | vup | vdown | hflex | vflex(weight) |  center | flex | scrollable</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//-&gt; AlignedElement</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//  - Or just set fields of every element &lt;- YEA.</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">// VContainer{elems...,fmt_string=&quot;&quot;}</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">// VContainer{{weights,elems}...,fmt_string=&quot; =-+&quot;}</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html">  158</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeltau_1_1HContainer.html">HContainer</a> : <span class="keyword">public</span> <a class="code" href="classeltau_1_1Element.html">Element</a> {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">HContainer</a>(Ts&amp;&amp;... elems);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="structeltau_1_1Vec2.html">Vec2</a></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">do_calc_pref_size</a>(<a class="code" href="structeltau_1_1Vec2.html">Vec2</a> max_size) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">do_draw</a>(<a class="code" href="classeltau_1_1DrawingWindow.html">DrawingWindow</a>&amp; window) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">  171</a></span>&#160;    std::tuple&lt;Elems...&gt; <a class="code" href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">m_elems</a>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;};</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79">  175</a></span>&#160;<a class="code" href="namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79">HContainer</a>(Ts...) -&gt; <a class="code" href="classeltau_1_1HContainer.html">HContainer&lt;std::decay_t&lt;Ts&gt;</a>...&gt;;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">  179</a></span>&#160;<a class="code" href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">HContainer&lt;Elems...&gt;::HContainer</a>(Ts&amp;&amp;... elems) : m_elems{std::forward&lt;Ts&gt;(elems)...} {}</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<a class="code" href="structeltau_1_1Vec2.html">Vec2</a></div>
-<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">  183</a></span>&#160;<a class="code" href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">HContainer&lt;Elems...&gt;::do_calc_pref_size</a>(<a class="code" href="structeltau_1_1Vec2.html">Vec2</a> max_size) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// Without alignment and flex.</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">//  If we are flex, claim maximum but still calc them.</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">auto</span> elems = std::apply([](<span class="keyword">auto</span>&amp;... v) { <span class="keywordflow">return</span> std::array{<span class="keyword">static_cast&lt;</span><a class="code" href="classeltau_1_1Element.html">Element</a>&amp;<span class="keyword">&gt;</span>(v)...}; });</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">auto</span> remaining{max_size};</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; elems.size(); ++i) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        remaining -= elems[i]-&gt;calc_pref_size(remaining);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    };</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> max_size - remaining;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">  198</a></span>&#160;<a class="code" href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">HContainer&lt;Elems...&gt;::do_draw</a>(<a class="code" href="classeltau_1_1DrawingWindow.html">DrawingWindow</a>&amp; window) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// Sane iteration</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">auto</span> elems = std::apply([](<span class="keyword">auto</span>&amp;... v) { <span class="keywordflow">return</span> std::array{<span class="keyword">static_cast&lt;</span><a class="code" href="classeltau_1_1Element.html">Element</a>&amp;<span class="keyword">&gt;</span>(v)...}; });</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; elems.size(); ++i) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment">// Restrict to its preferred size.</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keyword">auto</span> s = elems[i]-&gt;get_last_pref_size();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keyword">auto</span> r = elems[i]-&gt;draw(window.<a class="code" href="classeltau_1_1DrawingWindow.html#a5cc871f332ba04055d381003a562853c">sub_win</a>(0, s));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// Shift right (because we are horizontal container, rows are fixed globally for us).</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        window = window.<a class="code" href="classeltau_1_1DrawingWindow.html#a5cc871f332ba04055d381003a562853c">sub_win</a>({.m_row = 0, .m_col = s.m_col});</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    };</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;} <span class="comment">// namespace eltau</span></div>
-<div class="ttc" id="aclasseltau_1_1DrawingWindow_html"><div class="ttname"><a href="classeltau_1_1DrawingWindow.html">eltau::DrawingWindow</a></div><div class="ttdoc">Drawable area in a screen.</div><div class="ttdef"><b>Definition:</b> <a href="screen_8hpp_source.html#l00244">screen.hpp:244</a></div></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">auto</span> remaining{max_size};</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; elems.size(); ++i) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        remaining -= elems[i]-&gt;calc_pref_size(remaining);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    };</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> max_size - remaining;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elems&gt;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">  150</a></span>&#160;<a class="code" href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">HContainer&lt;Elems...&gt;::do_draw</a>(<a class="code" href="classeltau_1_1DrawingWindow.html">DrawingWindow</a>&amp; window) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// Sane iteration</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">auto</span> elems = std::apply([](<span class="keyword">auto</span>&amp;... v) { <span class="keywordflow">return</span> std::array{<span class="keyword">static_cast&lt;</span><a class="code" href="classeltau_1_1Element.html">Element</a>&amp;<span class="keyword">&gt;</span>(v)...}; });</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; elems.size(); ++i) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">// Restrict to its preferred size.</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">auto</span> s = elems[i]-&gt;get_last_pref_size();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keyword">auto</span> r = elems[i]-&gt;draw(window.<a class="code" href="classeltau_1_1DrawingWindow.html#a5cc871f332ba04055d381003a562853c">sub_win</a>(0, s));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">// Shift right (because we are horizontal container, rows are fixed globally for us).</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        window = window.<a class="code" href="classeltau_1_1DrawingWindow.html#a5cc871f332ba04055d381003a562853c">sub_win</a>({.m_row = 0, .m_col = s.m_col});</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    };</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;} <span class="comment">// namespace eltau</span></div>
+<div class="ttc" id="aclasseltau_1_1DrawingWindow_html"><div class="ttname"><a href="classeltau_1_1DrawingWindow.html">eltau::DrawingWindow</a></div><div class="ttdoc">Drawable area in a screen.</div><div class="ttdef"><b>Definition:</b> <a href="screen_8hpp_source.html#l00253">screen.hpp:253</a></div></div>
 <div class="ttc" id="aclasseltau_1_1DrawingWindow_html_a5cc871f332ba04055d381003a562853c"><div class="ttname"><a href="classeltau_1_1DrawingWindow.html#a5cc871f332ba04055d381003a562853c">eltau::DrawingWindow::sub_win</a></div><div class="ttdeci">DrawingWindow sub_win(Vec2 offset, Vec2 size)</div><div class="ttdoc">Same as Window::sub_win .</div><div class="ttdef"><b>Definition:</b> <a href="screen_8cpp_source.html#l00111">screen.cpp:111</a></div></div>
 <div class="ttc" id="aclasseltau_1_1Element_html"><div class="ttname"><a href="classeltau_1_1Element.html">eltau::Element</a></div><div class="ttdoc">Basic TUI drawable element.</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00020">element.hpp:20</a></div></div>
 <div class="ttc" id="aclasseltau_1_1Element_html_a1467ce84433393ef7d22124efc5b27cb"><div class="ttname"><a href="classeltau_1_1Element.html#a1467ce84433393ef7d22124efc5b27cb">eltau::Element::draw</a></div><div class="ttdeci">void draw(DrawingWindow &amp;window)</div><div class="ttdoc">Draw the element to the assigned window.</div><div class="ttdef"><b>Definition:</b> <a href="element_8cpp_source.html#l00021">element.cpp:21</a></div></div>
@@ -250,29 +228,22 @@ $(document).ready(function(){initNavTree('element_8hpp_source.html',''); initRes
 <div class="ttc" id="aclasseltau_1_1Element_html_ad9280903e61ef5d469168c6371d20baa"><div class="ttname"><a href="classeltau_1_1Element.html#ad9280903e61ef5d469168c6371d20baa">eltau::Element::m_last_pref_size</a></div><div class="ttdeci">Vec2 m_last_pref_size</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00096">element.hpp:96</a></div></div>
 <div class="ttc" id="aclasseltau_1_1Element_html_adf3c806dd1712335d97b5ee2783f4d0a"><div class="ttname"><a href="classeltau_1_1Element.html#adf3c806dd1712335d97b5ee2783f4d0a">eltau::Element::calc_pref_size</a></div><div class="ttdeci">Vec2 calc_pref_size(Vec2 max_size)</div><div class="ttdoc">Recalculate preferred minimal size given the restrictions.</div><div class="ttdef"><b>Definition:</b> <a href="element_8cpp_source.html#l00013">element.cpp:13</a></div></div>
 <div class="ttc" id="aclasseltau_1_1Element_html_ae5c5d261d503dd78ff886ad099622d42"><div class="ttname"><a href="classeltau_1_1Element.html#ae5c5d261d503dd78ff886ad099622d42">eltau::Element::operator=</a></div><div class="ttdeci">Element &amp; operator=(const Element &amp;other)=default</div><div class="ttdoc">Default copy assignment.</div></div>
-<div class="ttc" id="aclasseltau_1_1HContainer_html"><div class="ttname"><a href="classeltau_1_1HContainer.html">eltau::HContainer</a></div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00158">element.hpp:158</a></div></div>
-<div class="ttc" id="aclasseltau_1_1HContainer_html_a20e70c272c8fdece99b23bc40093e71f"><div class="ttname"><a href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">eltau::HContainer::do_calc_pref_size</a></div><div class="ttdeci">Vec2 do_calc_pref_size(Vec2 max_size) override</div><div class="ttdoc">Virtual version of calc_pref_size().</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00183">element.hpp:183</a></div></div>
-<div class="ttc" id="aclasseltau_1_1HContainer_html_a481b6511f70c61551a64b7da4cf0f640"><div class="ttname"><a href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">eltau::HContainer::do_draw</a></div><div class="ttdeci">void do_draw(DrawingWindow &amp;window) override</div><div class="ttdoc">Virtual version of draw().</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00198">element.hpp:198</a></div></div>
-<div class="ttc" id="aclasseltau_1_1HContainer_html_a59e045c7dd2ccff17c2b906a5e87bdbf"><div class="ttname"><a href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">eltau::HContainer::m_elems</a></div><div class="ttdeci">std::tuple&lt; Elems... &gt; m_elems</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00171">element.hpp:171</a></div></div>
-<div class="ttc" id="aclasseltau_1_1HContainer_html_a974cb13faee5cc98103da4096d2a5529"><div class="ttname"><a href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">eltau::HContainer::HContainer</a></div><div class="ttdeci">HContainer(Ts &amp;&amp;... elems)</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00179">element.hpp:179</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html"><div class="ttname"><a href="classeltau_1_1Text.html">eltau::Text</a></div><div class="ttdoc">Basic styled UTF-8 text with optional wrapping.</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00103">element.hpp:103</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html_a1174efeeaa33bc1156359309bb506638"><div class="ttname"><a href="classeltau_1_1Text.html#a1174efeeaa33bc1156359309bb506638">eltau::Text::m_wrap_limit</a></div><div class="ttdeci">std::size_t m_wrap_limit</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00144">element.hpp:144</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html_a19726ab0ef5dfe3a8dd7600a1c61ee09"><div class="ttname"><a href="classeltau_1_1Text.html#a19726ab0ef5dfe3a8dd7600a1c61ee09">eltau::Text::Text</a></div><div class="ttdeci">Text(std::string_view text, std::size_t wrap_limit=c_no_wrap)</div><div class="ttdoc">New Text element.</div><div class="ttdef"><b>Definition:</b> <a href="element_8cpp_source.html#l00031">element.cpp:31</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html_a1d94134c94d28a12c12b2dda10bc1f2b"><div class="ttname"><a href="classeltau_1_1Text.html#a1d94134c94d28a12c12b2dda10bc1f2b">eltau::Text::do_calc_pref_size</a></div><div class="ttdeci">Vec2 do_calc_pref_size(Vec2 max_size) override</div><div class="ttdoc">Return the space needed to render text.</div><div class="ttdef"><b>Definition:</b> <a href="element_8cpp_source.html#l00034">element.cpp:34</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html_a73dfd6bdd5fb41103fab43c28c55f6a7"><div class="ttname"><a href="classeltau_1_1Text.html#a73dfd6bdd5fb41103fab43c28c55f6a7">eltau::Text::m_text</a></div><div class="ttdeci">std::string m_text</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00142">element.hpp:142</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html_ab0560c6def574c894d3a1bce004a53af"><div class="ttname"><a href="classeltau_1_1Text.html#ab0560c6def574c894d3a1bce004a53af">eltau::Text::do_draw</a></div><div class="ttdeci">void do_draw(DrawingWindow &amp;window) override</div><div class="ttdoc">Draw text to the assigned window.</div><div class="ttdef"><b>Definition:</b> <a href="element_8cpp_source.html#l00049">element.cpp:49</a></div></div>
-<div class="ttc" id="aclasseltau_1_1Text_html_ac0a63fce3a6fefa055a731540e8a20d8"><div class="ttname"><a href="classeltau_1_1Text.html#ac0a63fce3a6fefa055a731540e8a20d8">eltau::Text::c_no_wrap</a></div><div class="ttdeci">constexpr static std::size_t c_no_wrap</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00106">element.hpp:106</a></div></div>
+<div class="ttc" id="aclasseltau_1_1HContainer_html"><div class="ttname"><a href="classeltau_1_1HContainer.html">eltau::HContainer</a></div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00110">element.hpp:110</a></div></div>
+<div class="ttc" id="aclasseltau_1_1HContainer_html_a20e70c272c8fdece99b23bc40093e71f"><div class="ttname"><a href="classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f">eltau::HContainer::do_calc_pref_size</a></div><div class="ttdeci">Vec2 do_calc_pref_size(Vec2 max_size) override</div><div class="ttdoc">Virtual version of calc_pref_size().</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00135">element.hpp:135</a></div></div>
+<div class="ttc" id="aclasseltau_1_1HContainer_html_a481b6511f70c61551a64b7da4cf0f640"><div class="ttname"><a href="classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640">eltau::HContainer::do_draw</a></div><div class="ttdeci">void do_draw(DrawingWindow &amp;window) override</div><div class="ttdoc">Virtual version of draw().</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00150">element.hpp:150</a></div></div>
+<div class="ttc" id="aclasseltau_1_1HContainer_html_a59e045c7dd2ccff17c2b906a5e87bdbf"><div class="ttname"><a href="classeltau_1_1HContainer.html#a59e045c7dd2ccff17c2b906a5e87bdbf">eltau::HContainer::m_elems</a></div><div class="ttdeci">std::tuple&lt; Elems... &gt; m_elems</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00123">element.hpp:123</a></div></div>
+<div class="ttc" id="aclasseltau_1_1HContainer_html_a974cb13faee5cc98103da4096d2a5529"><div class="ttname"><a href="classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529">eltau::HContainer::HContainer</a></div><div class="ttdeci">HContainer(Ts &amp;&amp;... elems)</div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00131">element.hpp:131</a></div></div>
 <div class="ttc" id="anamespaceeltau_html"><div class="ttname"><a href="namespaceeltau.html">eltau</a></div><div class="ttdef"><b>Definition:</b> <a href="element_8cpp_source.html#l00010">element.cpp:10</a></div></div>
 <div class="ttc" id="anamespaceeltau_html_a0df62f3b45b6af33a2437c2fd29b8d79"><div class="ttname"><a href="namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79">eltau::HContainer</a></div><div class="ttdeci">HContainer(Ts...) -&gt; HContainer&lt; std::decay_t&lt; Ts &gt;... &gt;</div></div>
 <div class="ttc" id="ascreen_8hpp_html"><div class="ttname"><a href="screen_8hpp.html">screen.hpp</a></div></div>
-<div class="ttc" id="astructeltau_1_1Vec2_html"><div class="ttname"><a href="structeltau_1_1Vec2.html">eltau::Vec2</a></div><div class="ttdoc">Coordinates in the screen.</div><div class="ttdef"><b>Definition:</b> <a href="screen_8hpp_source.html#l00069">screen.hpp:69</a></div></div>
+<div class="ttc" id="astructeltau_1_1Vec2_html"><div class="ttname"><a href="structeltau_1_1Vec2.html">eltau::Vec2</a></div><div class="ttdoc">Coordinates in the screen.</div><div class="ttdef"><b>Definition:</b> <a href="screen_8hpp_source.html#l00070">screen.hpp:70</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_bf75453cca849e474f330b8ac40e4662.html">eltau</a></li><li class="navelem"><a class="el" href="element_8hpp.html">element.hpp</a></li>
-    <li class="footer">Generated on Sun Nov 6 2022 18:38:03 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Nov 7 2022 19:29:02 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
