@@ -61,6 +61,7 @@ target_sources(
   include/eltau/terminal.hpp
   PRIVATE
   src/element.cpp
+  src/text.cpp
   src/exception.cpp
   src/screen.cpp
   src/terminal.cpp

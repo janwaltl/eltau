@@ -125,4 +125,11 @@ DrawingWindow::operator[](Vec2 coords) const noexcept {
         return (*m_screen)[coords];
     return nullptr;
 }
+
+std::ostream&
+operator<<(std::ostream& os, const Vec2& value) {
+    os << "{r=" << value.m_row << ", c=" << value.m_col << "}";
+    return os;
+}
+
 } // namespace eltau

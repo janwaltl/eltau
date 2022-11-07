@@ -30,7 +30,8 @@ endif(ELTAU_JUNIT_TEST_OUTPUT)
 target_sources(
   tests
   PRIVATE
-  test_screen.cpp
   test_element.cpp
   test_exception.cpp
+  test_screen.cpp
+  test_text.cpp
 )

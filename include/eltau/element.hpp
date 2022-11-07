@@ -96,54 +96,6 @@ private:
     Vec2 m_last_pref_size{};
 };
 
-
-/*******************************************************************************
- * @brief Basic styled UTF-8 text with optional wrapping.
- ******************************************************************************/
-class Text : public Element {
-public:
-    /*! Constant denoting unwrapped text. */
-    inline constexpr static std::size_t c_no_wrap = 0;
-
-    /*******************************************************************************
-     * @brief New Text element.
-     *
-     * Respects newline in the input string.
-     *
-     * @param text String to show, UTF-8 supported.
-     * @param wrap_limit Optional automatic wrapping. c_no_wrap is no wrapping.
-     ******************************************************************************/
-    explicit Text(std::string_view text, std::size_t wrap_limit = c_no_wrap);
-
-private:
-    /*******************************************************************************
-     * @brief Return the space needed to render text.
-     *
-     * By default, the text is rendered in one-line unless wrapped or if contains
-     * an explicit newline.
-     * Wrapping is either based on `wrap_limit` or the size limits.
-     *
-     * @param max_size limits on the size.
-     * @return Calculated necessary size.
-     ******************************************************************************/
-    Vec2
-    do_calc_pref_size(Vec2 max_size) override;
-
-    /*******************************************************************************
-     * @brief Draw text to the assigned window.
-     *
-     * Wraps the text if necessary, cuts off the rest that cannot fit if there are
-     * not enough lines.
-     ******************************************************************************/
-    void
-    do_draw(DrawingWindow& window) override;
-
-    /*! Text to render. */
-    std::string m_text;
-    /*! Hard wrap-limit on the text. */
-    std::size_t m_wrap_limit;
-};
-
 // Notes:
 // Is container aligned or should parent control that?
 // Element | hcenter | vcenter | hleft | hright | vup | vdown | hflex | vflex(weight) |  center | flex | scrollable

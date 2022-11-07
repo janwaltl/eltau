@@ -7,6 +7,7 @@
 
 #include <array>
 #include <cstdint>
+#include <ostream>
 #include <span>
 #include <vector>
 
@@ -97,6 +98,14 @@ operator+(const Vec2& l, const Vec2& r);
  ******************************************************************************/
 Vec2
 operator-(const Vec2& l, const Vec2& r);
+
+/*******************************************************************************
+ * @brief Pretty-print Vec2.
+ *
+ * Mainly for testing.
+ ******************************************************************************/
+std::ostream&
+operator<<(std::ostream& os, const Vec2& value);
 
 /*******************************************************************************
  * @brief Rectangular area on the screen.
