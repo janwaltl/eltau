@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['text_107',['Text',['../classeltau_1_1ascii_1_1Text.html',1,'eltau::ascii']]]
+  ['vec2_102',['Vec2',['../structeltau_1_1Vec2.html',1,'eltau']]]
 ];

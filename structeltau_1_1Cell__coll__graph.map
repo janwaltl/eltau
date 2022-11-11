@@ -1,5 +1,0 @@
-<map id="eltau::Cell" name="eltau::Cell">
-<area shape="rect" id="node1" title="Terminal cell." alt="" coords="121,139,200,165"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,161,61"/>
-<area shape="rect" id="node3" href="$structeltau_1_1Color256.html" title="256 Terminal colors" alt="" coords="186,20,293,47"/>
-</map>

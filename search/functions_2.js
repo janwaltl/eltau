@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['do_5fcalc_5fpref_5fsize_129',['do_calc_pref_size',['../classeltau_1_1Element.html#aa5182ab8523fd561e34ed1ed5da09656',1,'eltau::Element::do_calc_pref_size()'],['../classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f',1,'eltau::HContainer::do_calc_pref_size()'],['../classeltau_1_1ascii_1_1Text.html#a696547ace15a28ef59a046a3f5d8ac00',1,'eltau::ascii::Text::do_calc_pref_size()']]],
-  ['do_5fdraw_130',['do_draw',['../classeltau_1_1Element.html#acfdb84b584895d9fbdca5ee822bcf0f0',1,'eltau::Element::do_draw()'],['../classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640',1,'eltau::HContainer::do_draw()'],['../classeltau_1_1ascii_1_1Text.html#a6bd93afdb4d81b3af526a1b598f665ac',1,'eltau::ascii::Text::do_draw()']]],
-  ['draw_131',['draw',['../classeltau_1_1Element.html#a1467ce84433393ef7d22124efc5b27cb',1,'eltau::Element::draw()'],['../classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079',1,'eltau::EagerTerminal::draw()']]],
-  ['drawingwindow_132',['DrawingWindow',['../classeltau_1_1DrawingWindow.html#acfa43cdbf5425f8bde7e3bcee46b02ec',1,'eltau::DrawingWindow']]]
+  ['calc_5fpref_5fsize_121',['calc_pref_size',['../classeltau_1_1Element.html#adf3c806dd1712335d97b5ee2783f4d0a',1,'eltau::Element']]],
+  ['calc_5frows_5fcols_122',['calc_rows_cols',['../namespaceeltau_1_1ascii_1_1anonymous__namespace_02text_8cpp_03.html#a5398ffcd0d6e2849662967edaadcd316',1,'eltau::ascii::anonymous_namespace{text.cpp}']]],
+  ['clamp_123',['clamp',['../namespaceeltau.html#a0165014aa92419db16603449ef3ffb62',1,'eltau']]],
+  ['current_124',['current',['../structeltau_1_1SharedStateBaseImpl.html#a16971734103115379a6bc52a561bb775',1,'eltau::SharedStateBaseImpl']]],
+  ['cursor_125',['cursor',['../classeltau_1_1Window.html#adf9054e9d48b2bef96ed1b8f38f8e5a3',1,'eltau::Window::cursor()'],['../classeltau_1_1Screen.html#a31e8a777386f5740282882da3b00bbe6',1,'eltau::Screen::cursor()']]]
 ];

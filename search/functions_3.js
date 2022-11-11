@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['eagerterminal_133',['EagerTerminal',['../classeltau_1_1EagerTerminal.html#a132305a05a3de491c43aca0c479aca8b',1,'eltau::EagerTerminal']]],
-  ['element_134',['Element',['../classeltau_1_1Element.html#a6590f1a310d6c29313629e19a3260743',1,'eltau::Element::Element()=default'],['../classeltau_1_1Element.html#ac6f82dfde90461821f83fd3787f76811',1,'eltau::Element::Element(const Element &amp;other)=default'],['../classeltau_1_1Element.html#a64510d46d1e3dff9801fb7f3bf021749',1,'eltau::Element::Element(Element &amp;&amp;other) noexcept=default']]],
-  ['eltauexception_135',['EltauException',['../classeltau_1_1EltauException.html#a8f7e329e770562837cc0cef1aa2ffc98',1,'eltau::EltauException::EltauException(const EltauException &amp;other)=default'],['../classeltau_1_1EltauException.html#a3895f98115f8728b622b009abffc5ece',1,'eltau::EltauException::EltauException(EltauException &amp;&amp;other) noexcept=default']]],
-  ['end_136',['end',['../classeltau_1_1Window.html#a10e56237f6272f4ef88c398327ccdf53',1,'eltau::Window']]],
-  ['escape_5fascii_137',['escape_ascii',['../namespaceeltau_1_1ascii_1_1anonymous__namespace_02text_8cpp_03.html#a50817f3744e9c36e30e64ba216fbc818',1,'eltau::ascii::anonymous_namespace{text.cpp}']]]
+  ['do_5fcalc_5fpref_5fsize_126',['do_calc_pref_size',['../classeltau_1_1Element.html#aa5182ab8523fd561e34ed1ed5da09656',1,'eltau::Element::do_calc_pref_size()'],['../classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f',1,'eltau::HContainer::do_calc_pref_size()'],['../classeltau_1_1ascii_1_1Text.html#a696547ace15a28ef59a046a3f5d8ac00',1,'eltau::ascii::Text::do_calc_pref_size()']]],
+  ['do_5fdraw_127',['do_draw',['../classeltau_1_1Element.html#a8553a96098f8ecb7d147acb4794aa212',1,'eltau::Element::do_draw()'],['../classeltau_1_1HContainer.html#a46d82dde1c4e766893d37ab2c92a8a98',1,'eltau::HContainer::do_draw()'],['../classeltau_1_1ascii_1_1Text.html#a114c84951e1db92e4de5c0cbe470cf85',1,'eltau::ascii::Text::do_draw()']]],
+  ['draw_128',['draw',['../classeltau_1_1Element.html#a379bfec23ecbba1a22e38a342958d1bb',1,'eltau::Element::draw()'],['../classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079',1,'eltau::EagerTerminal::draw()']]]
 ];

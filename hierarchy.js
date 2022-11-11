@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "eltau::Cell", "structeltau_1_1Cell.html", null ],
     [ "eltau::Color256", "structeltau_1_1Color256.html", null ],
     [ "eltau::EagerTerminal", "classeltau_1_1EagerTerminal.html", null ],
     [ "eltau::Element", "classeltau_1_1Element.html", [
@@ -18,7 +17,5 @@ var hierarchy =
       [ "eltau::SharedStateImpl< State >", "structeltau_1_1SharedStateImpl.html", null ]
     ] ],
     [ "eltau::Vec2", "structeltau_1_1Vec2.html", null ],
-    [ "eltau::Window", "classeltau_1_1Window.html", [
-      [ "eltau::DrawingWindow", "classeltau_1_1DrawingWindow.html", null ]
-    ] ]
+    [ "eltau::Window", "classeltau_1_1Window.html", null ]
 ];

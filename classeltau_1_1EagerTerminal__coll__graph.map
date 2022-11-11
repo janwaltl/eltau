@@ -1,10 +1,6 @@
 <map id="eltau::EagerTerminal" name="eltau::EagerTerminal">
-<area shape="rect" id="node1" title="Terminal without caching." alt="" coords="46,436,185,463"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,332,151,373"/>
-<area shape="rect" id="node3" href="$classeltau_1_1Screen.html" title="Abstract terminal screen." alt="" coords="175,339,272,366"/>
-<area shape="rect" id="node4" href="$structeltau_1_1Vec2.html" title="Coordinates in the screen." alt="" coords="129,235,216,262"/>
-<area shape="rect" id="node5" title=" " alt="" coords="240,228,361,269"/>
-<area shape="rect" id="node6" href="$structeltau_1_1Cell.html" title="Terminal cell." alt="" coords="261,139,340,165"/>
-<area shape="rect" id="node7" title=" " alt="" coords="145,5,301,61"/>
-<area shape="rect" id="node8" href="$structeltau_1_1Color256.html" title="256 Terminal colors" alt="" coords="326,20,433,47"/>
+<area shape="rect" id="node1" title="Terminal without caching." alt="" coords="63,213,202,240"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,109,151,151"/>
+<area shape="rect" id="node3" href="$classeltau_1_1Screen.html" title=" " alt="" coords="175,117,272,143"/>
+<area shape="rect" id="node4" href="$structeltau_1_1Vec2.html" title="Coordinates in the screen." alt="" coords="180,5,267,32"/>
 </map>

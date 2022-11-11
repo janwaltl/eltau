@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['dim_14',['Dim',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a752fb7baeee7e1a6a4e8110233fb3d57',1,'eltau']]],
-  ['do_5fcalc_5fpref_5fsize_15',['do_calc_pref_size',['../classeltau_1_1Element.html#aa5182ab8523fd561e34ed1ed5da09656',1,'eltau::Element::do_calc_pref_size()'],['../classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f',1,'eltau::HContainer::do_calc_pref_size()'],['../classeltau_1_1ascii_1_1Text.html#a696547ace15a28ef59a046a3f5d8ac00',1,'eltau::ascii::Text::do_calc_pref_size()']]],
-  ['do_5fdraw_16',['do_draw',['../classeltau_1_1Element.html#acfdb84b584895d9fbdca5ee822bcf0f0',1,'eltau::Element::do_draw()'],['../classeltau_1_1HContainer.html#a481b6511f70c61551a64b7da4cf0f640',1,'eltau::HContainer::do_draw()'],['../classeltau_1_1ascii_1_1Text.html#a6bd93afdb4d81b3af526a1b598f665ac',1,'eltau::ascii::Text::do_draw()']]],
-  ['draw_17',['draw',['../classeltau_1_1Element.html#a1467ce84433393ef7d22124efc5b27cb',1,'eltau::Element::draw()'],['../classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079',1,'eltau::EagerTerminal::draw()']]],
-  ['drawingwindow_18',['DrawingWindow',['../classeltau_1_1DrawingWindow.html#acfa43cdbf5425f8bde7e3bcee46b02ec',1,'eltau::DrawingWindow::DrawingWindow()'],['../classeltau_1_1DrawingWindow.html',1,'eltau::DrawingWindow']]]
+  ['c_5fescape_5fchar_4',['c_escape_char',['../namespaceeltau_1_1ascii_1_1anonymous__namespace_02text_8cpp_03.html#a44ef840dd56ee7203dca33a6ebaba91c',1,'eltau::ascii::anonymous_namespace{text.cpp}']]],
+  ['c_5fno_5fwrap_5',['c_no_wrap',['../classeltau_1_1ascii_1_1Text.html#a20f1c8422e700ea9120d2a96da1f1c70',1,'eltau::ascii::Text']]],
+  ['calc_5fpref_5fsize_6',['calc_pref_size',['../classeltau_1_1Element.html#adf3c806dd1712335d97b5ee2783f4d0a',1,'eltau::Element']]],
+  ['calc_5frows_5fcols_7',['calc_rows_cols',['../namespaceeltau_1_1ascii_1_1anonymous__namespace_02text_8cpp_03.html#a5398ffcd0d6e2849662967edaadcd316',1,'eltau::ascii::anonymous_namespace{text.cpp}']]],
+  ['clamp_8',['clamp',['../namespaceeltau.html#a0165014aa92419db16603449ef3ffb62',1,'eltau']]],
+  ['color256_9',['Color256',['../structeltau_1_1Color256.html',1,'eltau']]],
+  ['current_10',['current',['../structeltau_1_1SharedStateBaseImpl.html#a16971734103115379a6bc52a561bb775',1,'eltau::SharedStateBaseImpl']]],
+  ['cursor_11',['cursor',['../classeltau_1_1Window.html#adf9054e9d48b2bef96ed1b8f38f8e5a3',1,'eltau::Window::cursor()'],['../classeltau_1_1Screen.html#a31e8a777386f5740282882da3b00bbe6',1,'eltau::Screen::cursor()']]]
 ];

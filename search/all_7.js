@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['inverse_37',['Inverse',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a84eb3dfbcca4b528a999740da778b26d',1,'eltau']]],
-  ['is_5finside_38',['is_inside',['../classeltau_1_1Window.html#a74ce0e51ac1429a1bdacad5b863922a0',1,'eltau::Window']]],
-  ['italic_39',['Italic',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a89caf7ea375a0b4e80487590a8007d40',1,'eltau']]]
+  ['hcontainer_33',['HContainer',['../classeltau_1_1HContainer.html',1,'eltau::HContainer&lt; Elems &gt;'],['../classeltau_1_1HContainer.html#a974cb13faee5cc98103da4096d2a5529',1,'eltau::HContainer::HContainer()'],['../namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79',1,'eltau::HContainer()']]]
 ];

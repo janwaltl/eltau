@@ -104,23 +104,17 @@ $(document).ready(function(){initNavTree('classeltau_1_1Window.html',''); initRe
 
 <p><code>#include &lt;<a class="el" href="screen_8hpp_source.html">screen.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for eltau::Window:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classeltau_1_1Window__inherit__graph.svg" width="160" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
 Collaboration diagram for eltau::Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classeltau_1_1Window__coll__graph.svg" width="116" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classeltau_1_1Window__coll__graph.svg" width="216" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aed370c0b0c88482a71dfc32e6235951b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#aed370c0b0c88482a71dfc32e6235951b">Window</a> (<a class="el" href="structeltau_1_1Vec2.html">Vec2</a> begin, <a class="el" href="structeltau_1_1Vec2.html">Vec2</a> <a class="el" href="classeltau_1_1Window.html#af69d1e01095657b9f9e4a94a9d597d00">size</a>) noexcept</td></tr>
-<tr class="memdesc:aed370c0b0c88482a71dfc32e6235951b"><td class="mdescLeft">&#160;</td><td class="mdescRight">New window.  <a href="classeltau_1_1Window.html#aed370c0b0c88482a71dfc32e6235951b">More...</a><br /></td></tr>
-<tr class="separator:aed370c0b0c88482a71dfc32e6235951b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3426bd3275c1a28372865b9f88fa94eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a3426bd3275c1a28372865b9f88fa94eb">Window</a> (<a class="el" href="structeltau_1_1Vec2.html">Vec2</a> begin, <a class="el" href="structeltau_1_1Vec2.html">Vec2</a> <a class="el" href="classeltau_1_1Window.html#af69d1e01095657b9f9e4a94a9d597d00">size</a>, <a class="el" href="classeltau_1_1Screen.html">Screen</a> &amp;screen) noexcept</td></tr>
+<tr class="memdesc:a3426bd3275c1a28372865b9f88fa94eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">New window.  <a href="classeltau_1_1Window.html#a3426bd3275c1a28372865b9f88fa94eb">More...</a><br /></td></tr>
+<tr class="separator:a3426bd3275c1a28372865b9f88fa94eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc6157fabfaedf51bf6166c5f5898646"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#adc6157fabfaedf51bf6166c5f5898646">Window</a> (const <a class="el" href="classeltau_1_1Window.html">Window</a> &amp;other)=default</td></tr>
 <tr class="memdesc:adc6157fabfaedf51bf6166c5f5898646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy ctor.  <a href="classeltau_1_1Window.html#adc6157fabfaedf51bf6166c5f5898646">More...</a><br /></td></tr>
 <tr class="separator:adc6157fabfaedf51bf6166c5f5898646"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,34 +134,46 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af69d1e01095657b9f9e4a94a9d597d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensions of the window.  <a href="classeltau_1_1Window.html#af69d1e01095657b9f9e4a94a9d597d00">More...</a><br /></td></tr>
 <tr class="separator:af69d1e01095657b9f9e4a94a9d597d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22944f0f0143a67877a87aee9020456d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a22944f0f0143a67877a87aee9020456d">origin</a> () const noexcept</td></tr>
-<tr class="memdesc:a22944f0f0143a67877a87aee9020456d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-left corner coords.  <a href="classeltau_1_1Window.html#a22944f0f0143a67877a87aee9020456d">More...</a><br /></td></tr>
+<tr class="memdesc:a22944f0f0143a67877a87aee9020456d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-left corner coords, relative to the terminal.  <a href="classeltau_1_1Window.html#a22944f0f0143a67877a87aee9020456d">More...</a><br /></td></tr>
 <tr class="separator:a22944f0f0143a67877a87aee9020456d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10e56237f6272f4ef88c398327ccdf53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a10e56237f6272f4ef88c398327ccdf53">end</a> () const noexcept</td></tr>
-<tr class="memdesc:a10e56237f6272f4ef88c398327ccdf53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom-right corner coords.  <a href="classeltau_1_1Window.html#a10e56237f6272f4ef88c398327ccdf53">More...</a><br /></td></tr>
+<tr class="memdesc:a10e56237f6272f4ef88c398327ccdf53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom-right corner coords, relative to the terminal.  <a href="classeltau_1_1Window.html#a10e56237f6272f4ef88c398327ccdf53">More...</a><br /></td></tr>
 <tr class="separator:a10e56237f6272f4ef88c398327ccdf53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9054e9d48b2bef96ed1b8f38f8e5a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#adf9054e9d48b2bef96ed1b8f38f8e5a3">cursor</a> () const noexcept</td></tr>
+<tr class="memdesc:adf9054e9d48b2bef96ed1b8f38f8e5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of cursor, relative to this window.  <a href="classeltau_1_1Window.html#adf9054e9d48b2bef96ed1b8f38f8e5a3">More...</a><br /></td></tr>
+<tr class="separator:adf9054e9d48b2bef96ed1b8f38f8e5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74ce0e51ac1429a1bdacad5b863922a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a74ce0e51ac1429a1bdacad5b863922a0">is_inside</a> (<a class="el" href="structeltau_1_1Vec2.html">Vec2</a> pos) const noexcept</td></tr>
 <tr class="memdesc:a74ce0e51ac1429a1bdacad5b863922a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether <code>pos</code> is inside the window or not.  <a href="classeltau_1_1Window.html#a74ce0e51ac1429a1bdacad5b863922a0">More...</a><br /></td></tr>
 <tr class="separator:a74ce0e51ac1429a1bdacad5b863922a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9088cddbde8b07f47bd6a1979b8bf0c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeltau_1_1Window.html">Window</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a9088cddbde8b07f47bd6a1979b8bf0c7">sub_win</a> (<a class="el" href="structeltau_1_1Vec2.html">Vec2</a> offset, <a class="el" href="structeltau_1_1Vec2.html">Vec2</a> <a class="el" href="classeltau_1_1Window.html#af69d1e01095657b9f9e4a94a9d597d00">size</a>)</td></tr>
-<tr class="memdesc:a9088cddbde8b07f47bd6a1979b8bf0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a sub-window.  <a href="classeltau_1_1Window.html#a9088cddbde8b07f47bd6a1979b8bf0c7">More...</a><br /></td></tr>
-<tr class="separator:a9088cddbde8b07f47bd6a1979b8bf0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad2963e4d7bc3c0278e4c717b33869e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeltau_1_1Window.html">Window</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#aad2963e4d7bc3c0278e4c717b33869e0">sub_win</a> (<a class="el" href="structeltau_1_1Vec2.html">Vec2</a> offset, <a class="el" href="structeltau_1_1Vec2.html">Vec2</a> <a class="el" href="classeltau_1_1Window.html#af69d1e01095657b9f9e4a94a9d597d00">size</a>) const</td></tr>
+<tr class="memdesc:aad2963e4d7bc3c0278e4c717b33869e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a sub-window.  <a href="classeltau_1_1Window.html#aad2963e4d7bc3c0278e4c717b33869e0">More...</a><br /></td></tr>
+<tr class="separator:aad2963e4d7bc3c0278e4c717b33869e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c282cfb02741d63553f18b5ff0f1894"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a2c282cfb02741d63553f18b5ff0f1894">operator==</a> (const <a class="el" href="classeltau_1_1Window.html">Window</a> &amp;other) const noexcept=default</td></tr>
+<tr class="memdesc:a2c282cfb02741d63553f18b5ff0f1894"><td class="mdescLeft">&#160;</td><td class="mdescRight">If two windows handle the same screen area.  <a href="classeltau_1_1Window.html#a2c282cfb02741d63553f18b5ff0f1894">More...</a><br /></td></tr>
 <tr class="separator:a2c282cfb02741d63553f18b5ff0f1894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892f628c24dd9686bca56ac577cb2627"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a892f628c24dd9686bca56ac577cb2627">write</a> (const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;cell, <a class="el" href="structeltau_1_1Vec2.html">Vec2</a> advance=<a class="el" href="structeltau_1_1Vec2.html">Vec2</a>{.m_row=0,.m_col=+1})</td></tr>
+<tr class="memdesc:a892f628c24dd9686bca56ac577cb2627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the screen at the current cursor position.  <a href="classeltau_1_1Window.html#a892f628c24dd9686bca56ac577cb2627">More...</a><br /></td></tr>
+<tr class="separator:a892f628c24dd9686bca56ac577cb2627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ccb4b74bc2653da27a9ffa8cba9a6f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a3ccb4b74bc2653da27a9ffa8cba9a6f2">move_nextline</a> () noexcept</td></tr>
+<tr class="memdesc:a3ccb4b74bc2653da27a9ffa8cba9a6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor to the beginning of the next line in this window.  <a href="classeltau_1_1Window.html#a3ccb4b74bc2653da27a9ffa8cba9a6f2">More...</a><br /></td></tr>
+<tr class="separator:a3ccb4b74bc2653da27a9ffa8cba9a6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:afd553a1fce0589dbe5ab559ac718f2d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#afd553a1fce0589dbe5ab559ac718f2d1">m_origin</a></td></tr>
+<tr class="memitem:afd553a1fce0589dbe5ab559ac718f2d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#afd553a1fce0589dbe5ab559ac718f2d1">m_origin</a> {0, 0}</td></tr>
 <tr class="separator:afd553a1fce0589dbe5ab559ac718f2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a345bcaed5de7ed877a66f2f21d3ec43e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a345bcaed5de7ed877a66f2f21d3ec43e">m_size</a></td></tr>
+<tr class="memitem:a345bcaed5de7ed877a66f2f21d3ec43e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a345bcaed5de7ed877a66f2f21d3ec43e">m_size</a> {0, 0}</td></tr>
 <tr class="separator:a345bcaed5de7ed877a66f2f21d3ec43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68eec93f0071a536a7e1c87c481da7b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeltau_1_1Screen.html">Screen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a68eec93f0071a536a7e1c87c481da7b3">m_screen</a> = nullptr</td></tr>
+<tr class="separator:a68eec93f0071a536a7e1c87c481da7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Rectangular area on the screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00113">113</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00119">119</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aed370c0b0c88482a71dfc32e6235951b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed370c0b0c88482a71dfc32e6235951b">&#9670;&nbsp;</a></span>Window() <span class="overload">[1/3]</span></h2>
+<a id="a3426bd3275c1a28372865b9f88fa94eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3426bd3275c1a28372865b9f88fa94eb">&#9670;&nbsp;</a></span>Window() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,7 +191,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeltau_1_1Screen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>screen</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,8 +213,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>New window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>Top-left corner of this window in terminal coordinates. </td></tr>
+    <tr><td class="paramname">size</td><td>Size for the window. </td></tr>
+    <tr><td class="paramname">screen</td><td><a class="el" href="classeltau_1_1Screen.html">Screen</a> to associate with this window, reference captured and must outlive this object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00078">78</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00059">59</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -290,6 +310,35 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adf9054e9d48b2bef96ed1b8f38f8e5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9054e9d48b2bef96ed1b8f38f8e5a3">&#9670;&nbsp;</a></span>cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a> eltau::Window::cursor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Position of cursor, relative to this window. </p>
+
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00077">77</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a10e56237f6272f4ef88c398327ccdf53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10e56237f6272f4ef88c398327ccdf53">&#9670;&nbsp;</a></span>end()</h2>
 
@@ -313,9 +362,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Bottom-right corner coords. </p>
+<p>Bottom-right corner coords, relative to the terminal. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00097">97</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00072">72</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +394,36 @@ Private Attributes</h2></td></tr>
 
 <p>Test whether <code>pos</code> is inside the window or not. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00081">81</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00082">82</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3ccb4b74bc2653da27a9ffa8cba9a6f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccb4b74bc2653da27a9ffa8cba9a6f2">&#9670;&nbsp;</a></span>move_nextline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eltau::Window::move_nextline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move cursor to the beginning of the next line in this window. </p>
+
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00101">101</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -429,6 +507,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>If two windows handle the same screen area. </p>
+
 </div>
 </div>
 <a id="a22944f0f0143a67877a87aee9020456d"></a>
@@ -454,9 +534,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Top-left corner coords. </p>
+<p>Top-left corner coords, relative to the terminal. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00092">92</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00067">67</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -485,12 +565,12 @@ Private Attributes</h2></td></tr>
 
 <p>Dimensions of the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00087">87</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00062">62</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9088cddbde8b07f47bd6a1979b8bf0c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9088cddbde8b07f47bd6a1979b8bf0c7">&#9670;&nbsp;</a></span>sub_win()</h2>
+<a id="aad2963e4d7bc3c0278e4c717b33869e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad2963e4d7bc3c0278e4c717b33869e0">&#9670;&nbsp;</a></span>sub_win()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -510,7 +590,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -518,14 +598,53 @@ Private Attributes</h2></td></tr>
 <p>Return a sub-window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">offset</td><td>Top-left corner of the new window, relative to begin(). </td></tr>
+    <tr><td class="paramname">offset</td><td>Top-left corner of the new window, relative to this window. </td></tr>
     <tr><td class="paramname">size</td><td>Size of the new window, clamped appropriately if it is too large. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>New sub-window. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New sub-window using the same terminal. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00102">102</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00088">88</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a892f628c24dd9686bca56ac577cb2627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892f628c24dd9686bca56ac577cb2627">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eltau::Window::write </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>cell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>&#160;</td>
+          <td class="paramname"><em>advance</em> = <code><a class="el" href="structeltau_1_1Vec2.html">Vec2</a>{.m_row&#160;=&#160;0,&#160;.m_col&#160;=&#160;+1}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write to the screen at the current cursor position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>to write. </td></tr>
+    <tr><td class="paramname">advance</td><td>How to advance the screen cursor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00095">95</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -540,7 +659,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a> eltau::Window::m_origin</td>
+          <td class="memname"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a> eltau::Window::m_origin {0, 0}</td>
         </tr>
       </table>
   </td>
@@ -551,7 +670,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Top-left corner. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00186">186</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00220">220</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a68eec93f0071a536a7e1c87c481da7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68eec93f0071a536a7e1c87c481da7b3">&#9670;&nbsp;</a></span>m_screen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classeltau_1_1Screen.html">Screen</a>* eltau::Window::m_screen = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="classeltau_1_1Screen.html">Screen</a> attached to this window. Held as ptr to keep moveability. </p>
+
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00224">224</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -565,7 +709,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a> eltau::Window::m_size</td>
+          <td class="memname"><a class="el" href="structeltau_1_1Vec2.html">Vec2</a> eltau::Window::m_size {0, 0}</td>
         </tr>
       </table>
   </td>
@@ -576,7 +720,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Size of the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00188">188</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00222">222</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -590,7 +734,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceeltau.html">eltau</a></li><li class="navelem"><a class="el" href="classeltau_1_1Window.html">Window</a></li>
-    <li class="footer">Generated on Mon Nov 7 2022 19:29:02 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Nov 11 2022 20:29:36 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

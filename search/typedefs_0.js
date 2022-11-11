@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cline_188',['cLine',['../classeltau_1_1Screen.html#a2a9dbd88226146e5341a65b45fa37d29',1,'eltau::Screen']]],
-  ['cpoint_189',['cpoint',['../namespaceeltau.html#a75e9c69caf764699868253384842609f',1,'eltau']]]
+  ['sharedstate_181',['SharedState',['../namespaceeltau.html#a12423a4c3d0e55b5d07a5edd961c00c1',1,'eltau']]]
 ];

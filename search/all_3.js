@@ -1,16 +1,7 @@
 var searchData=
 [
-  ['anonymous_5fnamespace_7bterminal_2ecpp_7d_19',['anonymous_namespace{terminal.cpp}',['../namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03.html',1,'eltau']]],
-  ['anonymous_5fnamespace_7btext_2ecpp_7d_20',['anonymous_namespace{text.cpp}',['../namespaceeltau_1_1ascii_1_1anonymous__namespace_02text_8cpp_03.html',1,'eltau::ascii']]],
-  ['ascii_21',['ascii',['../namespaceeltau_1_1ascii.html',1,'eltau']]],
-  ['eagerterminal_22',['EagerTerminal',['../classeltau_1_1EagerTerminal.html#a132305a05a3de491c43aca0c479aca8b',1,'eltau::EagerTerminal::EagerTerminal()'],['../classeltau_1_1EagerTerminal.html',1,'eltau::EagerTerminal']]],
-  ['element_23',['Element',['../classeltau_1_1Element.html#a64510d46d1e3dff9801fb7f3bf021749',1,'eltau::Element::Element(Element &amp;&amp;other) noexcept=default'],['../classeltau_1_1Element.html#ac6f82dfde90461821f83fd3787f76811',1,'eltau::Element::Element(const Element &amp;other)=default'],['../classeltau_1_1Element.html#a6590f1a310d6c29313629e19a3260743',1,'eltau::Element::Element()=default'],['../classeltau_1_1Element.html',1,'eltau::Element']]],
-  ['element_2ecpp_24',['element.cpp',['../element_8cpp.html',1,'']]],
-  ['element_2ehpp_25',['element.hpp',['../element_8hpp.html',1,'']]],
-  ['eltau_26',['eltau',['../namespaceeltau.html',1,'']]],
-  ['eltauexception_27',['EltauException',['../classeltau_1_1EltauException.html',1,'eltau::EltauException'],['../classeltau_1_1EltauException.html#a8f7e329e770562837cc0cef1aa2ffc98',1,'eltau::EltauException::EltauException(const EltauException &amp;other)=default'],['../classeltau_1_1EltauException.html#a3895f98115f8728b622b009abffc5ece',1,'eltau::EltauException::EltauException(EltauException &amp;&amp;other) noexcept=default']]],
-  ['end_28',['end',['../classeltau_1_1Window.html#a10e56237f6272f4ef88c398327ccdf53',1,'eltau::Window']]],
-  ['escape_5fascii_29',['escape_ascii',['../namespaceeltau_1_1ascii_1_1anonymous__namespace_02text_8cpp_03.html#a50817f3744e9c36e30e64ba216fbc818',1,'eltau::ascii::anonymous_namespace{text.cpp}']]],
-  ['exception_2ecpp_30',['exception.cpp',['../exception_8cpp.html',1,'']]],
-  ['exception_2ehpp_31',['exception.hpp',['../exception_8hpp.html',1,'']]]
+  ['dim_12',['Dim',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a752fb7baeee7e1a6a4e8110233fb3d57',1,'eltau']]],
+  ['do_5fcalc_5fpref_5fsize_13',['do_calc_pref_size',['../classeltau_1_1Element.html#aa5182ab8523fd561e34ed1ed5da09656',1,'eltau::Element::do_calc_pref_size()'],['../classeltau_1_1HContainer.html#a20e70c272c8fdece99b23bc40093e71f',1,'eltau::HContainer::do_calc_pref_size()'],['../classeltau_1_1ascii_1_1Text.html#a696547ace15a28ef59a046a3f5d8ac00',1,'eltau::ascii::Text::do_calc_pref_size()']]],
+  ['do_5fdraw_14',['do_draw',['../classeltau_1_1Element.html#a8553a96098f8ecb7d147acb4794aa212',1,'eltau::Element::do_draw()'],['../classeltau_1_1HContainer.html#a46d82dde1c4e766893d37ab2c92a8a98',1,'eltau::HContainer::do_draw()'],['../classeltau_1_1ascii_1_1Text.html#a114c84951e1db92e4de5c0cbe470cf85',1,'eltau::ascii::Text::do_draw()']]],
+  ['draw_15',['draw',['../classeltau_1_1Element.html#a379bfec23ecbba1a22e38a342958d1bb',1,'eltau::Element::draw()'],['../classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079',1,'eltau::EagerTerminal::draw()']]]
 ];

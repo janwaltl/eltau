@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['line_40',['line',['../classeltau_1_1Screen.html#a3f1ffd11847fcae5158d348dc45d8e83',1,'eltau::Screen::line(std::size_t idx) noexcept'],['../classeltau_1_1Screen.html#aa834214581a58eb4ef245eaece174000',1,'eltau::Screen::line(std::size_t idx) const noexcept']]],
-  ['line_41',['Line',['../classeltau_1_1Screen.html#a121e03f0a66d728ff24e7b62aeff8e2a',1,'eltau::Screen']]]
+  ['inverse_34',['Inverse',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a84eb3dfbcca4b528a999740da778b26d',1,'eltau']]],
+  ['is_5finside_35',['is_inside',['../classeltau_1_1Window.html#a74ce0e51ac1429a1bdacad5b863922a0',1,'eltau::Window']]],
+  ['italic_36',['Italic',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a89caf7ea375a0b4e80487590a8007d40',1,'eltau']]]
 ];

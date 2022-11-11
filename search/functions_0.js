@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['borrow_125',['borrow',['../structeltau_1_1SharedStateImpl.html#a6a6e226394f885c96abe0d7d9bb122e4',1,'eltau::SharedStateImpl']]]
+  ['advance_5fcursor_119',['advance_cursor',['../classeltau_1_1Screen.html#a22d81861812547de474e55a46fd67d0b',1,'eltau::Screen']]]
 ];

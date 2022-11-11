@@ -11,11 +11,9 @@ var annotated_dup =
       [ "HContainer", "classeltau_1_1HContainer.html", "classeltau_1_1HContainer" ],
       [ "EltauException", "classeltau_1_1EltauException.html", "classeltau_1_1EltauException" ],
       [ "Color256", "structeltau_1_1Color256.html", "structeltau_1_1Color256" ],
-      [ "Cell", "structeltau_1_1Cell.html", "structeltau_1_1Cell" ],
       [ "Vec2", "structeltau_1_1Vec2.html", "structeltau_1_1Vec2" ],
       [ "Window", "classeltau_1_1Window.html", "classeltau_1_1Window" ],
       [ "Screen", "classeltau_1_1Screen.html", "classeltau_1_1Screen" ],
-      [ "DrawingWindow", "classeltau_1_1DrawingWindow.html", "classeltau_1_1DrawingWindow" ],
       [ "SharedStateBaseImpl", "structeltau_1_1SharedStateBaseImpl.html", "structeltau_1_1SharedStateBaseImpl" ],
       [ "SharedStateImpl", "structeltau_1_1SharedStateImpl.html", "structeltau_1_1SharedStateImpl" ],
       [ "EagerTerminal", "classeltau_1_1EagerTerminal.html", "classeltau_1_1EagerTerminal" ]
