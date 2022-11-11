@@ -54,7 +54,7 @@ private:
      * not enough lines.
      ******************************************************************************/
     void
-    do_draw(DrawingWindow& window) override;
+    do_draw(Window& window) override;
 
     /*! Text to render. */
     std::string m_text;

@@ -18,7 +18,7 @@ Element::calc_pref_size(Vec2 max_size) {
 }
 
 void
-Element::draw(DrawingWindow& window) {
+Element::draw(Window& window) {
 
     return this->do_draw(window);
 }

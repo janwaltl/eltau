@@ -22,7 +22,7 @@ TEST_CASE("Element preferred size") {
             return exp_size;
         }
         void
-        do_draw(et::DrawingWindow& window) override {
+        do_draw(et::Window& window) override {
             (void)window;
             FAIL_CHECK("do_draw must not be called");
         }
@@ -49,7 +49,7 @@ TEST_CASE("Preferred size is not calculated for degenerate cases ") {
             return max_size;
         }
         void
-        do_draw(et::DrawingWindow& window) override {
+        do_draw(et::Window& window) override {
             (void)window;
             FAIL_CHECK("do_draw must not be called");
         }
@@ -63,8 +63,8 @@ TEST_CASE("Preferred size is not calculated for degenerate cases ") {
 }
 
 TEST_CASE("Element draw is called correctly") {
-    static et::Screen screen{{10, 11}};
-    static et::DrawingWindow exp_window{et::Window{{0, 0}, {10, 11}}, screen};
+    static et::Screen screen{{100, 100}};
+    static et::Window exp_window{{0, 0}, {10, 11}, screen};
 
     class DummyElement : public et::Element {
     private:
@@ -74,7 +74,7 @@ TEST_CASE("Element draw is called correctly") {
             return max_size;
         }
         void
-        do_draw(et::DrawingWindow& window) override {
+        do_draw(et::Window& window) override {
             REQUIRE(&window == &exp_window);
         }
     };

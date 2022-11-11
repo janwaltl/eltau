@@ -5,14 +5,13 @@
  ******************************************************************************/
 
 #include <fmt/core.h>
+#include <fmt/format.h>
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
 
+#include <eltau/exception.hpp>
 #include <eltau/terminal.hpp>
-
-#include "eltau/exception.hpp"
-#include "fmt/format.h"
 
 namespace eltau {
 namespace {
@@ -64,32 +63,6 @@ EagerTerminal::EagerTerminal(std::unique_ptr<Element> root) : m_root{std::move(r
 }
 void
 
-EagerTerminal::draw() {
-    if (!m_root)
-        return;
-
-    const auto dims = m_screen.size();
-    // Process elements
-
-    // Draw to the screen buffer
-    // m_root->calc_pref_size(dims);
-    // m_root->draw(DrawingWindow{{{0, 0}, dims}, m_screen});
-
-    // Draw the screen buffer to the screen.
-    fmt::print("\033[H");
-    for (std::size_t i = 0; i < dims.m_row; ++i) {
-        auto line = m_screen.line(i);
-        if (i > 0)
-            fmt::print("\r\n");
-
-        std::string x(line.size(), 'x');
-        fmt::print("{}\r", x);
-        for (const auto& cell : line) {
-            break;
-            if (cell.m_char[0] != 0)
-                fmt::print("{}", cell.m_char.data());
-        }
-    }
-}
+EagerTerminal::draw() {}
 
 } // namespace eltau

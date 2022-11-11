@@ -65,7 +65,7 @@ public:
      * @param window Window assigned to this element.
      ******************************************************************************/
     void
-    draw(DrawingWindow& window);
+    draw(Window& window);
 
     /*******************************************************************************
      * @brief Last recaulculated preferred size.
@@ -90,7 +90,7 @@ private:
      * Derived class must implement for its element.
      ******************************************************************************/
     virtual void
-    do_draw(DrawingWindow& window) = 0;
+    do_draw(Window& window) = 0;
 
     /*! Cached preferred size. */
     Vec2 m_last_pref_size{};
@@ -118,7 +118,7 @@ private:
     do_calc_pref_size(Vec2 max_size) override;
 
     void
-    do_draw(DrawingWindow& window) override;
+    do_draw(Window& window) override;
 
     std::tuple<Elems...> m_elems;
 };
@@ -147,7 +147,7 @@ HContainer<Elems...>::do_calc_pref_size(Vec2 max_size) {
 
 template <typename... Elems>
 void
-HContainer<Elems...>::do_draw(DrawingWindow& window) {
+HContainer<Elems...>::do_draw(Window& window) {
 
     // Sane iteration
     auto elems = std::apply([](auto&... v) { return std::array{static_cast<Element&>(v)...}; });

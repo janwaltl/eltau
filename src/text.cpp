@@ -64,14 +64,24 @@ Vec2
 Text::do_calc_pref_size(Vec2 max_size) {
     assert(max_size.m_row > 0 && max_size.m_col > 0);
 
-    auto limit{std::min(max_size.m_col, m_wrap_limit)};
+    auto col_limit{std::min(max_size.m_col, m_wrap_limit)};
 
-    return min(calc_rows_cols(m_text, limit), max_size);
+    return min(calc_rows_cols(m_text, col_limit), max_size);
 }
 
 void
-Text::do_draw(DrawingWindow& window) {
-    (void)window;
+Text::do_draw(Window& window) {
     // TODO (jw) Implement me after terminal rework.
+
+    auto col_limit{std::min(window.size().m_col, m_wrap_limit)};
+
+    // Window Cursor starts at 0,0.
+    for (auto c : m_text)
+        if (c == '\n' || window.cursor().m_col >= col_limit)
+            // \r\n
+            window.move_nextline();
+        else
+            // Advances cursor
+            window.write(c);
 }
 } // namespace eltau::ascii

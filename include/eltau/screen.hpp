@@ -13,12 +13,6 @@
 
 namespace eltau {
 
-/*! UTF-8 code point. */
-using cpoint = char;
-
-/*! UTF-8 uses maximum 4 code points per code unit. */
-constexpr std::size_t c_utf8_cpoints = 4;
-
 /*******************************************************************************
  * @brief Style of one Cell
  ******************************************************************************/
@@ -40,27 +34,9 @@ struct Color256 {
 };
 
 /*******************************************************************************
- * @brief Terminal cell
- *
- * Basic unit of terminal output - has unique row, column.
+ * @brief Support ASCII-only right now.
  ******************************************************************************/
-struct Cell {
-    /*! We support up to 6 code units per grapheme/terminal cell/glyph
-     *  Enough for normal languages in NFC format, no weird emojis though. */
-    constexpr static std::size_t c_max_cunits = 3;
-
-    Style m_style;
-    /*! Foreground color. */
-    Color256 m_fg;
-    /*! Background color. */
-    Color256 m_bg;
-
-    /*! One printable UTF-8 character, null-terminated(hence +1). */
-    std::array<cpoint, c_utf8_cpoints * c_max_cunits + 1> m_char;
-};
-
-// Expected sizes I am aiming for, change with caution.
-static_assert(sizeof(Cell) == 16, "Keep nice - 8, 16, or 32 in the future.");
+using TerminalCell = unsigned char;
 
 /*******************************************************************************
  * @brief Coordinates in the screen.
@@ -71,8 +47,23 @@ struct Vec2 {
     std::size_t m_row = 0;
     std::size_t m_col = 0;
 
+    /*******************************************************************************
+     * @brief Element-wise comparison.
+     ******************************************************************************/
     bool
     operator==(const Vec2&) const noexcept = default;
+
+    /*******************************************************************************
+     * @brief Element-wise addition.
+     ******************************************************************************/
+    Vec2&
+    operator+=(const Vec2& other) noexcept;
+
+    /*******************************************************************************
+     * @brief Element-wise saturating subtraction.
+     ******************************************************************************/
+    Vec2&
+    operator-=(const Vec2& other) noexcept;
 };
 
 /*******************************************************************************
@@ -88,16 +79,28 @@ Vec2
 max(const Vec2& l, const Vec2& r) noexcept;
 
 /*******************************************************************************
- * @brief Element-wise sum.
+ * @brief Element-wise addition.
  ******************************************************************************/
 Vec2
-operator+(const Vec2& l, const Vec2& r);
+operator+(const Vec2& l, const Vec2& r) noexcept;
 
 /*******************************************************************************
  * @brief Saturating element-wise subtraction.
  ******************************************************************************/
 Vec2
-operator-(const Vec2& l, const Vec2& r);
+operator-(const Vec2& l, const Vec2& r) noexcept;
+
+/*******************************************************************************
+ * @brief Element-wise clamp.
+ *
+ * Assumes low<=high.
+ *
+ * @param vec Vector to clamp into [low,high].
+ * @param low Low point.
+ * @param high High point.
+ ******************************************************************************/
+Vec2
+clamp(const Vec2& vec, const Vec2& low, const Vec2& high) noexcept;
 
 /*******************************************************************************
  * @brief Pretty-print Vec2.
@@ -107,6 +110,9 @@ operator-(const Vec2& l, const Vec2& r);
 std::ostream&
 operator<<(std::ostream& os, const Vec2& value);
 
+
+class Screen;
+
 /*******************************************************************************
  * @brief Rectangular area on the screen.
  ******************************************************************************/
@@ -114,8 +120,12 @@ class Window {
 public:
     /*******************************************************************************
      * @brief New window.
+     * @param begin Top-left corner of this window in terminal coordinates.
+     * @param size Size for the window.
+     * @param screen Screen to associate with this window, reference captured
+     * and must outlive this object.
      ******************************************************************************/
-    Window(Vec2 begin, Vec2 size) noexcept;
+    Window(Vec2 begin, Vec2 size, Screen& screen) noexcept;
 
     /*******************************************************************************
      * @brief Default copy ctor.
@@ -151,16 +161,22 @@ public:
     size() const noexcept;
 
     /*******************************************************************************
-     * @brief Top-left corner coords.
+     * @brief Top-left corner coords, relative to the terminal.
      ******************************************************************************/
     Vec2
     origin() const noexcept;
 
     /*******************************************************************************
-     * @brief Bottom-right corner coords.
+     * @brief Bottom-right corner coords, relative to the terminal.
      ******************************************************************************/
     Vec2
     end() const noexcept;
+
+    /*******************************************************************************
+     * @brief Position of cursor, relative to this window.
+     ******************************************************************************/
+    Vec2
+    cursor() const noexcept;
 
     /*******************************************************************************
      * @brief Test whether @p pos is inside the window or not.
@@ -171,120 +187,88 @@ public:
     /*******************************************************************************
      * @brief Return a sub-window.
      *
-     * @param offset Top-left corner of the new window, relative to begin().
+     * @param offset Top-left corner of the new window, relative to this window.
      * @param size Size of the new window, clamped appropriately if it is too large.
-     * @return New sub-window.
+     * @return New sub-window using the same terminal.
      ******************************************************************************/
     Window
-    sub_win(Vec2 offset, Vec2 size);
+    sub_win(Vec2 offset, Vec2 size) const;
 
+    /*******************************************************************************
+     * @brief If two windows handle the same screen area.
+     ******************************************************************************/
     bool
     operator==(const Window& other) const noexcept = default;
 
+    /*******************************************************************************
+     * @brief Write to the screen at the current cursor position.
+     *
+     * @param cell to write.
+     * @param advance How to advance the screen cursor.
+     ******************************************************************************/
+    void
+    write(const TerminalCell& cell, Vec2 advance = Vec2{.m_row = 0, .m_col = +1});
+
+    /*******************************************************************************
+     * @brief Move cursor to the beginning of the next line in this window.
+     ******************************************************************************/
+    void
+    move_nextline() noexcept;
+
 private:
     /*! Top-left corner. */
-    Vec2 m_origin;
+    Vec2 m_origin{0, 0};
     /*! Size of the window. */
-    Vec2 m_size;
+    Vec2 m_size{0, 0};
+    /*! Screen attached to this window. Held as ptr to keep moveability. */
+    Screen* m_screen = nullptr;
 };
 
-/*******************************************************************************
- * @brief Abstract terminal screen
- ******************************************************************************/
+
 class Screen {
 public:
-    /*! Non-owning view of a line of cells. */
-    using Line = std::span<Cell>;
-    /*! Non-owning read-only view of a line of cells. */
-    using cLine = std::span<const Cell>;
+    explicit Screen(Vec2 size) noexcept;
 
     /*******************************************************************************
-     * @brief Construct a new screen with the given dimensions.
-     *
-     * @param size Size of the screen.
+     * @brief Position of the cursor.
      ******************************************************************************/
-    explicit Screen(Vec2 size);
+    Vec2
+    cursor() const noexcept;
 
     /*******************************************************************************
-     * @brief Return screen dimensions passed in the ctor.
+     * @brief Dimensions of the screen.
      ******************************************************************************/
     Vec2
     size() const noexcept;
 
     /*******************************************************************************
-     * @brief Line-based access to the screen.
+     * @brief Write to the screen at the current cursor position.
      *
-     * @param idx Line index, valid range given by dims().
-     * @return Empty line if @p idx is out of range.
+     * @param cell to write.
+     * @param advance How to advance the screen cursor.
      ******************************************************************************/
-    Line
-    line(std::size_t idx) noexcept;
+    void
+    write(const TerminalCell& cell, Vec2 advance = Vec2{.m_row = 0, .m_col = +1});
 
     /*******************************************************************************
-     * @brief See non-const version.
-     ******************************************************************************/
-    cLine
-    line(std::size_t idx) const noexcept;
-
-    /*******************************************************************************
-     * @brief Cell-based access to the screen.
+     * @brief Move cursor to @p dest position.
      *
-     * @param coords Cell to return
-     * @retval nullptr If the @p coords are not within the screen.
+     * @param dest Absolute coordinates to move the cursor to.
      ******************************************************************************/
-    Cell*
-    operator[](Vec2 coords) noexcept;
+    void
+    move_cursor(const Vec2& dest) noexcept;
 
     /*******************************************************************************
-     * @brief See non-const version.
+     * @brief Move cursor by the given @p offset .
+     *
+     * @param offset Amount to advance the cursor by.
      ******************************************************************************/
-    const Cell*
-    operator[](Vec2 coords) const noexcept;
+    void
+    advance_cursor(const Vec2& offset) noexcept;
 
 private:
-    Vec2 m_size;
-    /*! Row-major storage. */
-    std::vector<Cell> m_buffer;
+    Vec2 m_cursor{0, 0};
+    Vec2 m_size{0, 0};
 };
-
-/*******************************************************************************
- * @brief Drawable area in a screen.
- ******************************************************************************/
-class DrawingWindow : public Window {
-public:
-    /*******************************************************************************
-     * @brief Create a new window.
-     *
-     * @param win Window to draw on, copied.
-     * @param screen Screen to use, reference is captured.
-     ******************************************************************************/
-    DrawingWindow(const Window& win, Screen& screen) noexcept;
-
-    /*******************************************************************************
-     * @brief Same as Window::sub_win .
-     ******************************************************************************/
-    DrawingWindow
-    sub_win(Vec2 offset, Vec2 size);
-
-    /*******************************************************************************
-     * @brief Cell-based access to the window.
-     *
-     * @param coords Cell to return, valid values in range [origin, origin+size).
-     * @retval nullptr If the @p coords are not within the window.
-     ******************************************************************************/
-    Cell*
-    operator[](Vec2 coords) noexcept;
-
-    /*******************************************************************************
-     * @brief See non-const version.
-     ******************************************************************************/
-    const Cell*
-    operator[](Vec2 coords) const noexcept;
-
-private:
-    /*! Used screen, valid unless moved-from. */
-    Screen* m_screen;
-};
-
 
 } // namespace eltau

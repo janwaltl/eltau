@@ -26,6 +26,12 @@ TEST_CASE("Vector max") {
     REQUIRE(max(et::Vec2{5, 7}, et::Vec2{3, 1}) == et::Vec2{5, 7});
 }
 
+TEST_CASE("Vector clamp") {
+    REQUIRE(clamp(et::Vec2{5, 4}, et::Vec2{0, 0}, et::Vec2{6, 6}) == et::Vec2{5, 4});
+    REQUIRE(clamp(et::Vec2{5, 4}, et::Vec2{6, 0}, et::Vec2{8, 3}) == et::Vec2{6, 3});
+    REQUIRE(clamp(et::Vec2{5, 4}, et::Vec2{0, 5}, et::Vec2{2, 8}) == et::Vec2{2, 5});
+}
+
 TEST_CASE("Vector subtraction") {
     constexpr auto m = std::numeric_limits<std::size_t>::max();
     REQUIRE(et::Vec2{0, 0} - et::Vec2{1, 2} == et::Vec2{0, 0});
@@ -48,7 +54,9 @@ TEST_CASE("Window getters") {
     constexpr et::Vec2 origin{10, 1};
     constexpr et::Vec2 size{3, 4};
 
-    et::Window win{origin, size};
+    et::Screen screen{size};
+
+    et::Window win{origin, size, screen};
     REQUIRE(win.size() == size);
     REQUIRE(win.origin() == origin);
     REQUIRE(win.end() == (origin + size));
@@ -57,16 +65,17 @@ TEST_CASE("Window getters") {
 TEST_CASE("Window inside test") {
 
     constexpr et::Vec2 origin{10, 16};
+    et::Screen screen{{100, 100}};
 
     SECTION("Empty window") {
         constexpr et::Vec2 size{0, 0};
-        et::Window win{origin, size};
+        et::Window win{origin, size, screen};
 
         REQUIRE(!win.is_inside(origin));
     }
     SECTION("Zero-extent row window") {
         constexpr et::Vec2 size{0, 13};
-        et::Window win{origin, size};
+        et::Window win{origin, size, screen};
 
         REQUIRE(!win.is_inside(origin));
         REQUIRE(!win.is_inside(origin + et::Vec2{0, 1}));
@@ -77,7 +86,7 @@ TEST_CASE("Window inside test") {
     }
     SECTION("Zero-extent col window") {
         constexpr et::Vec2 size{11, 0};
-        et::Window win{origin, size};
+        et::Window win{origin, size, screen};
 
         REQUIRE(!win.is_inside(origin));
         REQUIRE(!win.is_inside(origin + et::Vec2{1, 0}));
@@ -88,7 +97,7 @@ TEST_CASE("Window inside test") {
     }
     SECTION("Ordinary window") {
         constexpr et::Vec2 size{3, 5};
-        et::Window win{origin, size};
+        et::Window win{origin, size, screen};
 
         for (std::size_t r = 0; r < size.m_row; ++r)
             for (std::size_t c = 0; c < size.m_col; ++c) {
@@ -105,8 +114,9 @@ TEST_CASE("Window inside test") {
 TEST_CASE("Subwindow construction") {
     constexpr et::Vec2 origin{10, 16};
     constexpr et::Vec2 size{5, 3};
+    et::Screen screen{size};
 
-    et::Window win{origin, size};
+    et::Window win{origin, size, screen};
 
     SECTION("Full window") {
         auto sub = win.sub_win({0, 0}, size);
@@ -152,121 +162,5 @@ TEST_CASE("Screen size") {
         et::Screen s{size};
 
         REQUIRE(s.size() == size);
-    }
-}
-TEST_CASE("Window Line getters") {
-    const et::Vec2 size{5, 3};
-    const et::Screen s{size};
-    SECTION("Correct idx") {
-        for (std::size_t i = 0; i < size.m_row; ++i)
-            REQUIRE(s.line(i).size() == size.m_col);
-    }
-    SECTION("Out of range index -> empty line") {
-        REQUIRE(!s.line(size.m_row - 1).empty());
-        REQUIRE(s.line(size.m_row).empty());
-        REQUIRE(s.line(size.m_row + 1).empty());
-        REQUIRE(s.line(size.m_row + 12).empty());
-    }
-}
-
-TEST_CASE("Window Cell getters") {
-    const et::Vec2 size{5, 3};
-    const et::Screen s{size};
-    SECTION("Correct coords") {
-        for (std::size_t r = 0; r < size.m_row; ++r)
-            for (std::size_t c = 0; c < size.m_col; ++c)
-                REQUIRE(s[{.m_row = r, .m_col = c}] != nullptr);
-    }
-    SECTION("Out of range coords -> no Cell") {
-        REQUIRE(s[size] == nullptr);
-        REQUIRE(s[{.m_row = size.m_row, .m_col = size.m_col - 1}] == nullptr);
-        REQUIRE(s[{.m_row = size.m_row - 1, .m_col = size.m_col}] == nullptr);
-        REQUIRE(s[{.m_row = size.m_row - 1, .m_col = size.m_col - 1}] != nullptr);
-    }
-}
-
-TEST_CASE("Window cell and line equality") {
-    const et::Vec2 size{1, 4};
-    et::Screen s{size};
-    SECTION("Cells correspond to cells in lines") {
-        for (std::size_t r = 0; r < size.m_row; ++r)
-            for (std::size_t c = 0; c < size.m_col; ++c)
-                REQUIRE(s[{.m_row = r, .m_col = c}] == &s.line(r)[c]);
-    }
-    SECTION("Returned cells are unique") {
-        std::unordered_set<et::Cell*> cells;
-        for (std::size_t r = 0; r < size.m_row; ++r)
-            for (std::size_t c = 0; c < size.m_col; ++c)
-                cells.emplace(&s.line(r)[c]);
-
-        REQUIRE(cells.size() == size.m_col * size.m_row);
-    }
-}
-
-TEST_CASE("DrawingWindow captures correct window") {
-
-    constexpr et::Vec2 origin{10, 1};
-    constexpr et::Vec2 size{3, 4};
-
-    et::Screen s{size};
-    // Window can be out of screen.
-    et::Window win{origin, size};
-    et::DrawingWindow dwin{win, s};
-
-    REQUIRE(dwin.size() == win.size());
-    REQUIRE(dwin.origin() == win.origin());
-    REQUIRE(dwin.end() == win.end());
-}
-
-TEST_CASE("DrawingWindow captures correct subwindow") {
-
-    constexpr et::Vec2 origin{1, 1};
-    constexpr et::Vec2 size{14, 12};
-
-    et::Screen s{size};
-    // Window can be out of screen.
-    et::Window win{origin, size};
-    et::DrawingWindow dwin{win, s};
-
-    auto sdwin = dwin.sub_win({1, 0}, {2, 3});
-    auto swin = win.sub_win({1, 0}, {2, 3});
-
-    REQUIRE(sdwin.size() == swin.size());
-    REQUIRE(sdwin.origin() == swin.origin());
-    REQUIRE(sdwin.end() == swin.end());
-}
-
-TEST_CASE("DrawingWindow captures correct screen") {
-
-    SECTION("All window cells are correct") {
-
-        constexpr et::Vec2 origin{2, 7};
-        constexpr et::Vec2 size{12, 16};
-
-        et::Screen s{size};
-        // Fully inside the screen.
-        et::Window win{origin, {.m_row = 3, .m_col = 5}};
-        et::DrawingWindow dwin{win, s};
-        auto e = win.end();
-        for (std::size_t r = origin.m_row; r < e.m_row; ++r)
-            for (std::size_t c = origin.m_col; c < e.m_col; ++c) {
-                et::Vec2 coords{.m_row = r, .m_col = c};
-                REQUIRE(s[coords] == dwin[coords]);
-            }
-    }
-    SECTION("Cells are restricted exactly to the window") {
-        constexpr et::Vec2 origin{5, 0};
-        constexpr et::Vec2 size{12, 8};
-
-        et::Screen s{size};
-        // Fully inside the screen.
-        et::Window win{origin, {.m_row = 3, .m_col = 5}};
-        const et::DrawingWindow dwin{win, s};
-        for (std::size_t r = 0; r < size.m_row; ++r)
-            for (std::size_t c = 0; c < size.m_col; ++c) {
-                et::Vec2 coords{.m_row = r, .m_col = c};
-                auto inside = win.is_inside(coords);
-                REQUIRE((nullptr != dwin[coords]) == inside);
-            }
     }
 }
