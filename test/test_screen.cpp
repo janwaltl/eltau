@@ -5,6 +5,7 @@
  ******************************************************************************/
 
 #include <limits>
+#include <sstream>
 #include <unordered_set>
 
 #include <catch2/catch_test_macros.hpp>
@@ -64,6 +65,12 @@ TEST_CASE("Vector member addition") {
     REQUIRE((et::Vec2{10, 5} += et::Vec2{1, 7}) == et::Vec2{11, 12});
     REQUIRE((et::Vec2{12, 18} += et::Vec2{20, 18}) == et::Vec2{32, 36});
     REQUIRE((et::Vec2{2, 13} += et::Vec2{3, 11}) == et::Vec2{5, 24});
+}
+
+TEST_CASE("Vector pretty-print") {
+    std::stringstream s;
+    s << et::Vec2{15, 9};
+    REQUIRE(s.str() == "{r=15, c=9}");
 }
 
 
