@@ -37,11 +37,11 @@ escape_ascii(std::string str) noexcept {
  * @param wrap_limit Limit line length.
  * @return Escaped copy of a string.
  ******************************************************************************/
-Vec2
+Size2
 calc_rows_cols(std::string_view str, std::size_t wrap_limit) {
-    std::size_t max_cols = 0;
-    std::size_t cur_cols = 0;
-    std::size_t rows = str.empty() ? 0 : 1;
+    Size2::size_type max_cols = 0;
+    Size2::size_type cur_cols = 0;
+    Size2::size_type rows = str.empty() ? 0 : 1;
     for (auto c : str) {
         // Also "consumes" newline as wrap_limit if both conds are true.
         if (c == '\n' || cur_cols >= wrap_limit) {
@@ -52,7 +52,7 @@ calc_rows_cols(std::string_view str, std::size_t wrap_limit) {
             ++cur_cols;
     }
     max_cols = std::max(cur_cols, max_cols);
-    return Vec2{.m_row = rows, .m_col = max_cols};
+    return Size2{.m_row = rows, .m_col = max_cols};
 }
 
 } // namespace
@@ -60,28 +60,37 @@ calc_rows_cols(std::string_view str, std::size_t wrap_limit) {
 Text::Text(std::string_view text, std::size_t wrap_limit) :
     m_text(escape_ascii(std::string(text))), m_wrap_limit(wrap_limit) {}
 
-Vec2
-Text::do_calc_pref_size(Vec2 max_size) {
+Size2
+Text::do_calc_pref_size(Size2 max_size) {
     assert(max_size.m_row > 0 && max_size.m_col > 0);
 
-    auto col_limit{std::min(max_size.m_col, m_wrap_limit)};
+    auto col_limit{std::min(static_cast<std::size_t>(max_size.m_col), m_wrap_limit)};
 
     return min(calc_rows_cols(m_text, col_limit), max_size);
 }
 
 void
 Text::do_draw(Window& window) {
-    // TODO (jw) Implement me after terminal rework.
+    // Precondition of do_draw.
+    assert(window.cursor() == window.origin());
 
     auto col_limit{std::min(window.size().m_col, m_wrap_limit)};
+    auto row_limit{window.size().m_row};
 
     // Window Cursor starts at 0,0.
-    for (auto c : m_text)
-        if (c == '\n' || window.cursor().m_col >= col_limit)
+    for (auto c : m_text) {
+        auto cursor = window.cursor_rel();
+        assert(cursor.m_row >= 0);
+        assert(cursor.m_col >= 0);
+        if (static_cast<Size2::size_type>(cursor.m_row) >= row_limit)
+            // Run out of drawing space
+            break;
+        if (c == '\n' || static_cast<Size2::size_type>(cursor.m_col) >= col_limit)
             // \r\n
             window.move_nextline();
-        else
+        else if (window.is_inside(window.cursor()))
             // Advances cursor
             window.write(c);
+    }
 }
 } // namespace eltau::ascii

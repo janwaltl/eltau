@@ -53,8 +53,8 @@ public:
      * @param max_size Maximum allowed size of the element.
      * @return Preferred size of the element, must not exceed @p max_size.
      ******************************************************************************/
-    Vec2
-    calc_pref_size(Vec2 max_size);
+    Size2
+    calc_pref_size(Size2 max_size);
 
     /*******************************************************************************
      * @brief Draw the element to the assigned window.
@@ -72,7 +72,7 @@ public:
      *
      * @return Empty if the size has not been calculated yet.
      ******************************************************************************/
-    Vec2
+    Size2
     get_last_pref_size() const noexcept;
 
 private:
@@ -81,8 +81,8 @@ private:
      *
      * Derived class must implement for its element.
      ******************************************************************************/
-    virtual Vec2
-    do_calc_pref_size(Vec2 max_size) = 0;
+    virtual Size2
+    do_calc_pref_size(Size2 max_size) = 0;
 
     /*******************************************************************************
      * @brief Virtual version of draw().
@@ -93,7 +93,7 @@ private:
     do_draw(Window& window) = 0;
 
     /*! Cached preferred size. */
-    Vec2 m_last_pref_size{};
+    Size2 m_last_pref_size{};
 };
 
 // Notes:
@@ -106,6 +106,7 @@ private:
 // VContainer{elems...,fmt_string=""}
 // VContainer{{weights,elems}...,fmt_string=" =-+"}
 
+/*
 template <typename... Elems>
 class HContainer : public Element {
 
@@ -114,8 +115,8 @@ public:
     explicit HContainer(Ts&&... elems);
 
 private:
-    Vec2
-    do_calc_pref_size(Vec2 max_size) override;
+    Coords2
+    do_calc_pref_size(Coords2 max_size) override;
 
     void
     do_draw(Window& window) override;
@@ -131,8 +132,8 @@ template <typename... Ts>
 HContainer<Elems...>::HContainer(Ts&&... elems) : m_elems{std::forward<Ts>(elems)...} {}
 
 template <typename... Elems>
-Vec2
-HContainer<Elems...>::do_calc_pref_size(Vec2 max_size) {
+Coords2
+HContainer<Elems...>::do_calc_pref_size(Coords2 max_size) {
     // Without alignment and flex.
     // 	If we are flex, claim maximum but still calc them.
 
@@ -160,4 +161,5 @@ HContainer<Elems...>::do_draw(Window& window) {
     };
 }
 
+*/
 } // namespace eltau

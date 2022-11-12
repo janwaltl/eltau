@@ -9,8 +9,8 @@
 
 namespace eltau {
 
-Vec2
-Element::calc_pref_size(Vec2 max_size) {
+Size2
+Element::calc_pref_size(Size2 max_size) {
     // Only calc size for feasible bounds.
     if (max_size.m_col == 0 || max_size.m_row == 0)
         return m_last_pref_size = {0, 0};
@@ -23,7 +23,7 @@ Element::draw(Window& window) {
     return this->do_draw(window);
 }
 
-Vec2
+Size2
 Element::get_last_pref_size() const noexcept {
     return m_last_pref_size;
 }

@@ -7,9 +7,8 @@
 
 #include <array>
 #include <cstdint>
-#include <ostream>
-#include <span>
-#include <vector>
+
+#include <eltau/coords.hpp>
 
 namespace eltau {
 
@@ -38,78 +37,6 @@ struct Color256 {
  ******************************************************************************/
 using TerminalCell = unsigned char;
 
-/*******************************************************************************
- * @brief Coordinates in the screen.
- *
- * 0,0 is top-left corner.
- ******************************************************************************/
-struct Vec2 {
-    std::size_t m_row = 0;
-    std::size_t m_col = 0;
-
-    /*******************************************************************************
-     * @brief Element-wise comparison.
-     ******************************************************************************/
-    bool
-    operator==(const Vec2&) const noexcept = default;
-
-    /*******************************************************************************
-     * @brief Element-wise addition.
-     ******************************************************************************/
-    Vec2&
-    operator+=(const Vec2& other) noexcept;
-
-    /*******************************************************************************
-     * @brief Element-wise saturating subtraction.
-     ******************************************************************************/
-    Vec2&
-    operator-=(const Vec2& other) noexcept;
-};
-
-/*******************************************************************************
- * @brief Element-wise minimum.
- ******************************************************************************/
-Vec2
-min(const Vec2& l, const Vec2& r) noexcept;
-
-/*******************************************************************************
- * @brief Element-wise maximum.
- ******************************************************************************/
-Vec2
-max(const Vec2& l, const Vec2& r) noexcept;
-
-/*******************************************************************************
- * @brief Element-wise addition.
- ******************************************************************************/
-Vec2
-operator+(const Vec2& l, const Vec2& r) noexcept;
-
-/*******************************************************************************
- * @brief Saturating element-wise subtraction.
- ******************************************************************************/
-Vec2
-operator-(const Vec2& l, const Vec2& r) noexcept;
-
-/*******************************************************************************
- * @brief Element-wise clamp.
- *
- * Assumes low<=high.
- *
- * @param vec Vector to clamp into [low,high].
- * @param low Low point.
- * @param high High point.
- ******************************************************************************/
-Vec2
-clamp(const Vec2& vec, const Vec2& low, const Vec2& high) noexcept;
-
-/*******************************************************************************
- * @brief Pretty-print Vec2.
- *
- * Mainly for testing.
- ******************************************************************************/
-std::ostream&
-operator<<(std::ostream& os, const Vec2& value);
-
 
 class Screen;
 
@@ -125,7 +52,7 @@ public:
      * @param screen Screen to associate with this window, reference captured
      * and must outlive this object.
      ******************************************************************************/
-    Window(Vec2 begin, Vec2 size, Screen& screen) noexcept;
+    Window(Coords2 begin, Size2 size, Screen& screen) noexcept;
 
     /*******************************************************************************
      * @brief Default copy ctor.
@@ -157,32 +84,37 @@ public:
     /*******************************************************************************
      * @brief Dimensions of the window.
      ******************************************************************************/
-    Vec2
+    Size2
     size() const noexcept;
 
     /*******************************************************************************
      * @brief Top-left corner coords, relative to the terminal.
      ******************************************************************************/
-    Vec2
+    Coords2
     origin() const noexcept;
 
     /*******************************************************************************
      * @brief Bottom-right corner coords, relative to the terminal.
      ******************************************************************************/
-    Vec2
+    Coords2
     end() const noexcept;
 
     /*******************************************************************************
-     * @brief Position of cursor, relative to this window.
+     * @brief Position of cursor, absolute screen coordinates.
      ******************************************************************************/
-    Vec2
+    Coords2
     cursor() const noexcept;
+    /*******************************************************************************
+     * @brief Position of the cursor, relative to this window.
+     ******************************************************************************/
+    Offset2
+    cursor_rel() const noexcept;
 
     /*******************************************************************************
      * @brief Test whether @p pos is inside the window or not.
      ******************************************************************************/
     bool
-    is_inside(Vec2 pos) const noexcept;
+    is_inside(Coords2 pos) const noexcept;
 
     /*******************************************************************************
      * @brief Return a sub-window.
@@ -192,7 +124,7 @@ public:
      * @return New sub-window using the same terminal.
      ******************************************************************************/
     Window
-    sub_win(Vec2 offset, Vec2 size) const;
+    sub_win(Size2 offset, Size2 size) const;
 
     /*******************************************************************************
      * @brief If two windows handle the same screen area.
@@ -207,7 +139,7 @@ public:
      * @param advance How to advance the screen cursor.
      ******************************************************************************/
     void
-    write(const TerminalCell& cell, Vec2 advance = Vec2{.m_row = 0, .m_col = +1});
+    write(const TerminalCell& cell, Offset2 advance = {.m_row = 0, .m_col = +1});
 
     /*******************************************************************************
      * @brief Move cursor to the beginning of the next line in this window.
@@ -217,9 +149,9 @@ public:
 
 private:
     /*! Top-left corner. */
-    Vec2 m_origin{0, 0};
+    Coords2 m_origin{0, 0};
     /*! Size of the window. */
-    Vec2 m_size{0, 0};
+    Size2 m_size{0, 0};
     /*! Screen attached to this window. Held as ptr to keep moveability. */
     Screen* m_screen = nullptr;
 };
@@ -227,28 +159,56 @@ private:
 
 class Screen {
 public:
-    explicit Screen(Vec2 size) noexcept;
+    explicit Screen(Size2 size) noexcept;
+    /*******************************************************************************
+     * @brief Default copy ctor.
+     ******************************************************************************/
+    Screen(const Screen& other) = default;
+
+    /*******************************************************************************
+     * @brief Default move ctor.
+     ******************************************************************************/
+    Screen(Screen&& other) noexcept = default;
+
+    /*******************************************************************************
+     * @brief Default copy assignment.
+     ******************************************************************************/
+    Screen&
+    operator=(const Screen& other) = default;
+
+    /*******************************************************************************
+     * @brief Default move assignment.
+     ******************************************************************************/
+    Screen&
+    operator=(Screen&& other) noexcept = default;
+
+    /*******************************************************************************
+     * @brief Virtual dtor.
+     ******************************************************************************/
+    virtual ~Screen() noexcept = default;
 
     /*******************************************************************************
      * @brief Position of the cursor.
      ******************************************************************************/
-    Vec2
+    Coords2
     cursor() const noexcept;
 
     /*******************************************************************************
      * @brief Dimensions of the screen.
      ******************************************************************************/
-    Vec2
+    Size2
     size() const noexcept;
 
     /*******************************************************************************
      * @brief Write to the screen at the current cursor position.
      *
+     * cursor() after the call must be equal to cursor() before the call + @p advance.
+     *
      * @param cell to write.
      * @param advance How to advance the screen cursor.
      ******************************************************************************/
     void
-    write(const TerminalCell& cell, Vec2 advance = Vec2{.m_row = 0, .m_col = +1});
+    write(const TerminalCell& cell, Offset2 advance = {.m_row = 0, .m_col = +1});
 
     /*******************************************************************************
      * @brief Move cursor to @p dest position.
@@ -256,7 +216,7 @@ public:
      * @param dest Absolute coordinates to move the cursor to.
      ******************************************************************************/
     void
-    move_cursor(const Vec2& dest) noexcept;
+    move_cursor(const Coords2& dest) noexcept;
 
     /*******************************************************************************
      * @brief Move cursor by the given @p offset .
@@ -264,11 +224,13 @@ public:
      * @param offset Amount to advance the cursor by.
      ******************************************************************************/
     void
-    advance_cursor(const Vec2& offset) noexcept;
+    advance_cursor(const Offset2& offset) noexcept;
 
 private:
-    Vec2 m_cursor{0, 0};
-    Vec2 m_size{0, 0};
+    /*! Cached position of the cursor. */
+    Coords2 m_cursor{0, 0};
+    /*! Size of the screen. */
+    Size2 m_size{0, 0};
 };
 
 } // namespace eltau

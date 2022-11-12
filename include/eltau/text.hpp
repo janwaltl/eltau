@@ -44,8 +44,8 @@ private:
      * @param max_size limits on the size.
      * @return Calculated necessary size.
      ******************************************************************************/
-    Vec2
-    do_calc_pref_size(Vec2 max_size) override;
+    Size2
+    do_calc_pref_size(Size2 max_size) override;
 
     /*******************************************************************************
      * @brief Draw text to the assigned window.

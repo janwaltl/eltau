@@ -55,11 +55,13 @@ target_link_libraries(eltau PRIVATE fmt::fmt)
 target_sources(
   eltau
   PUBLIC
+  include/eltau/coords.hpp
   include/eltau/element.hpp
   include/eltau/exception.hpp
   include/eltau/screen.hpp
   include/eltau/terminal.hpp
   PRIVATE
+  src/coords.cpp
   src/element.cpp
   src/text.cpp
   src/exception.cpp

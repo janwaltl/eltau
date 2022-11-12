@@ -19,7 +19,7 @@ function(config_default_target_flags target)
   endif(ELTAU_TSAN)
 
   if(CMAKE_BUILD_TYPE STREQUAL Debug)
-    target_compile_options(${target} PRIVATE -Og -g3)
+    target_compile_options(${target} PRIVATE -O0 -g3)
   else()
     target_compile_options(${target} PRIVATE -O2 -g3)
     target_link_options(${target} PRIVATE -flto)
