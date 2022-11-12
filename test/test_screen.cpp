@@ -42,12 +42,30 @@ TEST_CASE("Vector subtraction") {
     REQUIRE(et::Vec2{0, m} - et::Vec2{m, 0} == et::Vec2{0, m});
 }
 
+TEST_CASE("Vector member subtraction") {
+    constexpr auto m = std::numeric_limits<std::size_t>::max();
+    REQUIRE((et::Vec2{0, 0} -= et::Vec2{1, 2}) == et::Vec2{0, 0});
+    REQUIRE((et::Vec2{10, 5} -= et::Vec2{1, 7}) == et::Vec2{9, 0});
+    REQUIRE((et::Vec2{12, 18} -= et::Vec2{20, 18}) == et::Vec2{0, 0});
+    REQUIRE((et::Vec2{2, 13} -= et::Vec2{3, 11}) == et::Vec2{0, 2});
+    REQUIRE((et::Vec2{m, 0} -= et::Vec2{0, m}) == et::Vec2{m, 0});
+    REQUIRE((et::Vec2{0, m} -= et::Vec2{m, 0}) == et::Vec2{0, m});
+}
+
 TEST_CASE("Vector addition") {
     REQUIRE(et::Vec2{0, 0} + et::Vec2{1, 2} == et::Vec2{1, 2});
     REQUIRE(et::Vec2{10, 5} + et::Vec2{1, 7} == et::Vec2{11, 12});
     REQUIRE(et::Vec2{12, 18} + et::Vec2{20, 18} == et::Vec2{32, 36});
     REQUIRE(et::Vec2{2, 13} + et::Vec2{3, 11} == et::Vec2{5, 24});
 }
+
+TEST_CASE("Vector member addition") {
+    REQUIRE((et::Vec2{0, 0} += et::Vec2{1, 2}) == et::Vec2{1, 2});
+    REQUIRE((et::Vec2{10, 5} += et::Vec2{1, 7}) == et::Vec2{11, 12});
+    REQUIRE((et::Vec2{12, 18} += et::Vec2{20, 18}) == et::Vec2{32, 36});
+    REQUIRE((et::Vec2{2, 13} += et::Vec2{3, 11}) == et::Vec2{5, 24});
+}
+
 
 TEST_CASE("Window getters") {
 
