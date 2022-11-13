@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sharedstate_181',['SharedState',['../namespaceeltau.html#a12423a4c3d0e55b5d07a5edd961c00c1',1,'eltau']]]
+  ['coords_5ftype_199',['coords_type',['../structeltau_1_1Coords2.html#a6ddeeaa5ceb5d8ba3d4da6e024e764b2',1,'eltau::Coords2']]]
 ];

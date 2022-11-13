@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['terminal_2ecpp_79',['terminal.cpp',['../terminal_8cpp.html',1,'']]],
-  ['terminal_2ehpp_80',['terminal.hpp',['../terminal_8hpp.html',1,'']]],
-  ['terminalcell_81',['TerminalCell',['../namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb',1,'eltau']]],
-  ['text_82',['Text',['../classeltau_1_1ascii_1_1Text.html',1,'eltau::ascii::Text'],['../classeltau_1_1ascii_1_1Text.html#a32fb314713a07b09d3509b86d2b9cd91',1,'eltau::ascii::Text::Text()']]],
-  ['text_2ecpp_83',['text.cpp',['../text_8cpp.html',1,'']]],
-  ['text_2ehpp_84',['text.hpp',['../text_8hpp.html',1,'']]]
+  ['underline_96',['Underline',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a0328574125c6665b62b0595b789af5b5',1,'eltau']]]
 ];

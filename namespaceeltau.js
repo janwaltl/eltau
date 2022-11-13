@@ -1,12 +1,16 @@
 var namespaceeltau =
 [
+    [ "anonymous_namespace{coords.cpp}", "namespaceeltau_1_1anonymous__namespace_02coords_8cpp_03.html", [
+      [ "sat_add", "namespaceeltau_1_1anonymous__namespace_02coords_8cpp_03.html#af7f543a52bb476c028e68803d65e5eaf", null ]
+    ] ],
     [ "anonymous_namespace{terminal.cpp}", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03.html", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03" ],
     [ "ascii", "namespaceeltau_1_1ascii.html", "namespaceeltau_1_1ascii" ],
+    [ "Coords2", "structeltau_1_1Coords2.html", "structeltau_1_1Coords2" ],
+    [ "Offset2", "structeltau_1_1Offset2.html", "structeltau_1_1Offset2" ],
+    [ "Size2", "structeltau_1_1Size2.html", "structeltau_1_1Size2" ],
     [ "Element", "classeltau_1_1Element.html", "classeltau_1_1Element" ],
-    [ "HContainer", "classeltau_1_1HContainer.html", "classeltau_1_1HContainer" ],
     [ "EltauException", "classeltau_1_1EltauException.html", "classeltau_1_1EltauException" ],
     [ "Color256", "structeltau_1_1Color256.html", "structeltau_1_1Color256" ],
-    [ "Vec2", "structeltau_1_1Vec2.html", "structeltau_1_1Vec2" ],
     [ "Window", "classeltau_1_1Window.html", "classeltau_1_1Window" ],
     [ "Screen", "classeltau_1_1Screen.html", "classeltau_1_1Screen" ],
     [ "SharedStateBaseImpl", "structeltau_1_1SharedStateBaseImpl.html", "structeltau_1_1SharedStateBaseImpl" ],
@@ -23,11 +27,25 @@ var namespaceeltau =
       [ "Inverse", "namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066a84eb3dfbcca4b528a999740da778b26d", null ],
       [ "Strike", "namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066afbb319e8afeae64fdf650c07f8eada5c", null ]
     ] ],
-    [ "clamp", "namespaceeltau.html#a0165014aa92419db16603449ef3ffb62", null ],
-    [ "HContainer", "namespaceeltau.html#a0df62f3b45b6af33a2437c2fd29b8d79", null ],
-    [ "max", "namespaceeltau.html#afd7938526bc749dac4e0c1d78ba395aa", null ],
-    [ "min", "namespaceeltau.html#a40f74572a92ad4f79d59d386ce8889aa", null ],
-    [ "operator+", "namespaceeltau.html#a9a53c3d11d873f9c10103c3f5b18cc87", null ],
-    [ "operator-", "namespaceeltau.html#a0772bb9dc28dd4bcd4f7ffad12fef489", null ],
-    [ "operator<<", "namespaceeltau.html#a60ab4604db4459d18afd574195aa08b6", null ]
+    [ "clamp", "namespaceeltau.html#ae3462c11594ffa5377fc1a7e448acec3", null ],
+    [ "clamp", "namespaceeltau.html#a535ce9e3cb61744546d494783ec25469", null ],
+    [ "clamp", "namespaceeltau.html#ace842b10b4980617f559e702edd22d50", null ],
+    [ "max", "namespaceeltau.html#a20474afd1b6fbe08737e5b8ffc7c9e2a", null ],
+    [ "max", "namespaceeltau.html#a6881a9ccb507f5cc305abccfe03aa8f6", null ],
+    [ "max", "namespaceeltau.html#a4ef9ffb02a2e498b5d53adf6647d0038", null ],
+    [ "min", "namespaceeltau.html#a796c634bd3f3d4301612657e62824059", null ],
+    [ "min", "namespaceeltau.html#a72fa1eacdad8117c49f7448eac071606", null ],
+    [ "min", "namespaceeltau.html#a73fc0fa1645031019933acb69c3165bb", null ],
+    [ "operator+", "namespaceeltau.html#ab322da9b34801d995f87a33ff2dddf58", null ],
+    [ "operator+", "namespaceeltau.html#ae198a5deb63d4df04927f722557fe595", null ],
+    [ "operator+", "namespaceeltau.html#a70a7f50df3dab8f1c19c87c3405c4aac", null ],
+    [ "operator+", "namespaceeltau.html#a464d89ae8da4e5ddf365f805131b8424", null ],
+    [ "operator-", "namespaceeltau.html#a728348c93e9679ac5d9f41181bffe907", null ],
+    [ "operator-", "namespaceeltau.html#a99ae791b1518a9171d9a661e38b625a0", null ],
+    [ "operator-", "namespaceeltau.html#a30b793c2a31127d7bec9da4317534706", null ],
+    [ "operator-", "namespaceeltau.html#abc662f9e7519fc5732e80c6d28e57012", null ],
+    [ "operator-", "namespaceeltau.html#a1c427ca0810b41763af0ec7356caa1ab", null ],
+    [ "operator<<", "namespaceeltau.html#a83c35d0fca10d6ed8c84e7945099b50c", null ],
+    [ "operator<<", "namespaceeltau.html#ae9bb37485393680453cb6579d28e63bd", null ],
+    [ "operator<<", "namespaceeltau.html#ad7fa7f62133bd3f21198a340f8888e33", null ]
 ];

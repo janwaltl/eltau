@@ -1,5 +1,6 @@
 <map id="eltau::Window" name="eltau::Window">
-<area shape="rect" id="node1" title="Rectangular area on the screen." alt="" coords="5,201,108,228"/>
-<area shape="rect" id="node2" href="$structeltau_1_1Vec2.html" title="Coordinates in the screen." alt="" coords="13,5,100,32"/>
-<area shape="rect" id="node3" href="$classeltau_1_1Screen.html" title=" " alt="" coords="113,111,211,137"/>
+<area shape="rect" id="node1" title="Rectangular area on the screen." alt="" coords="85,184,187,211"/>
+<area shape="rect" id="node2" href="$structeltau_1_1Size2.html" title="Positive offset, analogous to std::size_t for 1D." alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node4" href="$classeltau_1_1Screen.html" title=" " alt="" coords="87,95,185,121"/>
+<area shape="rect" id="node3" href="$structeltau_1_1Coords2.html" title="Coordinates in the screen." alt="" coords="127,5,231,32"/>
 </map>

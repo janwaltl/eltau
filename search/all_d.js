@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['screen_67',['Screen',['../classeltau_1_1Screen.html',1,'eltau::Screen'],['../classeltau_1_1Screen.html#af91889813661eb412925332e2c0f21cf',1,'eltau::Screen::Screen()']]],
-  ['screen_2ecpp_68',['screen.cpp',['../screen_8cpp.html',1,'']]],
-  ['screen_2ehpp_69',['screen.hpp',['../screen_8hpp.html',1,'']]],
-  ['setup_5fterminal_70',['setup_terminal',['../namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03.html#a5194a7be5c6b6253fc2a452f378fb3f1',1,'eltau::anonymous_namespace{terminal.cpp}']]],
-  ['shared_5fstate_2ehpp_71',['shared_state.hpp',['../shared__state_8hpp.html',1,'']]],
-  ['sharedstate_72',['SharedState',['../namespaceeltau.html#a12423a4c3d0e55b5d07a5edd961c00c1',1,'eltau']]],
-  ['sharedstatebaseimpl_73',['SharedStateBaseImpl',['../structeltau_1_1SharedStateBaseImpl.html',1,'eltau']]],
-  ['sharedstateimpl_74',['SharedStateImpl',['../structeltau_1_1SharedStateImpl.html',1,'eltau']]],
-  ['size_75',['size',['../classeltau_1_1Window.html#af69d1e01095657b9f9e4a94a9d597d00',1,'eltau::Window::size()'],['../classeltau_1_1Screen.html#ab403170934505092b16de3bddcf32956',1,'eltau::Screen::size()']]],
-  ['strike_76',['Strike',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066afbb319e8afeae64fdf650c07f8eada5c',1,'eltau']]],
-  ['style_77',['Style',['../namespaceeltau.html#a84ee5c845edc34fe7152f2471565a066',1,'eltau']]],
-  ['sub_5fwin_78',['sub_win',['../classeltau_1_1Window.html#aad2963e4d7bc3c0278e4c717b33869e0',1,'eltau::Window']]]
+  ['terminal_2ecpp_90',['terminal.cpp',['../terminal_8cpp.html',1,'']]],
+  ['terminal_2ehpp_91',['terminal.hpp',['../terminal_8hpp.html',1,'']]],
+  ['terminalcell_92',['TerminalCell',['../namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb',1,'eltau']]],
+  ['text_93',['Text',['../classeltau_1_1ascii_1_1Text.html',1,'eltau::ascii::Text'],['../classeltau_1_1ascii_1_1Text.html#a32fb314713a07b09d3509b86d2b9cd91',1,'eltau::ascii::Text::Text()']]],
+  ['text_2ecpp_94',['text.cpp',['../text_8cpp.html',1,'']]],
+  ['text_2ehpp_95',['text.hpp',['../text_8hpp.html',1,'']]]
 ];
