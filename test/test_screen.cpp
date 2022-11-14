@@ -16,7 +16,7 @@ namespace et = eltau;
 TEST_CASE("Window getters") {
 
     constexpr et::Coords2 origin{10, 1};
-    constexpr et::Size2 size{3, 4};
+    constexpr et::Size2 size{30, 40};
 
     et::Screen screen{size};
 
@@ -24,6 +24,25 @@ TEST_CASE("Window getters") {
     REQUIRE(win.size() == size);
     REQUIRE(win.origin() == origin);
     REQUIRE(win.end() == (origin + size));
+}
+
+TEST_CASE("Window cursor") {
+    constexpr et::Coords2 origin{10, 1};
+    constexpr et::Size2 size{30, 40};
+
+    et::Screen screen{size};
+    et::Window win{origin, {5, 6}, screen};
+
+    auto cursor_pos{
+        GENERATE(et::Coords2{0, 0}, et::Coords2{1, 2}, et::Coords2{20, 1}, et::Coords2{20, 0}, et::Coords2{11, 20})};
+    SECTION("Getter returns true cursor position.") {
+        screen.move_cursor(cursor_pos);
+        REQUIRE(win.cursor() == cursor_pos);
+    }
+    SECTION("Getter returns true relative cursor position.") {
+        screen.move_cursor(cursor_pos);
+        REQUIRE((win.origin() + win.cursor_rel()) == cursor_pos);
+    }
 }
 
 TEST_CASE("Window inside test") {
@@ -116,6 +135,7 @@ TEST_CASE("Subwindow construction") {
         REQUIRE(sub.origin() == (origin + sub_origin));
     }
 }
+
 TEST_CASE("Screen size") {
     SECTION("Empty screen") {
         et::Screen s{et::Size2{0, 0}};
@@ -129,4 +149,49 @@ TEST_CASE("Screen size") {
 
         REQUIRE(s.size() == size);
     }
+}
+
+TEST_CASE("Cursor starts at {0,0}") {
+    auto size{GENERATE(et::Size2{0, 0}, et::Size2{1, 2}, et::Size2{53, 1}, et::Size2{2, 0}, et::Size2{0, 3})};
+    et::Screen s{size};
+
+    REQUIRE(s.cursor() == et::Coords2{0, 0});
+}
+
+TEST_CASE("Cursor movement getter") {
+    et::Size2 size{100, 100};
+    et::Screen s{size};
+    auto dest{GENERATE(et::Coords2{0, 0}, et::Coords2{1, 2}, et::Coords2{53, 1}, et::Coords2{2, 0}, et::Coords2{0, 3})};
+
+    s.move_cursor(dest);
+    REQUIRE(s.cursor() == dest);
+}
+
+TEST_CASE("Cursor advance getter") {
+    et::Size2 size{100, 100};
+    et::Screen s{size};
+
+    et::Offset2 adv{};
+    et::Coords2 exp_pos{};
+
+    REQUIRE(s.cursor() == et::Coords2{0, 0});
+    adv = {5, 0};
+    s.advance_cursor(adv);
+    exp_pos += adv;
+    REQUIRE(s.cursor() == exp_pos);
+
+    adv = {-2, 0};
+    s.advance_cursor(adv);
+    exp_pos += adv;
+    REQUIRE(s.cursor() == exp_pos);
+
+    adv = {0, 5};
+    s.advance_cursor(adv);
+    exp_pos += adv;
+    REQUIRE(s.cursor() == exp_pos);
+
+    adv = {0, -4};
+    s.advance_cursor(adv);
+    exp_pos += adv;
+    REQUIRE(s.cursor() == exp_pos);
 }
