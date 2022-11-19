@@ -1,7 +1,5 @@
 <map id="eltau::EagerTerminal" name="eltau::EagerTerminal">
-<area shape="rect" id="node1" title="Terminal without caching." alt="" coords="63,199,202,225"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,151,136"/>
-<area shape="rect" id="node3" href="$classeltau_1_1Screen.html" title=" " alt="" coords="175,102,272,129"/>
-<area shape="rect" id="node4" href="$structeltau_1_1Size2.html" title="Positive offset, analogous to std::size_t for 1D." alt="" coords="119,5,207,32"/>
-<area shape="rect" id="node5" href="$structeltau_1_1Coords2.html" title="Coordinates in the screen." alt="" coords="231,5,335,32"/>
+<area shape="rect" id="node1" title="Terminal without caching." alt="" coords="93,109,231,136"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" id="node3" title=" " alt="" coords="175,5,320,47"/>
 </map>

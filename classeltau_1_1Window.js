@@ -15,7 +15,7 @@ var classeltau_1_1Window =
     [ "origin", "classeltau_1_1Window.html#a13457076726bb37369ac37c831f53957", null ],
     [ "size", "classeltau_1_1Window.html#a04223aefdbd4486708314371522c0cc0", null ],
     [ "sub_win", "classeltau_1_1Window.html#a960070c73fe401532044f263c6607903", null ],
-    [ "write", "classeltau_1_1Window.html#a9753f2676aa199158990ae8fb252402c", null ],
+    [ "write", "classeltau_1_1Window.html#a753df832d0cbca2d973b1360e2fc8b32", null ],
     [ "m_origin", "classeltau_1_1Window.html#a27055cde2739939a1bedc678427cc194", null ],
     [ "m_screen", "classeltau_1_1Window.html#a68eec93f0071a536a7e1c87c481da7b3", null ],
     [ "m_size", "classeltau_1_1Window.html#a7a656b8382efd6cff3292c0faac4e2b9", null ]

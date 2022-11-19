@@ -12,7 +12,6 @@ var hierarchy =
       ] ]
     ] ],
     [ "eltau::Offset2", "structeltau_1_1Offset2.html", null ],
-    [ "eltau::anonymous_namespace{terminal.cpp}::orig_term", "structeltau_1_1anonymous__namespace_02terminal_8cpp_03_1_1orig__term.html", null ],
     [ "eltau::Screen", "classeltau_1_1Screen.html", null ],
     [ "eltau::SharedStateBaseImpl", "structeltau_1_1SharedStateBaseImpl.html", [
       [ "eltau::SharedStateImpl< State >", "structeltau_1_1SharedStateImpl.html", null ]

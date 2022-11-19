@@ -154,9 +154,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2c282cfb02741d63553f18b5ff0f1894"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a2c282cfb02741d63553f18b5ff0f1894">operator==</a> (const <a class="el" href="classeltau_1_1Window.html">Window</a> &amp;other) const noexcept=default</td></tr>
 <tr class="memdesc:a2c282cfb02741d63553f18b5ff0f1894"><td class="mdescLeft">&#160;</td><td class="mdescRight">If two windows handle the same screen area.  <a href="classeltau_1_1Window.html#a2c282cfb02741d63553f18b5ff0f1894">More...</a><br /></td></tr>
 <tr class="separator:a2c282cfb02741d63553f18b5ff0f1894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9753f2676aa199158990ae8fb252402c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a9753f2676aa199158990ae8fb252402c">write</a> (const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;cell, <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> advance={.m_row=0,.m_col=+1})</td></tr>
-<tr class="memdesc:a9753f2676aa199158990ae8fb252402c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the screen at the current cursor position.  <a href="classeltau_1_1Window.html#a9753f2676aa199158990ae8fb252402c">More...</a><br /></td></tr>
-<tr class="separator:a9753f2676aa199158990ae8fb252402c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753df832d0cbca2d973b1360e2fc8b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a753df832d0cbca2d973b1360e2fc8b32">write</a> (const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;cell)</td></tr>
+<tr class="memdesc:a753df832d0cbca2d973b1360e2fc8b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the screen at the current cursor position.  <a href="classeltau_1_1Window.html#a753df832d0cbca2d973b1360e2fc8b32">More...</a><br /></td></tr>
+<tr class="separator:a753df832d0cbca2d973b1360e2fc8b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ccb4b74bc2653da27a9ffa8cba9a6f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Window.html#a3ccb4b74bc2653da27a9ffa8cba9a6f2">move_nextline</a> () noexcept</td></tr>
 <tr class="memdesc:a3ccb4b74bc2653da27a9ffa8cba9a6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor to the beginning of the next line in this window.  <a href="classeltau_1_1Window.html#a3ccb4b74bc2653da27a9ffa8cba9a6f2">More...</a><br /></td></tr>
 <tr class="separator:a3ccb4b74bc2653da27a9ffa8cba9a6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -641,8 +641,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9753f2676aa199158990ae8fb252402c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9753f2676aa199158990ae8fb252402c">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a753df832d0cbca2d973b1360e2fc8b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a753df832d0cbca2d973b1360e2fc8b32">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,27 +651,17 @@ Private Attributes</h2></td></tr>
           <td class="memname">void eltau::Window::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;&#160;</td>
-          <td class="paramname"><em>cell</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structeltau_1_1Offset2.html">Offset2</a>&#160;</td>
-          <td class="paramname"><em>advance</em> = <code>{.m_row&#160;=&#160;0,&#160;.m_col&#160;=&#160;+1}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Write to the screen at the current cursor position. </p>
+<p>See <a class="el" href="classeltau_1_1Screen.html#a953a93f11d24428614b8cbe3541eb5b9" title="Write to the screen at the current cursor position.">Screen::write()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cell</td><td>to write. </td></tr>
-    <tr><td class="paramname">advance</td><td>How to advance the screen cursor. </td></tr>
   </table>
   </dd>
 </dl>
@@ -702,7 +692,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Top-left corner. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00152">152</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00153">153</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -727,7 +717,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="classeltau_1_1Screen.html">Screen</a> attached to this window. Held as ptr to keep moveability. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00156">156</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00157">157</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -752,7 +742,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Size of the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00154">154</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00155">155</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -766,7 +756,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceeltau.html">eltau</a></li><li class="navelem"><a class="el" href="classeltau_1_1Window.html">Window</a></li>
-    <li class="footer">Generated on Mon Nov 14 2022 20:53:08 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Nov 19 2022 20:47:10 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

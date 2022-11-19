@@ -3,7 +3,6 @@ var namespaceeltau =
     [ "anonymous_namespace{coords.cpp}", "namespaceeltau_1_1anonymous__namespace_02coords_8cpp_03.html", [
       [ "sat_add", "namespaceeltau_1_1anonymous__namespace_02coords_8cpp_03.html#af7f543a52bb476c028e68803d65e5eaf", null ]
     ] ],
-    [ "anonymous_namespace{terminal.cpp}", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03.html", "namespaceeltau_1_1anonymous__namespace_02terminal_8cpp_03" ],
     [ "ascii", "namespaceeltau_1_1ascii.html", "namespaceeltau_1_1ascii" ],
     [ "Coords2", "structeltau_1_1Coords2.html", "structeltau_1_1Coords2" ],
     [ "Offset2", "structeltau_1_1Offset2.html", "structeltau_1_1Offset2" ],

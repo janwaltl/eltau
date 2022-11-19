@@ -92,10 +92,11 @@ $(document).ready(function(){initNavTree('classeltau_1_1Screen.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classeltau_1_1Screen-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">eltau::Screen Class Reference</div>  </div>
+<div class="title">eltau::Screen Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -132,15 +133,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab980d69531725fde4af6d2d67e4356ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Size2.html">Size2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#ab980d69531725fde4af6d2d67e4356ec">size</a> () const noexcept</td></tr>
 <tr class="memdesc:ab980d69531725fde4af6d2d67e4356ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensions of the screen.  <a href="classeltau_1_1Screen.html#ab980d69531725fde4af6d2d67e4356ec">More...</a><br /></td></tr>
 <tr class="separator:ab980d69531725fde4af6d2d67e4356ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a029964cd26e5bc4afec49ad779a68a09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a029964cd26e5bc4afec49ad779a68a09">write</a> (const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;cell, <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> advance={.m_row=0,.m_col=+1})</td></tr>
-<tr class="memdesc:a029964cd26e5bc4afec49ad779a68a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the screen at the current cursor position.  <a href="classeltau_1_1Screen.html#a029964cd26e5bc4afec49ad779a68a09">More...</a><br /></td></tr>
-<tr class="separator:a029964cd26e5bc4afec49ad779a68a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a630816a2d59420e210b87c944df1bdb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a630816a2d59420e210b87c944df1bdb3">move_cursor</a> (const <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> &amp;dest) noexcept</td></tr>
-<tr class="memdesc:a630816a2d59420e210b87c944df1bdb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor to <code>dest</code> position.  <a href="classeltau_1_1Screen.html#a630816a2d59420e210b87c944df1bdb3">More...</a><br /></td></tr>
-<tr class="separator:a630816a2d59420e210b87c944df1bdb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad34a2f4e04ad1ad0463f7bf3598d710d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#ad34a2f4e04ad1ad0463f7bf3598d710d">advance_cursor</a> (const <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> &amp;offset) noexcept</td></tr>
-<tr class="memdesc:ad34a2f4e04ad1ad0463f7bf3598d710d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor by the given <code>offset</code> .  <a href="classeltau_1_1Screen.html#ad34a2f4e04ad1ad0463f7bf3598d710d">More...</a><br /></td></tr>
-<tr class="separator:ad34a2f4e04ad1ad0463f7bf3598d710d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953a93f11d24428614b8cbe3541eb5b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a953a93f11d24428614b8cbe3541eb5b9">write</a> (const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;cell)</td></tr>
+<tr class="memdesc:a953a93f11d24428614b8cbe3541eb5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the screen at the current cursor position.  <a href="classeltau_1_1Screen.html#a953a93f11d24428614b8cbe3541eb5b9">More...</a><br /></td></tr>
+<tr class="separator:a953a93f11d24428614b8cbe3541eb5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f68aa49dc0ac2956b25e79798b29c03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a2f68aa49dc0ac2956b25e79798b29c03">move_cursor</a> (const <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> &amp;dest) noexcept</td></tr>
+<tr class="memdesc:a2f68aa49dc0ac2956b25e79798b29c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor to <code>dest</code> position.  <a href="classeltau_1_1Screen.html#a2f68aa49dc0ac2956b25e79798b29c03">More...</a><br /></td></tr>
+<tr class="separator:a2f68aa49dc0ac2956b25e79798b29c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad0040e17de7fc82ff37776517d604c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a3ad0040e17de7fc82ff37776517d604c">advance_cursor</a> (const <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> &amp;offset) noexcept</td></tr>
+<tr class="memdesc:a3ad0040e17de7fc82ff37776517d604c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor by the given <code>offset</code> .  <a href="classeltau_1_1Screen.html#a3ad0040e17de7fc82ff37776517d604c">More...</a><br /></td></tr>
+<tr class="separator:a3ad0040e17de7fc82ff37776517d604c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2654197ade8781151ad7241cb271bfa9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structeltau_1_1Coords2.html">Coords2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a2654197ade8781151ad7241cb271bfa9">do_advance_cursor</a> (const <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> &amp;offset) noexcept=0</td></tr>
+<tr class="memdesc:a2654197ade8781151ad7241cb271bfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor by the given <code>offset</code> .  <a href="classeltau_1_1Screen.html#a2654197ade8781151ad7241cb271bfa9">More...</a><br /></td></tr>
+<tr class="separator:a2654197ade8781151ad7241cb271bfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba0dd6461f3c023116a24abb45b26b8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structeltau_1_1Coords2.html">Coords2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#adba0dd6461f3c023116a24abb45b26b8">do_move_cursor</a> (const <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> &amp;dest) noexcept</td></tr>
+<tr class="memdesc:adba0dd6461f3c023116a24abb45b26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move cursor to <code>dest</code> position.  <a href="classeltau_1_1Screen.html#adba0dd6461f3c023116a24abb45b26b8">More...</a><br /></td></tr>
+<tr class="separator:adba0dd6461f3c023116a24abb45b26b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d068c553a1304d2f448a60658661b78"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structeltau_1_1Coords2.html">Coords2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeltau_1_1Screen.html#a5d068c553a1304d2f448a60658661b78">do_write</a> (const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;cell) noexcept=0</td></tr>
+<tr class="memdesc:a5d068c553a1304d2f448a60658661b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the screen at the current cursor position.  <a href="classeltau_1_1Screen.html#a5d068c553a1304d2f448a60658661b78">More...</a><br /></td></tr>
+<tr class="separator:a5d068c553a1304d2f448a60658661b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -151,7 +164,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00160">160</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00161">161</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a796e705808e558425e98e72b6c07e7a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a796e705808e558425e98e72b6c07e7a3">&#9670;&nbsp;</a></span>Screen() <span class="overload">[1/3]</span></h2>
@@ -265,8 +278,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad34a2f4e04ad1ad0463f7bf3598d710d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad34a2f4e04ad1ad0463f7bf3598d710d">&#9670;&nbsp;</a></span>advance_cursor()</h2>
+<a id="a3ad0040e17de7fc82ff37776517d604c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad0040e17de7fc82ff37776517d604c">&#9670;&nbsp;</a></span>advance_cursor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +288,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void eltau::Screen::advance_cursor </td>
+          <td class="memname"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a> eltau::Screen::advance_cursor </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> &amp;&#160;</td>
           <td class="paramname"><em>offset</em></td><td>)</td>
@@ -290,14 +303,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Move cursor by the given <code>offset</code> . </p>
+<p>The implementation might return different cursor position than requested, e.g. if <code>dest</code> is out of the screen.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">offset</td><td>Amount to advance the cursor by. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>New cursor position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00098">98</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00093">93</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,8 +345,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a630816a2d59420e210b87c944df1bdb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a630816a2d59420e210b87c944df1bdb3">&#9670;&nbsp;</a></span>move_cursor()</h2>
+<a id="a2654197ade8781151ad7241cb271bfa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2654197ade8781151ad7241cb271bfa9">&#9670;&nbsp;</a></span>do_advance_cursor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,7 +355,118 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void eltau::Screen::move_cursor </td>
+          <td class="memname">virtual <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> eltau::Screen::do_advance_cursor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeltau_1_1Offset2.html">Offset2</a> &amp;&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move cursor by the given <code>offset</code> . </p>
+<p>During the call, <a class="el" href="classeltau_1_1Screen.html#a582b6e7d5ba61966018b1cc433d30642" title="Position of the cursor.">cursor()</a> returns the position before advancement. The implementation is allowed to return different cursor position than the requested, e.g. if it would be out of the screen.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>Amount to advance the cursor by. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New cursor position. </dd></dl>
+
+</div>
+</div>
+<a id="adba0dd6461f3c023116a24abb45b26b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba0dd6461f3c023116a24abb45b26b8">&#9670;&nbsp;</a></span>do_move_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a> eltau::Screen::do_move_cursor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move cursor to <code>dest</code> position. </p>
+<p>The implementation might return different cursor position than requested, e.g. if <code>dest</code> is out of the screen.</p>
+<p>By default, it is implemented in terms of <a class="el" href="classeltau_1_1Screen.html#a2654197ade8781151ad7241cb271bfa9" title="Move cursor by the given offset .">do_advance_cursor()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>Absolute screen coordinates to move the cursor to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New cursor position. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00098">98</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5d068c553a1304d2f448a60658661b78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d068c553a1304d2f448a60658661b78">&#9670;&nbsp;</a></span>do_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> eltau::Screen::do_write </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write to the screen at the current cursor position. </p>
+<p>The new cursor position should be suitable for the writing of the next character in continuous text. E.g. advance the cursor by written text width, optionally wrap on screen edges.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New cursor position. </dd></dl>
+
+</div>
+</div>
+<a id="a2f68aa49dc0ac2956b25e79798b29c03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f68aa49dc0ac2956b25e79798b29c03">&#9670;&nbsp;</a></span>move_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a> eltau::Screen::move_cursor </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structeltau_1_1Coords2.html">Coords2</a> &amp;&#160;</td>
           <td class="paramname"><em>dest</em></td><td>)</td>
@@ -355,14 +481,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Move cursor to <code>dest</code> position. </p>
+<p>The implementation might return different cursor position than requested, e.g. if <code>dest</code> is out of the screen.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dest</td><td>Absolute coordinates to move the cursor to. </td></tr>
+    <tr><td class="paramname">dest</td><td>Absolute screen coordinates to move the cursor to. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>New cursor position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00092">92</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00087">87</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
 </div>
 </div>
@@ -451,41 +579,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a029964cd26e5bc4afec49ad779a68a09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a029964cd26e5bc4afec49ad779a68a09">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a953a93f11d24428614b8cbe3541eb5b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953a93f11d24428614b8cbe3541eb5b9">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void eltau::Screen::write </td>
+          <td class="memname"><a class="el" href="structeltau_1_1Coords2.html">Coords2</a> eltau::Screen::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceeltau.html#ac22ec6ca539b882161eed4b7fe9c5ecb">TerminalCell</a> &amp;&#160;</td>
-          <td class="paramname"><em>cell</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structeltau_1_1Offset2.html">Offset2</a>&#160;</td>
-          <td class="paramname"><em>advance</em> = <code>{.m_row&#160;=&#160;0,&#160;.m_col&#160;=&#160;+1}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Write to the screen at the current cursor position. </p>
-<p><a class="el" href="classeltau_1_1Screen.html#a582b6e7d5ba61966018b1cc433d30642" title="Position of the cursor.">cursor()</a> after the call must be equal to <a class="el" href="classeltau_1_1Screen.html#a582b6e7d5ba61966018b1cc433d30642" title="Position of the cursor.">cursor()</a> before the call + <code>advance</code>.</p>
+<p>The new cursor position is suitable for the writing of the next character in continuous text. E.g. advance the cursor by written text width, optionally wrap on screen edges.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cell</td><td>to write. </td></tr>
-    <tr><td class="paramname">advance</td><td>How to advance the screen cursor. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>New cursor position. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="screen_8cpp_source.html#l00082">82</a> of file <a class="el" href="screen_8cpp_source.html">screen.cpp</a>.</p>
 
@@ -513,7 +631,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached position of the cursor. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00231">231</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00282">282</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -538,7 +656,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Size of the screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00233">233</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="screen_8hpp_source.html#l00284">284</a> of file <a class="el" href="screen_8hpp_source.html">screen.hpp</a>.</p>
 
 </div>
 </div>
@@ -552,7 +670,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceeltau.html">eltau</a></li><li class="navelem"><a class="el" href="classeltau_1_1Screen.html">Screen</a></li>
-    <li class="footer">Generated on Mon Nov 14 2022 20:53:08 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Nov 19 2022 20:47:10 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
