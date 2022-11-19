@@ -63,7 +63,22 @@ TEST_CASE("Preferred size is not calculated for degenerate cases ") {
 }
 
 TEST_CASE("Element draw is called correctly") {
-    static et::Screen screen{{100, 100}};
+    class DummyScreen : public et::Screen {
+    public:
+        using et::Screen::Screen;
+
+    private:
+        et::Coords2
+        do_write(const et::TerminalCell& cell) noexcept override {
+            (void)cell;
+            return cursor() + et::Offset2{0, 1};
+        }
+        et::Coords2
+        do_advance_cursor(const et::Offset2& offset) noexcept override {
+            return cursor() + offset;
+        }
+    };
+    static DummyScreen screen{{100, 100}};
     static et::Window exp_window{{0, 0}, {10, 11}, screen};
 
     class DummyElement : public et::Element {

@@ -20,8 +20,9 @@ public:
      * @brief New full-screen terminal with specified root element.
      *
      * @param root The root of the TUI to draw.
+     * @param sreen Screen to draw to.
      ******************************************************************************/
-    explicit EagerTerminal(std::unique_ptr<Element> root);
+    explicit EagerTerminal(std::unique_ptr<Element> root, std::unique_ptr<Screen> screen);
 
     /*******************************************************************************
      * @brief Draw TUI.
@@ -32,7 +33,9 @@ public:
     draw();
 
 private:
+    /*! Root TUI element to draw. */
     std::unique_ptr<Element> m_root;
-    Screen m_screen;
+    /*! Screen to draw on. */
+    std::unique_ptr<Screen> m_screen;
 };
 } // namespace eltau

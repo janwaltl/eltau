@@ -51,9 +51,9 @@ Window::sub_win(Size2 offset, Size2 size) const {
 }
 
 void
-Window::write(const TerminalCell& cell, Offset2 advance) {
+Window::write(const TerminalCell& cell) {
     assert(m_screen);
-    m_screen->write(cell, advance);
+    m_screen->write(cell);
 }
 
 void
@@ -78,24 +78,24 @@ Screen::size() const noexcept {
     return m_size;
 }
 
-void
-Screen::write(const TerminalCell& cell, Offset2 advance) {
-    // TODO (jw) Implement me.
-    (void)cell;
-
-    // Cursor is moved on itself by writing to the screen cell.
-    if (advance != Offset2{.m_row = 0, .m_col = 1})
-        advance_cursor(advance - Offset2{.m_row = 0, .m_col = 1});
+Coords2
+Screen::write(const TerminalCell& cell) {
+    return do_write(cell);
 }
 
-void
+Coords2
 Screen::move_cursor(const Coords2& dest) noexcept {
-    m_cursor = min(dest, Coords2{0, 0} + m_size);
-    // TODO (jw) Actually move cursor.
+    // m_cursor set by the call.
+    return m_cursor = do_move_cursor(dest);
 }
 
-void
+Coords2
 Screen::advance_cursor(const Offset2& offset) noexcept {
-    move_cursor(m_cursor + offset);
+    return m_cursor = do_advance_cursor(offset);
+}
+
+Coords2
+Screen::do_move_cursor(const Coords2& dest) noexcept {
+    return do_advance_cursor(dest - cursor());
 }
 } // namespace eltau

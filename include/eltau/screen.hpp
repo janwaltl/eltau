@@ -135,11 +135,12 @@ public:
     /*******************************************************************************
      * @brief Write to the screen at the current cursor position.
      *
+     * See Screen::write().
+     *
      * @param cell to write.
-     * @param advance How to advance the screen cursor.
      ******************************************************************************/
     void
-    write(const TerminalCell& cell, Offset2 advance = {.m_row = 0, .m_col = +1});
+    write(const TerminalCell& cell);
 
     /*******************************************************************************
      * @brief Move cursor to the beginning of the next line in this window.
@@ -202,31 +203,81 @@ public:
     /*******************************************************************************
      * @brief Write to the screen at the current cursor position.
      *
-     * cursor() after the call must be equal to cursor() before the call + @p advance.
+     * The new cursor position is suitable for the writing of the next character
+     * in continuous text. E.g. advance the cursor by written text width,
+     * optionally wrap on screen edges.
      *
      * @param cell to write.
-     * @param advance How to advance the screen cursor.
+     * @return New cursor position.
      ******************************************************************************/
-    void
-    write(const TerminalCell& cell, Offset2 advance = {.m_row = 0, .m_col = +1});
+    Coords2
+    write(const TerminalCell& cell);
 
     /*******************************************************************************
      * @brief Move cursor to @p dest position.
      *
-     * @param dest Absolute coordinates to move the cursor to.
+     * The implementation might return different cursor position than requested,
+     * e.g. if @p dest is out of the screen.
+     *
+     * @param dest Absolute screen coordinates to move the cursor to.
+     * @return New cursor position.
      ******************************************************************************/
-    void
+    Coords2
     move_cursor(const Coords2& dest) noexcept;
 
     /*******************************************************************************
      * @brief Move cursor by the given @p offset .
      *
+     * The implementation might return different cursor position than requested,
+     * e.g. if @p dest is out of the screen.
+     *
      * @param offset Amount to advance the cursor by.
+     * @return New cursor position.
      ******************************************************************************/
-    void
+    Coords2
     advance_cursor(const Offset2& offset) noexcept;
 
 private:
+    /*******************************************************************************
+     * @brief Move cursor by the given @p offset .
+     *
+     * During the call, cursor() returns the position before advancement.
+     * The implementation is allowed to return different cursor position than
+     * the requested, e.g. if it would be out of the screen.
+     *
+     * @param offset Amount to advance the cursor by.
+     * @return New cursor position.
+     ******************************************************************************/
+    virtual Coords2
+    do_advance_cursor(const Offset2& offset) noexcept = 0;
+
+    /*******************************************************************************
+     * @brief Move cursor to @p dest position.
+     *
+     * The implementation might return different cursor position than requested,
+     * e.g. if @p dest is out of the screen.
+     *
+     * By default, it is implemented in terms of do_advance_cursor().
+     *
+     * @param dest Absolute screen coordinates to move the cursor to.
+     * @return New cursor position.
+     ******************************************************************************/
+    virtual Coords2
+    do_move_cursor(const Coords2& dest) noexcept;
+
+    /*******************************************************************************
+     * @brief Write to the screen at the current cursor position.
+     *
+     * The new cursor position should be suitable for the writing of the next
+     * character in continuous text. E.g. advance the cursor by written text width,
+     * optionally wrap on screen edges.
+     *
+     * @param cell to write.
+     * @return New cursor position.
+     ******************************************************************************/
+    virtual Coords2
+    do_write(const TerminalCell& cell) noexcept = 0;
+
     /*! Cached position of the cursor. */
     Coords2 m_cursor{0, 0};
     /*! Size of the screen. */

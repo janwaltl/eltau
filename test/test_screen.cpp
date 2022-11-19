@@ -13,12 +13,29 @@
 #include <eltau/screen.hpp>
 
 namespace et = eltau;
+namespace {
+class DummyScreen : public et::Screen {
+public:
+    using et::Screen::Screen;
+
+private:
+    et::Coords2
+    do_write(const et::TerminalCell& cell) noexcept override {
+        (void)cell;
+        return cursor() + et::Offset2{0, 1};
+    }
+    et::Coords2
+    do_advance_cursor(const et::Offset2& offset) noexcept override {
+        return cursor() + offset;
+    }
+};
+} // namespace
 TEST_CASE("Window getters") {
 
     constexpr et::Coords2 origin{10, 1};
     constexpr et::Size2 size{30, 40};
 
-    et::Screen screen{size};
+    DummyScreen screen{size};
 
     et::Window win{origin, size, screen};
     REQUIRE(win.size() == size);
@@ -30,7 +47,7 @@ TEST_CASE("Window cursor") {
     constexpr et::Coords2 origin{10, 1};
     constexpr et::Size2 size{30, 40};
 
-    et::Screen screen{size};
+    DummyScreen screen{size};
     et::Window win{origin, {5, 6}, screen};
 
     auto cursor_pos{
@@ -48,7 +65,7 @@ TEST_CASE("Window cursor") {
 TEST_CASE("Window inside test") {
 
     constexpr et::Coords2 origin{10, 16};
-    et::Screen screen{{100, 100}};
+    DummyScreen screen{{100, 100}};
 
     SECTION("Empty window") {
         constexpr et::Size2 size{0, 0};
@@ -99,7 +116,7 @@ TEST_CASE("Window inside test") {
 TEST_CASE("Subwindow construction") {
     constexpr et::Coords2 origin{10, 16};
     constexpr et::Size2 size{5, 3};
-    et::Screen screen{size};
+    DummyScreen screen{size};
 
     et::Window win{origin, size, screen};
 
@@ -138,14 +155,14 @@ TEST_CASE("Subwindow construction") {
 
 TEST_CASE("Screen size") {
     SECTION("Empty screen") {
-        et::Screen s{et::Size2{0, 0}};
+        DummyScreen s{{0, 0}};
 
         REQUIRE(s.size() == et::Size2{0, 0});
     }
 
     SECTION("Sizes") {
         auto size{GENERATE(et::Size2{0, 0}, et::Size2{1, 2}, et::Size2{53, 1}, et::Size2{2, 0}, et::Size2{0, 3})};
-        et::Screen s{size};
+        DummyScreen s{size};
 
         REQUIRE(s.size() == size);
     }
@@ -153,14 +170,14 @@ TEST_CASE("Screen size") {
 
 TEST_CASE("Cursor starts at {0,0}") {
     auto size{GENERATE(et::Size2{0, 0}, et::Size2{1, 2}, et::Size2{53, 1}, et::Size2{2, 0}, et::Size2{0, 3})};
-    et::Screen s{size};
+    DummyScreen s{size};
 
     REQUIRE(s.cursor() == et::Coords2{0, 0});
 }
 
 TEST_CASE("Cursor movement getter") {
     et::Size2 size{100, 100};
-    et::Screen s{size};
+    DummyScreen s{size};
     auto dest{GENERATE(et::Coords2{0, 0}, et::Coords2{1, 2}, et::Coords2{53, 1}, et::Coords2{2, 0}, et::Coords2{0, 3})};
 
     s.move_cursor(dest);
@@ -169,7 +186,7 @@ TEST_CASE("Cursor movement getter") {
 
 TEST_CASE("Cursor advance getter") {
     et::Size2 size{100, 100};
-    et::Screen s{size};
+    DummyScreen s{size};
 
     et::Offset2 adv{};
     et::Coords2 exp_pos{};
