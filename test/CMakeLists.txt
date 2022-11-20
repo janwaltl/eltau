@@ -34,4 +34,5 @@ target_sources(
   test_exception.cpp
   test_screen.cpp
   test_text.cpp
+  test_coords.cpp
 )
