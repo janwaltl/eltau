@@ -95,20 +95,18 @@ $(document).ready(function(){initNavTree('terminal_8cpp_source.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <a href="terminal_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="exception_8hpp.html">eltau/exception.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="terminal_8hpp.html">eltau/terminal.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeltau.html">eltau</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classeltau_1_1EagerTerminal.html#ae0e7bf672df17f32de7f8de3f3c7138c">   10</a></span>&#160;<a class="code" href="classeltau_1_1EagerTerminal.html#ae0e7bf672df17f32de7f8de3f3c7138c">EagerTerminal::EagerTerminal</a>(std::unique_ptr&lt;Element&gt; root, std::unique_ptr&lt;Screen&gt; screen) :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    m_root{std::move(root)}, m_screen{std::move(screen)} {}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079">   14</a></span>&#160;<a class="code" href="classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079">EagerTerminal::draw</a>() {}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <span class="comment">// namespace eltau</span></div>
-<div class="ttc" id="aclasseltau_1_1EagerTerminal_html_a663b860077348e0395fc3ffadb674079"><div class="ttname"><a href="classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079">eltau::EagerTerminal::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">Draw TUI.</div><div class="ttdef"><b>Definition:</b> <a href="terminal_8cpp_source.html#l00014">terminal.cpp:14</a></div></div>
-<div class="ttc" id="aclasseltau_1_1EagerTerminal_html_ae0e7bf672df17f32de7f8de3f3c7138c"><div class="ttname"><a href="classeltau_1_1EagerTerminal.html#ae0e7bf672df17f32de7f8de3f3c7138c">eltau::EagerTerminal::EagerTerminal</a></div><div class="ttdeci">EagerTerminal(std::unique_ptr&lt; Element &gt; root, std::unique_ptr&lt; Screen &gt; screen)</div><div class="ttdoc">New full-screen terminal with specified root element.</div><div class="ttdef"><b>Definition:</b> <a href="terminal_8cpp_source.html#l00010">terminal.cpp:10</a></div></div>
-<div class="ttc" id="aexception_8hpp_html"><div class="ttname"><a href="exception_8hpp.html">exception.hpp</a></div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="terminal_8hpp.html">eltau/terminal.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeltau.html">eltau</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classeltau_1_1EagerTerminal.html#ae0e7bf672df17f32de7f8de3f3c7138c">    9</a></span>&#160;<a class="code" href="classeltau_1_1EagerTerminal.html#ae0e7bf672df17f32de7f8de3f3c7138c">EagerTerminal::EagerTerminal</a>(std::unique_ptr&lt;Element&gt; root, std::unique_ptr&lt;Screen&gt; screen) :</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    m_root{std::move(root)}, m_screen{std::move(screen)} {}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079">   13</a></span>&#160;<a class="code" href="classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079">EagerTerminal::draw</a>() {}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;} <span class="comment">// namespace eltau</span></div>
+<div class="ttc" id="aclasseltau_1_1EagerTerminal_html_a663b860077348e0395fc3ffadb674079"><div class="ttname"><a href="classeltau_1_1EagerTerminal.html#a663b860077348e0395fc3ffadb674079">eltau::EagerTerminal::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">Draw TUI.</div><div class="ttdef"><b>Definition:</b> <a href="terminal_8cpp_source.html#l00013">terminal.cpp:13</a></div></div>
+<div class="ttc" id="aclasseltau_1_1EagerTerminal_html_ae0e7bf672df17f32de7f8de3f3c7138c"><div class="ttname"><a href="classeltau_1_1EagerTerminal.html#ae0e7bf672df17f32de7f8de3f3c7138c">eltau::EagerTerminal::EagerTerminal</a></div><div class="ttdeci">EagerTerminal(std::unique_ptr&lt; Element &gt; root, std::unique_ptr&lt; Screen &gt; screen)</div><div class="ttdoc">New full-screen terminal with specified root element.</div><div class="ttdef"><b>Definition:</b> <a href="terminal_8cpp_source.html#l00009">terminal.cpp:9</a></div></div>
 <div class="ttc" id="anamespaceeltau_html"><div class="ttname"><a href="namespaceeltau.html">eltau</a></div><div class="ttdef"><b>Definition:</b> <a href="coords_8cpp_source.html#l00011">coords.cpp:11</a></div></div>
 <div class="ttc" id="aterminal_8hpp_html"><div class="ttname"><a href="terminal_8hpp.html">terminal.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -117,7 +115,7 @@ $(document).ready(function(){initNavTree('terminal_8cpp_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="terminal_8cpp.html">terminal.cpp</a></li>
-    <li class="footer">Generated on Sat Nov 19 2022 20:47:10 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Nov 20 2022 20:18:15 for ElTau by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
