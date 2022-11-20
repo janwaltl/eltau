@@ -61,6 +61,9 @@ setup_terminal() {
     fmt::print("\033[?1049h");
 }
 
+/*******************************************************************************
+ * @brief Simple ASCII terminal.
+ ******************************************************************************/
 class TScreen : public eltau::Screen {
 public:
     TScreen() : eltau::Screen(get_screen_size()) { setup_terminal(); }

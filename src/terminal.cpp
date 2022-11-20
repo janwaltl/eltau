@@ -3,7 +3,6 @@
  * @copyright Copyright 2022 Jan Waltl.
  * @license	This file is released under ElTau project's license, see LICENSE.
  ******************************************************************************/
-#include <eltau/exception.hpp>
 #include <eltau/terminal.hpp>
 
 namespace eltau {
